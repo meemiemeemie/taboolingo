@@ -36,16 +36,6 @@
             /* Sky-50 */
         }
 
-        .theme-english {
-            --bg-color: #fafaf9;
-            /* Stone-50 */
-            --primary-color: #e11d48;
-            /* Rose-600 (English UI) */
-            --secondary-color: #78716c;
-            /* Stone-500 */
-            --primary-light: #ffe4e6;
-            /* Rose-100 */
-        }
 
         /* Semantic Utilities */
         .text-primary {
@@ -96,14 +86,6 @@
             border-color: var(--team-b) !important;
         }
 
-        /* Legacy Override Cleanup */
-        body.theme-english .text-pink-500,
-        body.theme-english .bg-pink-500,
-        body.theme-english .bg-pink-50,
-        body.theme-english .border-pink-500,
-        body.theme-english .text-pink-600 {
-            /* No longer needed with semantic vars, but keeping empty to override if I missed some */
-        }
 
         body {
             font-family: 'Lexend', sans-serif;
@@ -463,22 +445,38 @@
                     <div class="text-[10px] font-black text-slate-400 uppercase mb-2 tracking-widest text-center">2.
                         Select
                         Language</div>
-                    <div class="flex gap-4">
+                    <div class="grid grid-cols-2 gap-3">
                         <button id="lang-fr" onclick="game.setLanguage('fr')"
-                            class="flex-1 py-4 rounded-2xl bg-white border-4 border-slate-100 shadow-sm transition-all hover:scale-105 active:scale-95 group">
-                            <div class="text-4xl mb-1 group-hover:scale-110 transition-transform"><span
+                            class="py-4 rounded-2xl bg-white border-4 border-slate-100 shadow-sm transition-all hover:scale-105 active:scale-95 group">
+                            <div class="text-3xl mb-1 group-hover:scale-110 transition-transform"><span
                                     class="emoji-fr">🇫🇷</span></div>
                             <div
-                                class="text-xs font-black text-slate-400 uppercase tracking-wider group-[.selected]:text-primary">
+                                class="text-[10px] font-black text-slate-400 uppercase tracking-wider group-[.selected]:text-primary">
                                 Français</div>
                         </button>
                         <button id="lang-en" onclick="game.setLanguage('en')"
-                            class="flex-1 py-4 rounded-2xl bg-white border-4 border-slate-100 shadow-sm transition-all hover:scale-105 active:scale-95 group">
-                            <div class="text-4xl mb-1 group-hover:scale-110 transition-transform"><span
+                            class="py-4 rounded-2xl bg-white border-4 border-slate-100 shadow-sm transition-all hover:scale-105 active:scale-95 group">
+                            <div class="text-3xl mb-1 group-hover:scale-110 transition-transform"><span
                                     class="emoji-en">🇬🇧</span></div>
                             <div
-                                class="text-xs font-black text-slate-400 uppercase tracking-wider group-[.selected]:text-primary">
+                                class="text-[10px] font-black text-slate-400 uppercase tracking-wider group-[.selected]:text-primary">
                                 English</div>
+                        </button>
+                        <button id="lang-de" onclick="game.setLanguage('de')"
+                            class="py-4 rounded-2xl bg-white border-4 border-slate-100 shadow-sm transition-all hover:scale-105 active:scale-95 group">
+                            <div class="text-3xl mb-1 group-hover:scale-110 transition-transform"><span
+                                    class="emoji-de">🇩🇪</span></div>
+                            <div
+                                class="text-[10px] font-black text-slate-400 uppercase tracking-wider group-[.selected]:text-primary">
+                                Deutsch</div>
+                        </button>
+                        <button id="lang-es" onclick="game.setLanguage('es')"
+                            class="py-4 rounded-2xl bg-white border-4 border-slate-100 shadow-sm transition-all hover:scale-105 active:scale-95 group">
+                            <div class="text-3xl mb-1 group-hover:scale-110 transition-transform"><span
+                                    class="emoji-es">🇪🇸</span></div>
+                            <div
+                                class="text-[10px] font-black text-slate-400 uppercase tracking-wider group-[.selected]:text-primary">
+                                Español</div>
                         </button>
                     </div>
                 </div>
@@ -724,14 +722,22 @@
                 </div>
                 <div id="lobby-host-controls" class="hidden">
                     <label class="block text-left text-sm font-bold text-slate-600 mb-2">Language</label>
-                    <div class="flex gap-2 mb-4">
+                    <div class="grid grid-cols-2 gap-2 mb-4">
                         <button id="lobby-lang-fr" onclick="game.setMultiplayerLanguage('fr', this)"
-                            class="flex-1 py-3 rounded-xl border-2 border-slate-200 bg-white text-slate-600 font-bold text-sm transition-all flex items-center justify-center gap-2">
+                            class="py-3 rounded-xl border-2 border-slate-200 bg-white text-slate-600 font-bold text-sm transition-all flex items-center justify-center gap-2">
                             <span class="emoji-fr">🇫🇷</span> Français
                         </button>
                         <button id="lobby-lang-en" onclick="game.setMultiplayerLanguage('en', this)"
-                            class="flex-1 py-3 rounded-xl border-2 border-slate-200 bg-white text-slate-600 font-bold text-sm transition-all flex items-center justify-center gap-2">
+                            class="py-3 rounded-xl border-2 border-slate-200 bg-white text-slate-600 font-bold text-sm transition-all flex items-center justify-center gap-2">
                             <span class="emoji-en">🇬🇧</span> English
+                        </button>
+                        <button id="lobby-lang-de" onclick="game.setMultiplayerLanguage('de', this)"
+                            class="py-3 rounded-xl border-2 border-slate-200 bg-white text-slate-600 font-bold text-sm transition-all flex items-center justify-center gap-2">
+                            <span class="emoji-de">🇩🇪</span> Deutsch
+                        </button>
+                        <button id="lobby-lang-es" onclick="game.setMultiplayerLanguage('es', this)"
+                            class="py-3 rounded-xl border-2 border-slate-200 bg-white text-slate-600 font-bold text-sm transition-all flex items-center justify-center gap-2">
+                            <span class="emoji-es">🇪🇸</span> Español
                         </button>
                     </div>
 
@@ -2050,7 +2056,7 @@
 
                     // Visual feedback for Language in Lobby
                     if (this.gameState.language) {
-                        ['fr', 'en'].forEach(l => {
+                        Object.keys(LANGUAGES).forEach(l => {
                             const btn = document.getElementById(`lobby-lang-${l}`);
                             if (btn) {
                                 if (l === this.gameState.language) {
@@ -2594,10 +2600,46 @@
             }
         }
 
+        const LANGUAGES = {
+            fr: {
+                name: 'Français',
+                emoji: '🇫🇷',
+                winEmoji: '🥖',
+                url: 'https://raw.githubusercontent.com/meemiemeemie/french-taboo/main/word-list.csv',
+                wiki: 'fr',
+                wiktionary: 'fr'
+            },
+            en: {
+                name: 'English',
+                emoji: '🇬🇧',
+                winEmoji: '🍵',
+                url: 'https://raw.githubusercontent.com/meemiemeemie/french-taboo/main/english_words.csv',
+                wiki: 'en',
+                wiktionary: 'en'
+            },
+            de: {
+                name: 'Deutsch',
+                emoji: '🇩🇪',
+                winEmoji: '🍺',
+                url: 'https://raw.githubusercontent.com/meemiemeemie/french-taboo/main/german_words.csv',
+                wiki: 'de',
+                wiktionary: 'de'
+            },
+            es: {
+                name: 'Español',
+                emoji: '🇪🇸',
+                winEmoji: '💃',
+                url: 'https://raw.githubusercontent.com/meemiemeemie/french-taboo/main/spanish_words.csv',
+                wiki: 'es',
+                wiktionary: 'es'
+            }
+        };
+
         class TabooPro {
             constructor() {
-                this.db = { fr: [], en: [] };
-                this.activeLanguage = null; // 'fr' or 'en'
+                this.db = {};
+                Object.keys(LANGUAGES).forEach(l => this.db[l] = []);
+                this.activeLanguage = null;
                 this.playedIds = new Set();
                 this.selectedLevel = null;
                 this.score = 0;
@@ -2642,28 +2684,26 @@
                     // Start screen logo (initial state is France)
                     const mainLogo = document.getElementById('main-logo-emoji');
                     if (mainLogo && mainLogo.textContent.trim() === '🇫🇷') {
-                        mainLogo.textContent = '🥖';
+                        mainLogo.textContent = LANGUAGES.fr.winEmoji;
                     }
 
-                    // Update all English buttons to Tea
-                    document.querySelectorAll('.emoji-en').forEach(el => el.textContent = '🍵');
-                    // Update all French buttons to Baguette
-                    document.querySelectorAll('.emoji-fr').forEach(el => el.textContent = '🥖');
+                    // Update all buttons based on config
+                    Object.keys(LANGUAGES).forEach(lang => {
+                        const config = LANGUAGES[lang];
+                        document.querySelectorAll(`.emoji-${lang}`).forEach(el => el.textContent = config.winEmoji);
+                    });
                 }
             }
 
             async fetchData() {
                 try {
-                    const [resFr, resEn] = await Promise.all([
-                        fetch(REMOTE_URL_FR),
-                        fetch(REMOTE_URL_EN)
-                    ]);
+                    const fetchPromises = Object.keys(LANGUAGES).map(async lang => {
+                        const res = await fetch(LANGUAGES[lang].url);
+                        const text = await res.text();
+                        this.loadData(text, lang);
+                    });
 
-                    const textFr = await resFr.text();
-                    const textEn = await resEn.text();
-
-                    this.loadData(textFr, 'fr');
-                    this.loadData(textEn, 'en');
+                    await Promise.all(fetchPromises);
                 } catch (e) {
                     console.error("Error loading data:", e);
                     const el = document.getElementById('total-card-count');
@@ -2734,9 +2774,10 @@
                 if (!startBtn) return;
 
                 if (!this.selectedLevel || !this.activeLanguage) {
-                    const frCount = this.db.fr ? this.db.fr.length : 0;
-                    const enCount = this.db.en ? this.db.en.length : 0;
-                    const total = frCount + enCount;
+                    let total = 0;
+                    Object.keys(LANGUAGES).forEach(l => {
+                        if (this.db[l]) total += this.db[l].length;
+                    });
                     el.textContent = `${total} cards loaded · Select Language & Level`;
                     startBtn.disabled = true;
                     startBtn.className = "btn-3d w-full bg-slate-200 text-slate-400 py-4 rounded-2xl font-black text-xl shadow-lg";
@@ -2794,51 +2835,38 @@
             }
 
             getRefUrl(word, type) {
+                const config = LANGUAGES[this.activeLanguage] || LANGUAGES.fr;
                 const normalizedType = (type || "").trim().toLowerCase();
-                const wiktionaryTypes = ['noun', 'adj', 'verb', 'adj/noun', 'noun/adj', 'nom', 'verbe', 'adjectif'];
+                const wiktionaryTypes = ['noun', 'adj', 'verb', 'adj/noun', 'noun/adj', 'nom', 'verbe', 'adjectif', 'sustantivo', 'verbo', 'adjetivo', 'nomen', 'adjektiv'];
                 const isWiktionary = wiktionaryTypes.includes(normalizedType);
 
                 if (isWiktionary) {
                     // Wiktionary needs lowercase for general words to resolve correctly
                     const lowercaseWord = word.toLowerCase().replace(/\s+/g, '_');
-                    const langDomain = this.activeLanguage === 'en' ? 'en' : 'fr';
-                    return `https://${langDomain}.wiktionary.org/wiki/${encodeURIComponent(lowercaseWord)}`;
+                    return `https://${config.wiktionary}.wiktionary.org/wiki/${encodeURIComponent(lowercaseWord)}`;
                 }
 
                 // Wikipedia generally handles capitalized titles better
                 const encodedWord = encodeURIComponent(word.replace(/\s+/g, '_'));
-                if (this.activeLanguage === 'en') {
-                    return `https://en.wikipedia.org/wiki/${encodedWord}`;
-                }
-                return `https://fr.wikipedia.org/wiki/${encodedWord}`;
+                return `https://${config.wiki}.wikipedia.org/wiki/${encodedWord}`;
             }
 
             setLanguage(lang) {
+                const config = LANGUAGES[lang] || LANGUAGES.fr;
                 this.activeLanguage = lang;
                 localStorage.setItem('taboo_lang', lang);
 
-                // Toggle theme
-                if (lang === 'en') {
-                    document.body.classList.add('theme-english');
-                } else {
-                    document.body.classList.remove('theme-english');
-                }
+                // Toggle theme (No longer needed, all use default indigo)
 
                 // Update Main Logo based on OS and Language
                 const logoEl = document.getElementById('main-logo-emoji');
                 if (logoEl) {
                     const isWindows = navigator.userAgent.indexOf('Windows') !== -1;
-                    if (lang === 'en') {
-                        // English: Tea (Win) or Flag (Others)
-                        logoEl.textContent = isWindows ? '🍵' : '🇬🇧';
-                    } else {
-                        // French: Baguette (Win) or Flag (Others)
-                        logoEl.textContent = isWindows ? '🥖' : '🇫🇷';
-                    }
+                    logoEl.textContent = isWindows ? config.winEmoji : config.emoji;
                 }
 
                 // Update UI selection
-                ['fr', 'en'].forEach(l => {
+                Object.keys(LANGUAGES).forEach(l => {
                     const btn = document.getElementById(`lang-${l}`);
                     if (btn) {
                         if (l === lang) {
