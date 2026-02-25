@@ -1,25 +1,26 @@
-# Taboolingo 🥖 / 🍵
+# Taboolingo 🥖 / 🍵 / 🍺 / 💃
 
-A web-based bilingual language learning game inspired by the classic Taboo game. Players must describe French or English words without using forbidden "taboo" words, making it an engaging way to practice vocabulary and communication skills in either language. Optimized for all ages, from students to seniors.
+A web-based multi-language learning game inspired by the classic Taboo game. Players must describe words in **French, English, German, or Spanish** without using forbidden "taboo" words, making it an engaging way to practice vocabulary and communication skills. Optimized for all ages, from students to seniors.
 
 ## 🎮 How to Play
 
 ### 📱 Local Pass-and-Play (One Device)
 *Best for friends and family in the same room.*
 
-1. **Select a Level**: Choose from A1 (Beginner), A2 (Elementary), B1 (Intermediate), or B2 (Upper Intermediate).
-2. **Select Timer Mode**: Choose between **Standard (60s)** or **Beginner (120s)**.
-3. **Start a Round**: Click **"📱 Local Pass-and-Play"**. One person takes the phone.
-4. **Describe the Word**: Explain the target word at the top without using any of the 5 taboo words listed below it.
-5. **Score Points**: A teammate guesses. Click **Correct!** for each success.
-6. **Pass the Phone**: After the round ends, pass the device to the next player.
+1. **Select Language**: Choose from Français, English, Deutsch, or Español.
+2. **Select a Level**: Choose from A1 (Beginner), A2 (Elementary), B1 (Intermediate), or B2 (Upper Intermediate).
+3. **Select Timer Mode**: Choose between **Standard (60s)** or **Beginner (120s)**.
+4. **Start a Round**: Click **"📱 Local Pass-and-Play"**. One person takes the phone.
+5. **Describe the Word**: Explain the target word at the top without using any of the 5 taboo words listed below it.
+6. **Score Points**: A teammate guesses. Click **Correct!** for each success.
+7. **Pass the Phone**: After the round ends, pass the device to the next player.
 
 ### 🌐 Online Multiplayer (Play from Anywhere)
 *Best for playing with friends on their own devices.*
 
 1. **Setup**: One player clicks **"🌐 Online Multiplayer"** -> "Create Room" and shares the 4-character code (e.g., "AB12").
 2. **Join**: Other players enter the room code and their name to join.
-3. **Start Game**: The host selects a level and **Timer Mode**, then starts the session once everyone is in.
+3. **Start Game**: The host selects the **Language**, level, and **Timer Mode**, then starts the session once everyone is in.
 4. **Take Turns**: 
    - **2-3 Players**: Turn-based - one player describes, the others guess.
    - **4+ Players**: Team-based - the game automatically splits you into Team A and Team B.
@@ -29,6 +30,7 @@ A web-based bilingual language learning game inspired by the classic Taboo game.
 
 ## ✨ Features
 
+- **4 Languages Supported**: Practice in **French, English, German, and Spanish**.
 - **4 Difficulty Levels**: A1, A2, B1, B2 (CEFR standards).
 - **Variable Timers**: Choose **Standard (60s)** or **Beginner (120s)** for a more relaxed experience.
 - **1000+ Words in each language**: Comprehensive vocabulary coverage.
@@ -37,14 +39,22 @@ A web-based bilingual language learning game inspired by the classic Taboo game.
   - **Shared Sync**: Cards, timer, and scores stay perfectly in sync.
   - **Automatic Teams**: Turns and scoring handled for you.
   - **Rejoin Logic**: Refreshing the page won't lose your spot in the game.
-- **Micro-Animations**: A vibrant, premium UI that feels alive.
+- **Micro-Animations**: A vibrant, premium UI that feels alive (Indigo theme).
 - **Word Review**: Full session breakdown with links to definitions.
-- **Windows Optimized**: Smart emoji detection for a great experience on any device.
+- **Windows Optimized**: Smart emoji detection for a premium experience (🥖, 🍵, 🍺, 💃).
 
 ## 🚀 Getting Started
 
 ### Local Mode
-Simply open `index.html` in your web browser. No accounts or internet connection required (if using a local copy).
+Simply open `index.html` in your web browser. 
+
+> [!IMPORTANT]
+> **Testing Local Data Changes**: Modern browsers block `fetch` requests to local files (CORS policy) when opening `index.html` via the `file:///` protocol. To test local changes to CSV files (like `french_words.csv`), you must run a simple web server:
+> - **Python**: `python -m http.server`
+> - **Node/npm**: `npx serve`
+> - **VS Code**: Use the "Live Server" extension.
+>
+> Once running, access the game via `http://localhost:8000` (or similar).
 
 ### Online Mode Setup
 Multiplayer mode uses Firebase for synchronization. 
@@ -56,7 +66,7 @@ Multiplayer mode uses Firebase for synchronization.
 ## 📋 Technical Details
 
 - **Frontend**: Pure HTML5, CSS3, JavaScript (No build process).
-- **Styling**: Tailwind CSS for a modern "glassmorphism" aesthetic.
+- **Styling**: Tailwind CSS with a consistent Indigo theme.
 - **Persistence**: `localStorage` used to remember your name and game history.
 - **Real-time**: Firebase Realtime Database for multiplayer synchronization.
 

@@ -402,7 +402,8 @@
 
             <!-- Stack -->
             <div id="stack-box" class="flex flex-col items-center min-w-[40px]">
-                <span class="text-[8px] uppercase font-black text-slate-400 leading-none mb-1">Stack</span>
+                <span data-i18n="label-stack"
+                    class="text-[8px] uppercase font-black text-slate-400 leading-none mb-1">Stack</span>
                 <div id="stack-display" class="text-lg font-black text-slate-700 leading-none">0</div>
             </div>
 
@@ -411,7 +412,8 @@
             <!-- Connection Status -->
             <div id="connection-status" class="flex items-center gap-1.5">
                 <span id="connection-dot" class="w-2.5 h-2.5 rounded-full bg-slate-300 shadow-inner"></span>
-                <span id="connection-text" class="text-[10px] font-black text-slate-500 uppercase">Offline</span>
+                <span id="connection-text" data-i18n="label-offline"
+                    class="text-[10px] font-black text-slate-500 uppercase">Offline</span>
             </div>
         </div>
     </div>
@@ -421,20 +423,22 @@
         <div id="screen-start" class="text-center">
             <div id="main-logo-emoji" class="text-6xl mb-4">🇫🇷</div>
             <h1 class="text-3xl font-black text-slate-800 mb-2">Taboo<span class="text-primary">lingo</span></h1>
-            <p id="total-card-count" class="text-[10px] font-black text-primary uppercase mb-4 tracking-widest">
+            <p id="total-card-count" data-i18n="status-loading"
+                class="text-[10px] font-black text-primary uppercase mb-4 tracking-widest">
                 Loading...</p>
 
             <!-- Mode Tabs (Step 1) -->
-            <div class="text-[10px] font-black text-slate-400 uppercase mb-2 tracking-widest text-center">1. Connection
+            <div data-i18n="step-connection"
+                class="text-[10px] font-black text-slate-400 uppercase mb-2 tracking-widest text-center">1. Connection
                 Mode</div>
             <div class="flex bg-slate-100 p-1 rounded-2xl mb-6 shadow-inner">
                 <button id="tab-local" onclick="game.setTab('local')"
                     class="flex-1 py-3 rounded-xl font-black text-sm transition-all flex items-center justify-center gap-2 bg-white text-slate-800 shadow-sm">
-                    <span>📱</span> Local
+                    <span data-i18n="tab-local">Local</span>
                 </button>
                 <button id="tab-online" onclick="game.setTab('online')"
                     class="flex-1 py-3 rounded-xl font-black text-sm transition-all flex items-center justify-center gap-2 text-slate-400">
-                    <span>🌐</span> Online
+                    <span data-i18n="tab-online">Online</span>
                 </button>
             </div>
 
@@ -442,7 +446,8 @@
             <div id="content-local" class="space-y-6">
                 <!-- Language Selection (Step 2) -->
                 <div class="mb-6">
-                    <div class="text-[10px] font-black text-slate-400 uppercase mb-2 tracking-widest text-center">2.
+                    <div data-i18n="step-language"
+                        class="text-[10px] font-black text-slate-400 uppercase mb-2 tracking-widest text-center">2.
                         Select
                         Language</div>
                     <div class="grid grid-cols-2 gap-3">
@@ -483,7 +488,8 @@
                 <!-- Level Selection -->
                 <!-- Level Selection (Step 3) -->
                 <div>
-                    <div class="text-[10px] font-black text-slate-400 uppercase mb-2 tracking-widest text-center">3.
+                    <div data-i18n="step-difficulty"
+                        class="text-[10px] font-black text-slate-400 uppercase mb-2 tracking-widest text-center">3.
                         Select
                         Difficulty</div>
                     <div class="grid grid-cols-2 gap-3">
@@ -491,26 +497,30 @@
                             class="level-btn p-4 rounded-2xl bg-white border-2 border-slate-100 transition-all text-left opacity-50 cursor-not-allowed"
                             onclick="game.setLevel('A1', this)" disabled>
                             <div class="text-primary font-black text-lg">A1</div>
-                            <div class="text-[10px] text-slate-400 font-bold uppercase tracking-wider">Beginner</div>
+                            <div data-i18n="label-beginner"
+                                class="text-[10px] text-slate-400 font-bold uppercase tracking-wider">Beginner</div>
                         </button>
                         <button
                             class="level-btn p-4 rounded-2xl bg-white border-2 border-slate-100 transition-all text-left opacity-50 cursor-not-allowed"
                             onclick="game.setLevel('A2', this)" disabled>
                             <div class="text-primary font-black text-lg">A2</div>
-                            <div class="text-[10px] text-slate-400 font-bold uppercase tracking-wider">Elementary</div>
+                            <div data-i18n="label-elementary"
+                                class="text-[10px] text-slate-400 font-bold uppercase tracking-wider">Elementary</div>
                         </button>
                         <button
                             class="level-btn p-4 rounded-2xl bg-white border-2 border-slate-100 transition-all text-left opacity-50 cursor-not-allowed"
                             onclick="game.setLevel('B1', this)" disabled>
                             <div class="text-primary font-black text-lg">B1</div>
-                            <div class="text-[10px] text-slate-400 font-bold uppercase tracking-wider">Intermediate
+                            <div data-i18n="label-intermediate"
+                                class="text-[10px] text-slate-400 font-bold uppercase tracking-wider">Intermediate
                             </div>
                         </button>
                         <button
                             class="level-btn p-4 rounded-2xl bg-white border-2 border-slate-100 transition-all text-left opacity-50 cursor-not-allowed"
                             onclick="game.setLevel('B2', this)" disabled>
                             <div class="text-primary font-black text-lg">B2</div>
-                            <div class="text-[10px] text-slate-400 font-bold uppercase tracking-wider">Upper Inter.
+                            <div data-i18n="label-upper-inter"
+                                class="text-[10px] text-slate-400 font-bold uppercase tracking-wider">Upper Inter.
                             </div>
                         </button>
                     </div>
@@ -518,24 +528,27 @@
 
                 <!-- Timer Mode -->
                 <div>
-                    <div class="text-[10px] font-black text-slate-400 uppercase mb-2 tracking-widest text-center">Timer
+                    <div data-i18n="label-timer-duration"
+                        class="text-[10px] font-black text-slate-400 uppercase mb-2 tracking-widest text-center">Timer
                         Duration</div>
                     <div class="flex gap-2">
-                        <button id="timer-standard" onclick="game.setTimerMode(60, this)"
+                        <button id="timer-standard" onclick="game.setTimerMode(60, this)" data-i18n="btn-timer-standard"
                             class="flex-1 py-3 rounded-xl border-2 border-primary bg-primary-light text-primary font-bold text-sm transition-all">
                             Standard (60s)
                         </button>
                         <button id="timer-beginner" onclick="game.setTimerMode(120, this)"
+                            data-i18n="btn-timer-beginner"
                             class="flex-1 py-3 rounded-xl border-2 border-slate-100 bg-white text-slate-400 font-bold text-sm transition-all">
                             Beginner (2m)
                         </button>
                     </div>
                 </div>
 
-                <div class="pt-2">
-                    <button id="btn-start-round" disabled onclick="game.startRound()"
-                        class="btn-3d w-full bg-slate-200 text-slate-400 py-4 rounded-2xl font-black text-xl shadow-lg">
-                        Select a Level
+                <div id="btn-container-local">
+                    <button id="btn-start-round" onclick="game.startRound()" data-i18n="btn-start-round"
+                        class="btn-3d w-full bg-slate-200 text-slate-400 py-4 rounded-2xl font-black text-xl shadow-lg cursor-not-allowed"
+                        disabled>
+                        Start Round
                     </button>
                 </div>
             </div>
@@ -544,22 +557,26 @@
             <div id="content-online" class="hidden space-y-6">
                 <div class="bg-slate-50 p-6 rounded-3xl border border-slate-100 space-y-4">
                     <div class="text-center">
-                        <div class="text-xl font-black text-slate-800 mb-1">Play with Friends</div>
-                        <p class="text-xs text-slate-400 font-medium">Create a private room and share the code</p>
+                        <div data-i18n="label-play-with-friends" class="text-xl font-black text-slate-800 mb-1">Play
+                            with Friends</div>
+                        <p data-i18n="sub-create-room" class="text-xs text-slate-400 font-medium">Create a private room
+                            and share the code</p>
                     </div>
 
-                    <input id="input-host-name" type="text" maxlength="20" placeholder="Your Name (Optional)"
+                    <input id="input-host-name" data-i18n="placeholder-name" type="text" maxlength="20"
+                        placeholder="Your Name (Optional)"
                         class="w-full px-4 py-3 rounded-xl border-2 border-slate-200 text-center text-lg font-bold bg-white">
 
-                    <button onclick="game.createRoom()"
+                    <button onclick="game.createRoom()" data-i18n="btn-create-room"
                         class="btn-3d w-full bg-slate-800 text-white py-4 rounded-2xl text-lg font-black shadow-lg">
                         Create New Room
                     </button>
                 </div>
 
-                <div class="text-center text-[10px] font-black text-slate-300 uppercase tracking-widest">— OR —</div>
+                <div data-i18n="label-or"
+                    class="text-center text-[10px] font-black text-slate-300 uppercase tracking-widest">— OR —</div>
 
-                <button onclick="game.showJoinRoom()"
+                <button onclick="game.showJoinRoom()" data-i18n="btn-join-room"
                     class="btn-3d w-full bg-white border-2 border-slate-100 text-slate-600 py-4 rounded-2xl text-lg font-black shadow-sm">
                     Join Existing Room
                 </button>
@@ -567,12 +584,30 @@
             <div class="flex flex-col gap-2 mb-8">
                 <button id="btn-how-to-play" onclick="game.showHowToPlay()"
                     class="w-full py-2 text-primary font-bold text-sm flex items-center justify-center gap-1">
-                    <span>❔ How to Play</span>
+                    <span data-i18n="btn-how-to-play">❔ How to Play</span>
                 </button>
-                <button onclick="game.storage.resetPlayed()"
-                    class="text-[10px] text-slate-300 font-bold uppercase tracking-widest hover:text-slate-400 transition-colors">
-                    Reset all cards
-                </button>
+                <div class="flex flex-col items-center gap-4 py-3 border-t border-slate-50 mt-2">
+                    <button onclick="game.storage.resetPlayed()" data-i18n="btn-reset-cards"
+                        class="text-[10px] text-slate-300 font-bold uppercase tracking-widest hover:text-slate-400 transition-colors">
+                        Reset all cards
+                    </button>
+
+                    <div class="w-full">
+                        <div data-i18n="label-interface-language"
+                            class="text-[8px] font-black text-slate-400 uppercase mb-2 tracking-widest text-center">
+                            Interface Language</div>
+                        <div class="flex justify-center gap-4">
+                            <button onclick="game.setUILanguage('fr')" data-lang="fr"
+                                class="ui-toggle-btn px-3 py-1 text-xs font-black rounded-lg bg-slate-50 opacity-40 hover:opacity-100 hover:bg-white hover:shadow-sm transition-all">FR</button>
+                            <button onclick="game.setUILanguage('en')" data-lang="en"
+                                class="ui-toggle-btn px-3 py-1 text-xs font-black rounded-lg bg-slate-50 opacity-40 hover:opacity-100 hover:bg-white hover:shadow-sm transition-all">EN</button>
+                            <button onclick="game.setUILanguage('de')" data-lang="de"
+                                class="ui-toggle-btn px-3 py-1 text-xs font-black rounded-lg bg-slate-50 opacity-40 hover:opacity-100 hover:bg-white hover:shadow-sm transition-all">DE</button>
+                            <button onclick="game.setUILanguage('es')" data-lang="es"
+                                class="ui-toggle-btn px-3 py-1 text-xs font-black rounded-lg bg-slate-50 opacity-40 hover:opacity-100 hover:bg-white hover:shadow-sm transition-all">ES</button>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
 
@@ -605,13 +640,13 @@
             <div class="flex gap-4 w-full mb-8">
                 <button id="btn-skip" onclick="game.skipCard()"
                     class="btn-3d flex-1 bg-slate-200 text-slate-500 py-4 rounded-2xl font-bold">
-                    Skip (1/1)
+                    <span data-i18n="btn-skip">Skip</span> (1/1)
                 </button>
-                <button id="btn-buzzed" onclick="game.markBuzzed()"
+                <button id="btn-buzzed" onclick="game.markBuzzed()" data-i18n="btn-buzzed"
                     class="btn-3d flex-1 bg-red-500 text-white py-4 rounded-2xl font-bold hidden">
                     Buzzed
                 </button>
-                <button id="btn-correct" onclick="game.nextCard(true)"
+                <button id="btn-correct" onclick="game.nextCard(true)" data-i18n="btn-correct"
                     class="btn-3d flex-[2] bg-green-500 text-white py-4 rounded-2xl font-black text-lg">
                     Correct! ✅
                 </button>
@@ -621,7 +656,8 @@
 
             <!-- Start round button for active player -->
             <div id="multiplayer-start-round" class="hidden w-full mb-8">
-                <button onclick="game.startMultiplayerRound()"
+                <button id="btn-start-round-multiplayer" onclick="game.startMultiplayerRound()"
+                    data-i18n="btn-start-round"
                     class="btn-3d w-full bg-green-500 text-white py-4 rounded-2xl font-black text-lg">
                     Start Your Round
                 </button>
@@ -629,24 +665,26 @@
 
             <!-- Multiplayer buzzer for opposing players -->
             <div id="multiplayer-buzzer-container" class="hidden w-full mb-8 flex flex-col items-center">
-                <button id="global-buzzer" onclick="game.handleBuzzer()"
+                <button id="global-buzzer" onclick="game.handleBuzzer()" data-i18n="btn-buzz"
                     class="hidden w-32 h-32 bg-red-600 text-white rounded-full font-black text-xl shadow-[0_15px_40px_rgba(220,38,38,0.4)] hover:scale-105 active:scale-95 transition-all flex items-center justify-center border-8 border-red-500 uppercase mb-4">
                     Buzz!
                 </button>
-                <p class="text-[10px] text-slate-400 font-bold uppercase mt-2 text-center">Buzz if you hear a taboo
+                <p data-i18n="label-buzz-if-taboo"
+                    class="text-[10px] text-slate-400 font-bold uppercase mt-2 text-center">Buzz if you hear a taboo
                     word!</p>
             </div>
 
             <!-- Waiting for player message -->
             <div id="multiplayer-waiting"
                 class="hidden w-full mb-4 bg-slate-50 border-2 border-slate-200 rounded-2xl p-4">
-                <div class="text-sm font-bold text-slate-600" id="waiting-text">Waiting for player to start...</div>
+                <div data-i18n="label-waiting-start" class="text-sm font-bold text-slate-600" id="waiting-text">Waiting
+                    for player to start...</div>
             </div>
 
             <!-- Player list (multiplayer) -->
             <div id="multiplayer-player-list"
                 class="hidden w-full mb-4 bg-white rounded-2xl p-4 border-2 border-slate-100">
-                <div class="text-xs text-slate-400 font-bold uppercase mb-2">Players</div>
+                <div data-i18n="label-players" class="text-xs text-slate-400 font-bold uppercase mb-2">Players</div>
                 <div id="game-players-list" class="space-y-1"></div>
             </div>
         </div>
@@ -654,23 +692,27 @@
         <!-- SUMMARY SCREEN -->
         <div id="screen-summary" class="hidden text-center flex flex-col items-center">
             <div class="text-6xl mb-4">🎉</div>
-            <h2 id="summary-title" class="text-3xl font-black text-slate-800 mb-2">Round Finished</h2>
+            <h2 id="summary-title" data-i18n="label-round-finished" class="text-3xl font-black text-slate-800 mb-2">
+                Round Finished</h2>
             <div class="bg-white rounded-3xl p-6 border-2 border-slate-100 mb-4 w-full shadow-sm">
                 <div id="round-score-val" class="text-6xl font-black text-primary mb-2">0</div>
-                <div class="text-xs text-slate-400 uppercase font-black tracking-widest mb-6">Points this round
+                <div data-i18n="label-points-round"
+                    class="text-xs text-slate-400 uppercase font-black tracking-widest mb-6">Points this round
                 </div>
 
                 <div class="flex flex-col items-center py-4">
-                    <p class="text-[10px] text-slate-400 font-bold uppercase mt-2">Next round coming up!</p>
+                    <p data-i18n="label-next-round-coming" class="text-[10px] text-slate-400 font-bold uppercase mt-2">
+                        Next round coming up!</p>
                 </div>
             </div>
 
             <div class="flex flex-col gap-3 w-full">
-                <button onclick="game.startRound()"
+                <button onclick="game.startRound()" data-i18n="btn-next-round"
                     class="btn-3d w-full bg-slate-800 text-white py-4 rounded-2xl text-xl font-black">
                     Next Round
                 </button>
-                <button onclick="game.showEndGame()" class="w-full py-2 text-slate-400 font-bold text-sm underline">
+                <button onclick="game.showEndGame()" data-i18n="btn-final-score"
+                    class="w-full py-2 text-slate-400 font-bold text-sm underline">
                     Final Score & Breakdown
                 </button>
             </div>
@@ -681,21 +723,23 @@
         <!-- JOIN ROOM SCREEN -->
         <div id="screen-join-room" class="hidden text-center flex flex-col items-center">
             <div class="text-6xl mb-4">🔗</div>
-            <h2 class="text-3xl font-black text-slate-800 mb-4">Join Room</h2>
+            <h2 data-i18n="label-join-room" class="text-3xl font-black text-slate-800 mb-4">Join Room</h2>
             <div class="bg-white rounded-3xl p-6 border-2 border-slate-100 mb-6 w-full shadow-sm">
-                <label class="block text-left text-sm font-bold text-slate-600 mb-2">Room Code</label>
+                <label data-i18n="label-room-code" class="block text-left text-sm font-bold text-slate-600 mb-2">Room
+                    Code</label>
                 <input id="input-room-code" type="text" maxlength="4" placeholder="AB12"
                     oninput="this.value = this.value.toUpperCase()"
                     class="w-full px-4 py-3 rounded-xl border-2 border-slate-200 text-center text-2xl font-black room-code-display uppercase mb-4"
                     style="letter-spacing: 0.2em;">
-                <label class="block text-left text-sm font-bold text-slate-600 mb-2">Your Name</label>
+                <label data-i18n="label-your-name" class="block text-left text-sm font-bold text-slate-600 mb-2">Your
+                    Name</label>
                 <input id="input-player-name" type="text" maxlength="20" placeholder="Enter your name"
                     class="w-full px-4 py-3 rounded-xl border-2 border-slate-200 text-center text-lg font-bold mb-4">
-                <button onclick="game.joinRoom()"
+                <button onclick="game.joinRoom()" data-i18n="btn-join"
                     class="btn-3d w-full bg-slate-800 text-white py-3 rounded-xl font-black">
                     Join
                 </button>
-                <button onclick="game.showScreen('start')"
+                <button onclick="game.showScreen('start')" data-i18n="btn-back"
                     class="w-full mt-4 text-slate-400 font-bold text-sm underline">
                     Back
                 </button>
@@ -705,19 +749,21 @@
         <!-- LOBBY SCREEN -->
         <div id="screen-lobby" class="hidden text-center flex flex-col items-center">
             <div class="text-6xl mb-4">🏠</div>
-            <h2 class="text-3xl font-black text-slate-800 mb-4">Room Lobby</h2>
+            <h2 data-i18n="label-room-lobby" class="text-3xl font-black text-slate-800 mb-4">Room Lobby</h2>
             <div class="bg-white rounded-3xl p-6 border-2 border-slate-100 mb-6 w-full shadow-sm">
                 <div class="mb-6">
-                    <div class="text-xs text-slate-400 font-bold uppercase mb-2">Room Code</div>
+                    <div data-i18n="label-room-code" class="text-xs text-slate-400 font-bold uppercase mb-2">Room Code
+                    </div>
                     <div id="lobby-room-code" class="text-4xl font-black room-code-display text-primary mb-2">----
                     </div>
-                    <button id="btn-copy-code" onclick="game.copyRoomCode()"
+                    <button id="btn-copy-code" onclick="game.copyRoomCode()" data-i18n="btn-copy-code"
                         class="text-xs text-slate-500 font-bold underline">
                         Copy Code
                     </button>
                 </div>
                 <div class="mb-6">
-                    <div class="text-xs text-slate-400 font-bold uppercase mb-3 text-left">Players</div>
+                    <div data-i18n="label-players" class="text-xs text-slate-400 font-bold uppercase mb-3 text-left">
+                        Players</div>
                     <div id="lobby-players-list" class="space-y-2 text-left"></div>
                 </div>
                 <div id="lobby-host-controls" class="hidden">
@@ -778,50 +824,56 @@
                     </div>
 
                     <button id="btn-start-game" disabled onclick="game.startMultiplayerGame()"
+                        data-i18n="label-select-level-to-start"
                         class="btn-3d w-full bg-slate-200 text-slate-400 py-4 rounded-2xl text-xl font-black">
                         Select Level to Start
                     </button>
                 </div>
-                <div id="lobby-waiting" class="text-slate-500 text-sm">
+                <div id="lobby-waiting" data-i18n="label-waiting-host" class="text-slate-500 text-sm">
                     Waiting for host to start the game...
                 </div>
             </div>
-            <button onclick="game.leaveRoom()" class="w-full py-2 text-slate-400 font-bold text-sm underline">
+            <button onclick="game.leaveRoom()" data-i18n="btn-leave-room"
+                class="w-full py-2 text-slate-400 font-bold text-sm underline">
                 Leave Room
             </button>
         </div>
 
         <!-- END GAME SCREEN -->
         <div id="screen-endgame" class="hidden text-center flex flex-col items-center w-full">
-            <h2 class="text-3xl font-black text-slate-800 mb-2">Session Recap</h2>
+            <h2 data-i18n="label-session-recap" class="text-3xl font-black text-slate-800 mb-2">Session Recap</h2>
             <div class="bg-white rounded-3xl p-6 border-2 border-slate-100 mb-6 w-full shadow-sm">
                 <div class="flex justify-around mb-6 pb-6 border-b border-slate-100">
                     <div class="text-center">
                         <div id="total-final-score" class="text-4xl font-black text-primary">0</div>
-                        <div class="text-center text-[10px] text-slate-400 font-black uppercase">Total Points</div>
+                        <div data-i18n="label-total-points"
+                            class="text-center text-[10px] text-slate-400 font-black uppercase">Total Points</div>
                     </div>
                     <div class="text-center">
                         <div id="total-rounds-count" class="text-4xl font-black text-slate-800">0</div>
-                        <div class="text-[10px] text-slate-400 font-black uppercase">Rounds</div>
+                        <div data-i18n="label-rounds" class="text-[10px] text-slate-400 font-black uppercase">Rounds
+                        </div>
                     </div>
                 </div>
 
-                <h3 class="text-[10px] font-black text-slate-400 uppercase text-left mb-3">Round Breakdown</h3>
+                <h3 data-i18n="label-round-breakdown"
+                    class="text-[10px] font-black text-slate-400 uppercase text-left mb-3">Round Breakdown</h3>
                 <div id="round-history-list" class="space-y-2 mb-6"></div>
 
-                <button id="btn-show-review" onclick="game.showWordReview()"
+                <button id="btn-show-review" onclick="game.showWordReview()" data-i18n="btn-review-guessed"
                     class="w-full bg-primary-light text-primary py-3 rounded-2xl font-black text-sm">
                     Review Guessed Words?
                 </button>
 
                 <div id="review-section" class="hidden mt-6 text-left">
-                    <h3 class="text-[10px] font-black text-slate-400 uppercase mb-3">Word Review (Click for
+                    <h3 data-i18n="label-word-review" class="text-[10px] font-black text-slate-400 uppercase mb-3">Word
+                        Review (Click for
                         Definition)
                     </h3>
                     <div id="word-review-list" class="space-y-2"></div>
                 </div>
             </div>
-            <button onclick="game.returnToMainMenu()"
+            <button onclick="game.returnToMainMenu()" data-i18n="btn-main-menu"
                 class="btn-3d w-full bg-slate-800 text-white py-4 rounded-2xl text-xl font-black">
                 Main Menu
             </button>
@@ -838,17 +890,18 @@
             <div class="bg-white rounded-3xl p-6 border-2 border-slate-100 mb-6 w-full shadow-sm">
                 <!-- Team Scores Summary -->
                 <div id="team-scores-container" class="hidden mb-8">
-                    <h3 class="text-[10px] font-black text-slate-400 uppercase text-left mb-3">Team Results</h3>
+                    <h3 data-i18n="label-team-results"
+                        class="text-[10px] font-black text-slate-400 uppercase text-left mb-3">Team Results</h3>
                     <div class="flex gap-3">
                         <div id="team-a-score-card" class="team-score-card team-a">
-                            <div class="text-[10px] font-black opacity-60">TEAM A</div>
+                            <div data-i18n="team-indicator-a" class="text-[10px] font-black opacity-60">TEAM A</div>
                             <div id="team-a-total-pts" class="text-3xl font-black">0</div>
-                            <div class="text-[9px] font-bold">TOTAL POINTS</div>
+                            <div data-i18n="label-total-points" class="text-[9px] font-bold">TOTAL POINTS</div>
                         </div>
                         <div id="team-b-score-card" class="team-score-card team-b">
-                            <div class="text-[10px] font-black opacity-60">TEAM B</div>
+                            <div data-i18n="team-indicator-b" class="text-[10px] font-black opacity-60">TEAM B</div>
                             <div id="team-b-total-pts" class="text-3xl font-black">0</div>
-                            <div class="text-[9px] font-bold">TOTAL POINTS</div>
+                            <div data-i18n="label-total-points" class="text-[9px] font-bold">TOTAL POINTS</div>
                         </div>
                     </div>
                 </div>
@@ -856,12 +909,14 @@
                 <h3 class="text-[10px] font-black text-slate-400 uppercase text-left mb-3">Player Standings</h3>
                 <div id="final-scores-list" class="space-y-2 mb-6"></div>
 
-                <h3 class="text-[10px] font-black text-slate-400 uppercase text-left mb-3">Your Words</h3>
-                <p class="text-xs text-slate-500 mb-3 text-left">All the words you had to describe:</p>
+                <h3 data-i18n="label-your-words" class="text-[10px] font-black text-slate-400 uppercase text-left mb-3">
+                    Your Words</h3>
+                <p data-i18n="label-words-described" class="text-xs text-slate-500 mb-3 text-left">All the words you had
+                    to describe:</p>
                 <div id="my-words-list" class="space-y-2 mb-6"></div>
             </div>
 
-            <button onclick="game.returnToMainMenu()"
+            <button onclick="game.returnToMainMenu()" data-i18n="btn-main-menu"
                 class="btn-3d w-full bg-slate-800 text-white py-4 rounded-2xl text-xl font-black">
                 Main Menu
             </button>
@@ -876,9 +931,9 @@
             <p class="text-slate-500 mb-6 text-sm" id="buzz-modal-text">Did you get <span id="last-word-hint"
                     class="font-bold text-primary"></span> correctly?</p>
             <div class="flex gap-3">
-                <button onclick="game.handleBuzzResponse(false)"
+                <button onclick="game.handleBuzzResponse(false)" data-i18n="btn-cancel"
                     class="flex-1 bg-slate-100 text-slate-600 py-3 rounded-xl font-bold">No</button>
-                <button onclick="game.handleBuzzResponse(true)"
+                <button onclick="game.handleBuzzResponse(true)" data-i18n="btn-confirm-sure"
                     class="flex-1 bg-primary text-white py-3 rounded-xl font-bold">Yes!</button>
             </div>
         </div>
@@ -889,7 +944,7 @@
         class="hidden fixed inset-0 bg-slate-900/60 backdrop-blur-sm z-[200] flex items-center justify-center p-4">
         <div class="bg-white rounded-3xl p-8 max-w-sm w-full text-center shadow-2xl">
             <div class="text-4xl mb-4">⚖️</div>
-            <h3 class="text-2xl font-black text-slate-800 mb-2">Teams Unbalanced</h3>
+            <h3 data-i18n="label-are-you-sure" class="text-2xl font-black text-slate-800 mb-2">Are you sure?</h3>
             <p id="finish-game-msg" class="text-slate-500 mb-8 leading-relaxed">Too many players have left. The game
                 must end to keep it fair for everyone.</p>
             <div class="space-y-3">
@@ -909,42 +964,51 @@
     <div id="modal-how-to-play" class="hidden fixed inset-0 z-[150] flex items-center justify-center p-6 overlay">
         <div class="bg-white rounded-3xl p-8 shadow-2xl max-w-sm w-full max-h-[80vh] overflow-y-auto no-scrollbar">
             <div class="text-4xl mb-4 text-center">📖</div>
-            <h3 class="text-2xl font-black mb-4 text-center">How to Play</h3>
+            <h3 data-i18n="modal-how-to-play-title" class="text-2xl font-black mb-4 text-center">How to Play</h3>
 
             <div class="space-y-6 text-sm text-slate-600">
                 <section>
-                    <h4 class="font-black text-slate-800 uppercase text-[10px] mb-2 text-primary tracking-widest">The
+                    <h4 data-i18n="how-to-goal-title"
+                        class="font-black text-slate-800 uppercase text-[10px] mb-2 text-primary tracking-widest">The
                         Goal</h4>
-                    <p>Describe the word at the top without using any of the 5 taboo words listed below it!</p>
+                    <p data-i18n="how-to-goal-text">Describe the word at the top without using any of the 5 taboo words
+                        listed below it!</p>
                 </section>
 
                 <section>
-                    <h4 class="font-black text-slate-800 uppercase text-[10px] mb-2 text-primary tracking-widest">The
+                    <h4 data-i18n="how-to-modes-title"
+                        class="font-black text-slate-800 uppercase text-[10px] mb-2 text-primary tracking-widest">The
                         Modes</h4>
                     <ul class="space-y-3">
                         <li class="flex gap-3">
                             <span class="text-lg">📱</span>
-                            <span><strong>Local Pass-and-Play:</strong> One phone, in the same room. Select
-                                <strong>Standard</strong> or <strong>Beginner</strong> timer, then pass the phone to the
-                                next player after each round.</span>
+                            <span><strong data-i18n="how-to-mode-local-title">Local Pass-and-Play:</strong> <span
+                                    data-i18n="how-to-mode-local-text">One phone, in the same room. Select
+                                    <strong>Standard</strong> or <strong>Beginner</strong> timer, then pass the phone to
+                                    the
+                                    next player after each round.</span></span>
                         </li>
                         <li class="flex gap-3">
                             <span class="text-lg">🌐</span>
-                            <span><strong>Online Multiplayer:</strong> Play with friends on their own devices. One
-                                person hosts and sets the timer, others join with a 4-letter code.</span>
+                            <span><strong data-i18n="how-to-mode-online-title">Online Multiplayer:</strong> <span
+                                    data-i18n="how-to-mode-online-text">Play with friends on their own devices. One
+                                    person hosts and sets the timer, others join with a 4-letter code.</span></span>
                         </li>
                     </ul>
                 </section>
 
                 <section>
-                    <h4 class="font-black text-slate-800 uppercase text-[10px] mb-2 text-primary tracking-widest">The
+                    <h4 data-i18n="how-to-buzzer-title"
+                        class="font-black text-slate-800 uppercase text-[10px] mb-2 text-primary tracking-widest">The
                         Buzzer</h4>
-                    <p>In <strong>Online Team</strong> mode, the opposing team has a <strong>BUZZ</strong> button. If
-                        they hear you say a taboo word, they'll buzz you and you lose the point!</p>
+                    <p data-i18n="how-to-buzzer-text">In <strong>Online Team</strong> mode, the opposing team has a
+                        <strong>BUZZ</strong> button. If
+                        they hear you say a taboo word, they'll buzz you and you lose the point!
+                    </p>
                 </section>
             </div>
 
-            <button onclick="game.hideHowToPlay()"
+            <button onclick="game.hideHowToPlay()" data-i18n="btn-got-it"
                 class="w-full mt-8 bg-slate-800 text-white py-4 rounded-2xl font-black">
                 Got it!
             </button>
@@ -955,21 +1019,21 @@
     <div id="modal-leave-game" class="hidden fixed inset-0 z-[100] flex items-center justify-center p-6 overlay">
         <div class="bg-white rounded-3xl p-8 shadow-2xl max-w-xs w-full text-center">
             <div class="text-4xl mb-4">👋</div>
-            <h3 class="text-xl font-black mb-2">Leave Game?</h3>
-            <p class="text-slate-500 mb-6 text-sm">What would you like to do?</p>
+            <h3 data-i18n="label-leave-game" class="text-xl font-black mb-2">Leave Game?</h3>
+            <p data-i18n="label-leave-action" class="text-slate-500 mb-6 text-sm">What would you like to do?</p>
             <div class="flex flex-col gap-3">
                 <button id="btn-leave-individual" onclick="game.confirmLeaveAction('leave')"
-                    class="w-full bg-orange-500 text-white py-3 rounded-xl font-bold">
+                    data-i18n="btn-leave-individual" class="w-full bg-orange-500 text-white py-3 rounded-xl font-bold">
                     Leave Game
                 </button>
                 <p id="leave-game-warning"
                     class="hidden text-orange-600 text-[10px] font-black uppercase tracking-tighter bg-orange-50 p-3 rounded-xl border border-orange-100 leading-tight">
                 </p>
-                <button id="end-for-all-btn" onclick="game.confirmLeaveAction('endAll')"
+                <button id="end-for-all-btn" onclick="game.confirmLeaveAction('endAll')" data-i18n="btn-end-for-all"
                     class="w-full bg-red-500 text-white py-3 rounded-xl font-bold">
                     End for All Players
                 </button>
-                <button onclick="game.hideLeaveGameModal()"
+                <button onclick="game.hideLeaveGameModal()" data-i18n="btn-cancel"
                     class="w-full bg-slate-100 text-slate-600 py-3 rounded-xl font-bold">
                     Cancel
                 </button>
@@ -981,12 +1045,13 @@
     <div id="modal-confirm-leave" class="hidden fixed inset-0 z-[100] flex items-center justify-center p-6 overlay">
         <div class="bg-white rounded-3xl p-8 shadow-2xl max-w-xs w-full text-center">
             <div class="text-4xl mb-4">⚠️</div>
-            <h3 class="text-xl font-black mb-2">Are you sure?</h3>
-            <p id="confirm-leave-text" class="text-slate-500 mb-6 text-sm">This action cannot be undone.</p>
+            <h3 data-i18n="label-are-you-sure" class="text-xl font-black mb-2">Are you sure?</h3>
+            <p id="confirm-leave-text" data-i18n="label-cannot-be-undone" class="text-slate-500 mb-6 text-sm">This
+                action cannot be undone.</p>
             <div class="flex gap-3">
-                <button onclick="game.cancelLeaveConfirm()"
+                <button onclick="game.cancelLeaveConfirm()" data-i18n="btn-cancel"
                     class="flex-1 bg-slate-100 text-slate-600 py-3 rounded-xl font-bold">Cancel</button>
-                <button id="confirm-leave-btn" onclick="game.executeLeaveAction()"
+                <button id="confirm-leave-btn" onclick="game.executeLeaveAction()" data-i18n="btn-confirm-sure"
                     class="flex-1 bg-red-500 text-white py-3 rounded-xl font-bold">Yes, I'm sure</button>
             </div>
         </div>
@@ -2590,7 +2655,8 @@
                         const btn = document.getElementById('btn-copy-code');
                         if (btn) {
                             const originalText = btn.textContent;
-                            btn.textContent = 'Copied!';
+                            const dict = I18N[this.game.uiLanguage] || I18N.en;
+                            btn.textContent = dict["btn-copied"] || 'Copied!';
                             setTimeout(() => {
                                 btn.textContent = originalText;
                             }, 2000);
@@ -2605,7 +2671,8 @@
                 name: 'Français',
                 emoji: '🇫🇷',
                 winEmoji: '🥖',
-                url: 'https://raw.githubusercontent.com/meemiemeemie/french-taboo/main/word-list.csv',
+                url: 'https://raw.githubusercontent.com/meemiemeemie/french-taboo/main/french_words.csv',
+                fallbacks: ['https://raw.githubusercontent.com/meemiemeemie/french-taboo/main/word-list.csv'],
                 wiki: 'fr',
                 wiktionary: 'fr'
             },
@@ -2635,11 +2702,391 @@
             }
         };
 
+        const I18N = {
+            fr: {
+                "step-connection": "1. Mode de connexion",
+                "tab-local": "📱 Local",
+                "tab-online": "🌐 En ligne",
+                "step-language": "2. Langue à pratiquer",
+                "step-difficulty": "3. Choisir le niveau",
+                "label-beginner": "Débutant",
+                "label-elementary": "Élémentaire",
+                "label-intermediate": "Intermédiaire",
+                "label-upper-inter": "Avancé",
+                "label-timer-duration": "Durée du minuteur",
+                "btn-timer-standard": "Standard (60s)",
+                "btn-timer-beginner": "Débutant (2m)",
+                "btn-select-level": "Choisir un niveau",
+                "label-play-with-friends": "Jouer avec des amis",
+                "sub-create-room": "Créez une salle privée et partagez le code",
+                "placeholder-name": "Votre nom (Optionnel)",
+                "btn-create-room": "Créer une salle",
+                "label-or": "— OU —",
+                "btn-join-room": "Rejoindre une salle",
+                "btn-how-to-play": "❔ Comment jouer",
+                "btn-reset-cards": "Réinitialiser les cartes",
+                "label-stack": "Pile",
+                "label-offline": "Hors ligne",
+                "label-online": "En ligne",
+                "btn-skip": "Passer",
+                "btn-buzzed": "Buzzé",
+                "btn-correct": "Correct ! ✅",
+                "btn-start-round": "Démarrer la manche",
+                "label-buzz-if-taboo": "Buzzer si vous entendez un mot interdit !",
+                "label-waiting-start": "En attente du joueur...",
+                "label-players": "Joueurs",
+                "label-round-finished": "Manche terminée",
+                "label-points-round": "Points cette manche",
+                "label-next-round-coming": "La suite arrive !",
+                "btn-next-round": "Manche suivante",
+                "btn-final-score": "Score final & Détails",
+                "label-join-room": "Rejoindre une salle",
+                "label-room-code": "Code de la salle",
+                "label-your-name": "Votre nom",
+                "btn-join": "Rejoindre",
+                "btn-back": "Retour",
+                "label-room-lobby": "Salon de la salle",
+                "btn-copy-code": "Copier le code",
+                "label-select-level-to-start": "Choisir un niveau pour démarrer",
+                "label-waiting-host": "En attente de l'hôte...",
+                "btn-leave-room": "Quitter la salle",
+                "label-session-recap": "Récapitulatif de la session",
+                "label-total-points": "Points totaux",
+                "label-rounds": "Manches",
+                "label-round-breakdown": "Détails par manche",
+                "btn-review-guessed": "Revoir les mots ?",
+                "label-word-review": "Révision (Cliquer pour la définition)",
+                "btn-main-menu": "Menu principal",
+                "label-team-results": "Résultats par équipe",
+                "label-your-words": "Vos mots",
+                "label-words-described": "Tous les mots que vous avez décrits :",
+                "label-leave-game": "Quitter la partie ?",
+                "label-leave-action": "Que souhaitez-vous faire ?",
+                "btn-leave-individual": "Quitter la partie",
+                "btn-end-for-all": "Terminer pour tous",
+                "btn-cancel": "Annuler",
+                "label-are-you-sure": "Êtes-vous sûr ?",
+                "label-cannot-be-undone": "Cette action est irréversible.",
+                "btn-confirm-sure": "Oui, je suis sûr",
+                "modal-how-to-play-title": "Comment jouer",
+                "how-to-goal-title": "Le but",
+                "how-to-goal-text": "Décrivez le mot en haut sans utiliser les 5 mots interdits en dessous ! Chaque joueur a droit à 1 saut par tour.",
+                "how-to-modes-title": "Les modes",
+                "how-to-mode-local-title": "Local Pass-and-Play :",
+                "how-to-mode-local-text": "Un téléphone, dans la même pièce. Choisissez le minuteur Standard ou Débutant, puis passez le téléphone au joueur suivant après chaque manche.",
+                "how-to-mode-online-title": "Multijoueur en ligne :",
+                "how-to-mode-online-text": "Jouez avec des amis sur leurs propres appareils. Une personne héberge, les autres rejoignent avec un code à 4 lettres.",
+                "how-to-buzzer-title": "Le Buzzer",
+                "how-to-buzzer-text": "En mode Équipe en ligne, l'équipe adverse a un bouton BUZZ. S'ils vous entendent dire un mot interdit, ils vous buzzent et vous perdez le point !",
+                "btn-got-it": "Compris !",
+                "status-loading": "Chargement...",
+                "status-error": "Erreur de chargement",
+                "label-cards-loaded": "cartes chargées",
+                "label-select-lang-level": "Choisir langue & niveau",
+                "btn-buzz": "Buzz !",
+                "team-indicator-a": "ÉQUIPE A",
+                "team-indicator-b": "ÉQUIPE B",
+                "alert-select-lang": "Veuillez d'abord choisir une langue.",
+                "modal-times-up": "Temps écoulé !",
+                "modal-just-in-time": "L'avez-vous trouvé juste à temps ?",
+                "btn-copied": "Copié !",
+                "alert-invalid-code": "Code invalide (4 caractères).",
+                "alert-enter-name": "Veuillez entrer votre nom.",
+                "btn-start-game-level": "Démarrer (Niveau {level})",
+                "alert-select-level": "Veuillez choisir un niveau.",
+                "label-round-done": "Manche {num} terminée !",
+                "label-level-tag": "Niveau {lvl}",
+                "label-skip-count": "Passer ({n}/1)",
+                "label-interface-language": "Langue de l'interface"
+            },
+            en: {
+                "step-connection": "1. Connection Mode",
+                "tab-local": "📱 Local",
+                "tab-online": "🌐 Online",
+                "step-language": "2. Practice Language",
+                "step-difficulty": "3. Select Difficulty",
+                "label-beginner": "Beginner",
+                "label-elementary": "Elementary",
+                "label-intermediate": "Intermediate",
+                "label-upper-inter": "Upper Inter.",
+                "label-timer-duration": "Timer Duration",
+                "btn-timer-standard": "Standard (60s)",
+                "btn-timer-beginner": "Beginner (2m)",
+                "btn-select-level": "Select a Level",
+                "label-play-with-friends": "Play with Friends",
+                "sub-create-room": "Create a private room and share the code",
+                "placeholder-name": "Your Name (Optional)",
+                "btn-create-room": "Create New Room",
+                "label-or": "— OR —",
+                "btn-join-room": "Join Existing Room",
+                "btn-how-to-play": "❔ How to Play",
+                "btn-reset-cards": "Reset all cards",
+                "label-stack": "Stack",
+                "label-offline": "Offline",
+                "label-online": "Online",
+                "btn-skip": "Skip",
+                "btn-buzzed": "Buzzed",
+                "btn-correct": "Correct! ✅",
+                "btn-start-round": "Start Your Round",
+                "label-buzz-if-taboo": "Buzz if you hear a taboo word!",
+                "label-waiting-start": "Waiting for player to start...",
+                "label-players": "Players",
+                "label-round-finished": "Round Finished",
+                "label-points-round": "Points this round",
+                "label-next-round-coming": "Next round coming up!",
+                "btn-next-round": "Next Round",
+                "btn-final-score": "Final Score & Breakdown",
+                "label-join-room": "Join Room",
+                "label-room-code": "Room Code",
+                "label-your-name": "Your Name",
+                "btn-join": "Join",
+                "btn-back": "Back",
+                "label-room-lobby": "Room Lobby",
+                "btn-copy-code": "Copy Code",
+                "label-select-level-to-start": "Select Level to Start",
+                "label-waiting-host": "Waiting for host to start the game...",
+                "btn-leave-room": "Leave Room",
+                "label-session-recap": "Session Recap",
+                "label-total-points": "Total Points",
+                "label-rounds": "Rounds",
+                "label-round-breakdown": "Round Breakdown",
+                "btn-review-guessed": "Review Guessed Words?",
+                "label-word-review": "Word Review (Click for Definition)",
+                "btn-main-menu": "Main Menu",
+                "label-team-results": "Team Results",
+                "label-your-words": "Your Words",
+                "label-words-described": "All the words you had to describe:",
+                "label-leave-game": "Leave Game?",
+                "label-leave-action": "What would you like to do?",
+                "btn-leave-individual": "Leave Game",
+                "btn-end-for-all": "End for All Players",
+                "btn-cancel": "Cancel",
+                "label-are-you-sure": "Are you sure?",
+                "label-cannot-be-undone": "This action cannot be undone.",
+                "btn-confirm-sure": "Yes, I'm sure",
+                "modal-how-to-play-title": "How to Play",
+                "how-to-goal-title": "The Goal",
+                "how-to-goal-text": "Describe the word at the top without using any of the 5 taboo words listed below it! Each player gets 1 skip per turn.",
+                "how-to-modes-title": "The Modes",
+                "how-to-mode-local-title": "Local Pass-and-Play:",
+                "how-to-mode-local-text": "One phone, in the same room. Select Standard or Beginner timer, then pass the phone to the next player after each round.",
+                "how-to-mode-online-title": "Online Multiplayer:",
+                "how-to-mode-online-text": "Play with friends on their own devices. One person hosts and sets the timer, others join with a 4-letter code.",
+                "how-to-buzzer-title": "The Buzzer",
+                "how-to-buzzer-text": "In Online Team mode, the opposing team has a BUZZ button. If they hear you say a taboo word, they'll buzz you and you lose the point!",
+                "btn-got-it": "Got it!",
+                "status-loading": "Loading...",
+                "status-error": "Error loading list",
+                "label-cards-loaded": "cards loaded",
+                "label-select-lang-level": "Select Language & Level",
+                "btn-buzz": "Buzz!",
+                "team-indicator-a": "TEAM A",
+                "team-indicator-b": "TEAM B",
+                "alert-select-lang": "Please select a language first.",
+                "modal-times-up": "Time's Up!",
+                "modal-just-in-time": "Did you get it just in time?",
+                "btn-copied": "Copied!",
+                "alert-invalid-code": "Please enter a valid 4-character code.",
+                "alert-enter-name": "Please enter your name.",
+                "btn-start-game-level": "Start (Level {level})",
+                "alert-select-level": "Please select a level first.",
+                "label-round-done": "Round {num} Done!",
+                "label-level-tag": "Level {lvl}",
+                "label-skip-count": "Skip ({n}/1)",
+                "label-interface-language": "Interface Language"
+            },
+            de: {
+                "step-connection": "1. Verbindungsmodus",
+                "tab-local": "📱 Lokal",
+                "tab-online": "🌐 Online",
+                "step-language": "2. Übungssprache",
+                "step-difficulty": "3. Schwierigkeitsgrad wählen",
+                "label-beginner": "Anfänger",
+                "label-elementary": "Grundstufe",
+                "label-intermediate": "Mittelstufe",
+                "label-upper-inter": "Obere Mittelstufe",
+                "label-timer-duration": "Timer-Dauer",
+                "btn-timer-standard": "Standard (60s)",
+                "btn-timer-beginner": "Anfänger (2m)",
+                "btn-select-level": "Level wählen",
+                "label-play-with-friends": "Mit Freunden spielen",
+                "sub-create-room": "Privaten Raum erstellen",
+                "placeholder-name": "Dein Name (Optional)",
+                "btn-create-room": "Raum erstellen",
+                "label-or": "— ODER —",
+                "btn-join-room": "Raum beitreten",
+                "btn-how-to-play": "❔ Spielanleitung",
+                "btn-reset-cards": "Karten zurücksetzen",
+                "label-stack": "Stapel",
+                "label-offline": "Offline",
+                "label-online": "Online",
+                "btn-skip": "Überspringen",
+                "btn-buzzed": "Gebuzzert",
+                "btn-correct": "Richtig! ✅",
+                "btn-start-round": "Runde starten",
+                "label-buzz-if-taboo": "Buzzern, wenn du ein Tabu-Wort hörst!",
+                "label-waiting-start": "Warten auf Spieler...",
+                "label-players": "Spieler",
+                "label-round-finished": "Runde beendet",
+                "label-points-round": "Punkte in dieser Runde",
+                "label-next-round-coming": "Nächste Runde folgt!",
+                "btn-next-round": "Nächste Runde",
+                "btn-final-score": "Endstand & Details",
+                "label-join-room": "Raum beitreten",
+                "label-room-code": "Raum-Code",
+                "label-your-name": "Dein Name",
+                "btn-join": "Beitreten",
+                "btn-back": "Zurück",
+                "label-room-lobby": "Warteraum",
+                "btn-copy-code": "Code kopieren",
+                "label-select-level-to-start": "Level wählen zum Starten",
+                "label-waiting-host": "Warten auf Host...",
+                "btn-leave-room": "Raum verlassen",
+                "label-session-recap": "Sitzungsrückblick",
+                "label-total-points": "Gesamtpunkte",
+                "label-rounds": "Runden",
+                "label-round-breakdown": "Runden-Details",
+                "btn-review-guessed": "Wörter wiederholen?",
+                "label-word-review": "Wort-Wiederholung (Klicken für Definition)",
+                "btn-main-menu": "Hauptmenü",
+                "label-team-results": "Ergebnisse nach Teams",
+                "label-your-words": "Deine Wörter",
+                "label-words-described": "Alle Wörter, die du beschrieben hast:",
+                "label-leave-game": "Spiel verlassen?",
+                "label-leave-action": "Was möchtest du tun?",
+                "btn-leave-individual": "Spiel verlassen",
+                "btn-end-for-all": "Für alle beenden",
+                "btn-cancel": "Abbrechen",
+                "label-are-you-sure": "Bist du sicher?",
+                "label-cannot-be-undone": "Diese Aktion kann nicht rückgängig gemacht werden.",
+                "btn-confirm-sure": "Ja, ich bin sicher",
+                "modal-how-to-play-title": "Spielanleitung",
+                "how-to-goal-title": "Das Ziel",
+                "how-to-goal-text": "Beschreibe das Wort oben, ohne die 5 Tabu-Wörter darunter zu benutzen! Jeder Spieler hat 1 Mal Überspringen pro Runde.",
+                "how-to-modes-title": "Die Modi",
+                "how-to-mode-local-title": "Local Pass-and-Play:",
+                "how-to-mode-local-text": "Ein Handy, im selben Raum. Wähle den Timer (Standard oder Anfänger) und gib das Handy nach jeder Runde weiter.",
+                "how-to-mode-online-title": "Online-Multiplayer:",
+                "how-to-mode-online-text": "Spiele mit Freunden auf ihren eigenen Geräten. Einer hostet, die anderen treten mit einem 4-stelligen Code bei.",
+                "how-to-buzzer-title": "Der Buzzer",
+                "how-to-buzzer-text": "Im Online-Team-Modus hat das gegnerische Team einen BUZZ-Button. Wenn sie dich ein Tabu-Wort sagen hören, buzzern sie dich!",
+                "btn-got-it": "Verstanden!",
+                "status-loading": "Laden...",
+                "status-error": "Fehler beim Laden",
+                "label-cards-loaded": "Karten geladen",
+                "label-select-lang-level": "Sprache & Level wählen",
+                "btn-buzz": "Buzzen!",
+                "team-indicator-a": "TEAM A",
+                "team-indicator-b": "TEAM B",
+                "alert-select-lang": "Bitte wähle zuerst eine Sprache.",
+                "modal-times-up": "Zeit abgelaufen!",
+                "modal-just-in-time": "Hast du es noch rechtzeitig geschafft?",
+                "btn-copied": "Kopiert!",
+                "alert-invalid-code": "Bitte gib einen gültigen 4-stelligen Code ein.",
+                "alert-enter-name": "Bitte gib deinen Namen ein.",
+                "btn-start-game-level": "Start (Level {level})",
+                "alert-select-level": "Bitte wähle zuerst ein Level.",
+                "label-interface-language": "Sprache der Benutzeroberfläche"
+            },
+            es: {
+                "step-connection": "1. Modo de conexión",
+                "tab-local": "📱 Local",
+                "tab-online": "🌐 Online",
+                "step-language": "2. Idioma a practicar",
+                "step-difficulty": "3. Elegir dificultad",
+                "label-beginner": "Principiante",
+                "label-elementary": "Elemental",
+                "label-intermediate": "Intermedio",
+                "label-upper-inter": "Intermedio alto",
+                "label-timer-duration": "Duración del cronómetro",
+                "btn-timer-standard": "Estándar (60s)",
+                "btn-timer-beginner": "Principiante (2m)",
+                "btn-select-level": "Elegir nivel",
+                "label-play-with-friends": "Jugar con amigos",
+                "sub-create-room": "Crear una sala privada",
+                "placeholder-name": "Tu nombre (Opcional)",
+                "btn-create-room": "Crear sala",
+                "label-or": "— O —",
+                "btn-join-room": "Unirse a una sala",
+                "btn-how-to-play": "❔ Cómo jugar",
+                "btn-reset-cards": "Restablecer cartas",
+                "label-stack": "Pila",
+                "label-offline": "Desconectado",
+                "label-online": "En línea",
+                "btn-skip": "Pasar",
+                "btn-buzzed": "Zumbado",
+                "btn-correct": "¡Correcto! ✅",
+                "btn-start-round": "Empezar ronda",
+                "how-to-goal-text": "¡Describe la palabra de arriba sin usar las 5 palabras prohibidas de abajo! Cada jugador tiene 1 salto por turno.",
+                "label-buzz-if-taboo": "¡Usa el zumbador si oyes una palabra prohibida!",
+                "label-waiting-start": "Esperando al jugador...",
+                "label-players": "Joueurs",
+                "label-round-finished": "Ronda terminada",
+                "label-points-round": "Puntos esta ronda",
+                "label-next-round-coming": "¡La próxima ronda viene pronto!",
+                "btn-next-round": "Siguiente ronda",
+                "btn-final-score": "Puntuación final & detalles",
+                "label-join-room": "Unirse a sala",
+                "label-room-code": "Código de la sala",
+                "label-your-name": "Tu nombre",
+                "btn-join": "Unirse",
+                "btn-back": "Atrás",
+                "label-room-lobby": "Lobby de la sala",
+                "btn-copy-code": "Copiar código",
+                "label-select-level-to-start": "Elige un nivel para empezar",
+                "label-waiting-host": "Esperando al anfitrión...",
+                "btn-leave-room": "Salir de la sala",
+                "label-session-recap": "Resumen de la sesión",
+                "label-total-points": "Puntos totales",
+                "label-rounds": "Rondas",
+                "label-round-breakdown": "Detalles de la ronda",
+                "btn-review-guessed": "¿Repasar palabras?",
+                "label-word-review": "Repaso de palabras (Clic para definición)",
+                "btn-main-menu": "Menú principal",
+                "label-team-results": "Resultados por equipo",
+                "label-your-words": "Tus palabras",
+                "label-words-described": "Todas las palabras que describiste:",
+                "label-leave-game": "¿Salir del juego?",
+                "label-leave-action": "¿Qué quieres hacer?",
+                "btn-leave-individual": "Salir del juego",
+                "btn-end-for-all": "Terminar para todos",
+                "btn-cancel": "Cancelar",
+                "label-are-you-sure": "¿Estás seguro?",
+                "label-cannot-be-undone": "Esta acción no se puede deshacer.",
+                "btn-confirm-sure": "Sí, estoy seguro",
+                "modal-how-to-play-title": "Cómo jugar",
+                "how-to-goal-title": "El objetivo",
+                "how-to-modes-title": "Los modos",
+                "how-to-mode-local-title": "Local Pass-and-Play:",
+                "how-to-mode-local-text": "Un teléfono, en la misma habitación. Elige el cronómetro (Estándar o Principiante) y pasa el teléfono al siguiente jugador.",
+                "how-to-mode-online-title": "Multijugador online:",
+                "how-to-mode-online-text": "Juega con amigos en sus propios dispositivos. Uno crea la sala, otros se unen con un código de 4 letras.",
+                "how-to-buzzer-title": "El Zumbador",
+                "how-to-buzzer-text": "En el modo de equipo online, el equipo contrario tiene un botón de ZUMBIDO. ¡Si te oyen decir una palabra prohibida, te zumban!",
+                "btn-got-it": "¡Entendido!",
+                "status-loading": "Cargando...",
+                "status-error": "Error al cargar",
+                "label-cards-loaded": "cartas cargadas",
+                "label-select-lang-level": "Elige idioma y nivel",
+                "btn-buzz": "¡Zas!",
+                "team-indicator-a": "EQUIPO A",
+                "team-indicator-b": "EQUIPO B",
+                "alert-select-lang": "Por favor, selecciona un idioma primero.",
+                "modal-times-up": "¡Tiempo agotado!",
+                "modal-just-in-time": "¿Lo conseguiste justo a tiempo?",
+                "btn-copied": "¡Copiado!",
+                "alert-invalid-code": "Introduce un código válido de 4 caracteres.",
+                "alert-enter-name": "Por favor, introduce tu nombre.",
+                "btn-start-game-level": "Empezar (Nivel {level})",
+                "alert-select-level": "Por favor, selecciona un nivel primero.",
+                "label-interface-language": "Idioma de la interfaz"
+            }
+        };
+
         class TabooPro {
             constructor() {
-                this.db = {};
-                Object.keys(LANGUAGES).forEach(l => this.db[l] = []);
-                this.activeLanguage = null;
+                this.wordDb = {};
+                Object.keys(LANGUAGES).forEach(l => this.wordDb[l] = []);
                 this.playedIds = new Set();
                 this.selectedLevel = null;
                 this.score = 0;
@@ -2652,62 +3099,220 @@
                 this.skips = 1;
                 this.timer = null;
                 this.currentCard = null;
-                this.audio = null;
                 this.levels = ['A1', 'A2', 'B1', 'B2'];
+                this.activeLanguage = 'fr'; // Default deck
+                this.uiLanguage = 'en'; // Default UI
+                this.audio = null;
 
                 this.multiplayerMode = false;
-                this.storage = new StorageManager();
-                this.multiplayer = new MultiplayerManager(this);
 
+                console.log("TabooPro constructor called. User Agent:", navigator.userAgent);
+                try {
+                    this.initLocalSettings();
+                    this.fetchData().then(() => {
+                        console.log("fetchData completed.");
+                        this.updateStartUI();
+                    }).catch(err => {
+                        console.error("fetchData failed:", err);
+                        this.updateStartUI();
+                    });
+                } catch (e) {
+                    console.error("Constructor initialization error:", e);
+                }
+                this.multiplayer = new MultiplayerManager(this);
+                this.storage = new StorageManager();
                 this.initApp();
+            }
+
+            initLocalSettings() {
+                // Deck Language (Practice)
+                const savedDeck = localStorage.getItem('taboo_lang');
+                if (savedDeck && LANGUAGES[savedDeck]) {
+                    this.activeLanguage = savedDeck;
+                } else {
+                    this.activeLanguage = this.detectLanguage();
+                }
+
+                // UI Language
+                const savedUI = localStorage.getItem('taboo_ui_lang');
+                if (savedUI && I18N[savedUI]) {
+                    this.uiLanguage = savedUI;
+                } else {
+                    this.uiLanguage = this.detectLanguage();
+                }
+
+                this.setUILanguage(this.uiLanguage);
+                // Ensure buttons are enabled and state is initialized
+                setTimeout(() => this.setLanguage(this.activeLanguage), 0);
+            }
+
+            setUILanguage(lang) {
+                this.uiLanguage = lang;
+                localStorage.setItem('taboo_ui_lang', lang);
+                this.updateUIText();
+
+                // Update toggle visuals
+                document.querySelectorAll('[onclick^="game.setUILanguage"]').forEach(btn => {
+                    const attr = btn.getAttribute('onclick');
+                    const match = attr.match(/'([^']+)'/);
+                    if (match && match[1] === lang) {
+                        btn.classList.add('border-primary', 'bg-primary-light', 'text-primary');
+                        btn.classList.remove('border-slate-100', 'bg-white', 'text-slate-400');
+                    } else {
+                        btn.classList.add('border-slate-100', 'bg-white', 'text-slate-400');
+                        btn.classList.remove('border-primary', 'bg-primary-light', 'text-primary');
+                    }
+                });
+            }
+
+            updateUIText() {
+                const dict = I18N[this.uiLanguage] || I18N.en;
+                document.querySelectorAll('[data-i18n]').forEach(el => {
+                    const key = el.getAttribute('data-i18n');
+                    if (dict[key]) {
+                        if (el.tagName === 'INPUT') {
+                            el.placeholder = dict[key];
+                        } else {
+                            el.textContent = dict[key];
+                        }
+                    }
+                });
+                this.updateStartUI();
             }
 
             async initApp() {
                 // Platform specific visuals (Windows Emojis)
                 this.updatePlatformVisuals();
 
-                // Load saved language
-                const savedLang = localStorage.getItem('taboo_lang');
-                if (savedLang) {
-                    this.setLanguage(savedLang);
-                }
+                // Load saved language - REMOVED, now handled by initLocalSettings
+                // const savedLang = localStorage.getItem('taboo_lang');
+                // if (savedLang) {
+                //     this.setLanguage(savedLang);
+                // }
 
-                await this.fetchData();
+                // fetchData is now called directly in constructor after initLocalSettings
+                // await this.fetchData();
                 if (this.multiplayer) {
                     this.multiplayer.tryAutoRejoin();
                 }
             }
 
             updatePlatformVisuals() {
-                const isWindows = navigator.userAgent.indexOf('Windows') !== -1;
+                const ua = navigator.userAgent.toLowerCase();
+                const isWindows = ua.indexOf('windows') !== -1 || ua.indexOf('win32') !== -1 || ua.indexOf('win64') !== -1;
+                console.log("updatePlatformVisuals. isWindows:", isWindows);
+
                 if (isWindows) {
-                    // Start screen logo (initial state is France)
+                    // Main Logo
                     const mainLogo = document.getElementById('main-logo-emoji');
-                    if (mainLogo && mainLogo.textContent.trim() === '🇫🇷') {
-                        mainLogo.textContent = LANGUAGES.fr.winEmoji;
+                    if (mainLogo) {
+                        const config = LANGUAGES[this.activeLanguage] || LANGUAGES.fr;
+                        mainLogo.textContent = config.winEmoji;
                     }
 
-                    // Update all buttons based on config
+                    // Selection Buttons
                     Object.keys(LANGUAGES).forEach(lang => {
                         const config = LANGUAGES[lang];
-                        document.querySelectorAll(`.emoji-${lang}`).forEach(el => el.textContent = config.winEmoji);
+                        document.querySelectorAll(`.emoji-${lang}`).forEach(el => {
+                            el.textContent = config.winEmoji;
+                        });
+                    });
+                } else {
+                    // Non-windows: restore flags
+                    Object.keys(LANGUAGES).forEach(lang => {
+                        const config = LANGUAGES[lang];
+                        document.querySelectorAll(`.emoji-${lang}`).forEach(el => {
+                            el.textContent = config.emoji;
+                        });
                     });
                 }
             }
 
+            detectLanguage() {
+                const navLang = navigator.language.split('-')[0]; // e.g., 'fr-FR' -> 'fr'
+                if (I18N[navLang]) {
+                    return navLang;
+                }
+                return 'en';
+            }
+
+            setUILanguage(lang) {
+                console.log("setUILanguage called with:", lang);
+                this.uiLanguage = lang;
+                localStorage.setItem('taboo_ui_lang', lang);
+                const dict = I18N[lang] || I18N.en;
+                document.querySelectorAll('[data-i18n]').forEach(el => {
+                    const key = el.getAttribute('data-i18n');
+                    if (dict[key]) {
+                        if (el.tagName === 'INPUT') {
+                            el.placeholder = dict[key];
+                        } else {
+                            el.textContent = dict[key];
+                        }
+                    }
+                });
+                this.updatePlatformVisuals();
+            }
+
             async fetchData() {
+                console.log("fetchData started...");
                 try {
+                    const isLocalProtocol = window.location.protocol === 'file:';
                     const fetchPromises = Object.keys(LANGUAGES).map(async lang => {
-                        const res = await fetch(LANGUAGES[lang].url);
+                        console.log(`Fetching ${lang}...`);
+                        const config = LANGUAGES[lang];
+                        let res;
+                        let lastError;
+
+                        try {
+                            // Try local relative path first
+                            const localUrl = config.url.split('/').pop();
+                            res = await fetch(localUrl);
+                            if (!res.ok) throw new Error("Local file not found");
+                            console.log(`Loaded ${lang} from local ${localUrl}`);
+                        } catch (e) {
+                            lastError = e;
+                            // Fallback to primary remote URL
+                            console.log(`Local fetch failed for ${lang}, trying primary remote fallback...`);
+                            const urlsToTry = [config.url, ...(config.fallbacks || [])];
+                            let success = false;
+
+                            for (const url of urlsToTry) {
+                                try {
+                                    res = await fetch(url);
+                                    if (res.ok) {
+                                        success = true;
+                                        console.log(`Loaded ${lang} from remote: ${url}`);
+                                        break;
+                                    }
+                                } catch (err) {
+                                    console.warn(`Remote fetch failed for ${lang} at ${url}`);
+                                }
+                            }
+
+                            if (!success) {
+                                if (isLocalProtocol) {
+                                    throw new Error("Local security (CORS) blocked loading. Please run a local server.");
+                                }
+                                throw new Error(`Could not load ${lang} from any source.`);
+                            }
+                        }
                         const text = await res.text();
                         this.loadData(text, lang);
                     });
 
                     await Promise.all(fetchPromises);
+                    console.log("All fetches resolved.");
                 } catch (e) {
                     console.error("Error loading data:", e);
                     const el = document.getElementById('total-card-count');
-                    if (el) el.textContent = 'Error loading list';
+                    if (el) {
+                        const isLocal = window.location.protocol === 'file:';
+                        el.innerHTML = `<span class="text-red-500 font-bold">Error: ${e.message}</span>` +
+                            (isLocal ? `<br><span class="text-[10px] text-slate-400">Tip: Open via http://localhost or use VS Code Live Server</span>` : '');
+                    }
+                } finally {
+                    this.updateStartUI();
                 }
             }
 
@@ -2716,19 +3321,29 @@
                 const results = [];
                 for (let i = 1; i < lines.length; i++) {
                     const cols = lines[i].split(',');
-                    if (cols.length < 8) continue;
-                    const word = cols[0].trim();
-                    const level = cols[1].trim();
+                    if (cols.length < 2) continue; // Must have word and level
+
+                    const word = (cols[0] || "").trim();
+                    const level = (cols[1] || "").trim();
+                    if (!word) continue;
+
+                    // Lenient taboo parsing: take up to 5 words if they exist
+                    const taboo = [];
+                    for (let j = 3; j <= 7; j++) {
+                        if (cols[j]) taboo.push(cols[j].trim());
+                    }
+
                     results.push({
-                        id: word + '|' + level,
+                        id: word + '|' + level + '|' + i, // Unique ID with index to avoid overlaps
                         word,
                         level: level,
                         levelIdx: this.levels.indexOf(level),
-                        type: cols[2].trim(),
-                        taboo: [cols[3], cols[4], cols[5], cols[6], cols[7]].map(s => s.trim())
+                        type: (cols[2] || "").trim(),
+                        taboo: taboo
                     });
                 }
-                this.db[lang] = results;
+                console.log(`Parsed ${results.length} words for ${lang}`);
+                this.wordDb[lang] = results;
 
                 // Initialize played IDs if not already done
                 if (!this.playedIds) {
@@ -2744,8 +3359,8 @@
             }
 
             getPool(level) {
-                if (!level || !this.activeLanguage || !this.db[this.activeLanguage]) return [];
-                const dataset = this.db[this.activeLanguage];
+                if (!level || !this.activeLanguage || !this.wordDb[this.activeLanguage]) return [];
+                const dataset = this.wordDb[this.activeLanguage];
                 const maxIdx = this.levels.indexOf(level);
                 const playedSource = this.multiplayerMode ? this.multiplayer.sessionPlayedIds : this.playedIds;
                 return dataset.filter(c => c.levelIdx <= maxIdx && !playedSource.has(c.id));
@@ -2768,34 +3383,49 @@
 
             updateStartUI() {
                 const el = document.getElementById('total-card-count');
+                const startBtn = document.getElementById('btn-start-round');
+                const startGameBtn = document.getElementById('btn-start-round-multiplayer');
+
                 if (!el) return;
 
-                const startBtn = document.getElementById('btn-start-round');
-                if (!startBtn) return;
+                const dict = I18N[this.uiLanguage] || I18N.en;
 
                 if (!this.selectedLevel || !this.activeLanguage) {
                     let total = 0;
                     Object.keys(LANGUAGES).forEach(l => {
-                        if (this.db[l]) total += this.db[l].length;
+                        if (this.wordDb[l]) total += this.wordDb[l].length;
                     });
-                    el.textContent = `${total} cards loaded · Select Language & Level`;
-                    startBtn.disabled = true;
-                    startBtn.className = "btn-3d w-full bg-slate-200 text-slate-400 py-4 rounded-2xl font-black text-xl shadow-lg";
-                    startBtn.textContent = "Select a Level";
+                    el.textContent = `${total} ${dict['label-cards-loaded'] || 'cards loaded'} · ${dict['label-select-lang-level'] || 'Select Language & Level'}`;
+                    if (startBtn) {
+                        startBtn.disabled = true;
+                        startBtn.className = "btn-3d w-full bg-slate-200 text-slate-400 py-4 rounded-2xl font-black text-xl shadow-lg";
+                        startBtn.textContent = dict['btn-select-level'] || "Select a Level";
+                    }
+                    if (startGameBtn) {
+                        startGameBtn.disabled = true;
+                        startGameBtn.textContent = dict['btn-select-level'] || "Select a Level";
+                    }
                     return;
                 }
 
                 const pool = this.getPool(this.selectedLevel);
-                el.textContent = `${pool.length} cards in stack`;
+                if (el) el.textContent = `${pool.length} ${dict['label-stack'] || 'cards in stack'}`;
 
-                if (pool.length === 0) {
-                    startBtn.disabled = true;
-                    startBtn.className = "btn-3d w-full bg-slate-200 text-slate-400 py-4 rounded-2xl font-black text-xl shadow-lg transition-all";
-                    startBtn.textContent = "No cards left - Reset to play";
-                } else {
-                    startBtn.disabled = false;
-                    startBtn.className = "btn-3d w-full bg-pink-500 text-white py-4 rounded-2xl font-black text-xl shadow-lg transition-all transform hover:scale-[1.02] active:scale-[0.98]";
-                    startBtn.textContent = `Start Round (${pool.length} in stack)`;
+                if (startBtn) {
+                    if (pool.length === 0) {
+                        startBtn.disabled = true;
+                        startBtn.className = "btn-3d w-full bg-slate-200 text-slate-400 py-4 rounded-2xl font-black text-xl shadow-lg transition-all";
+                        startBtn.textContent = dict['btn-reset-cards'] || "No cards left";
+                    } else {
+                        startBtn.disabled = false;
+                        startBtn.className = "btn-3d w-full bg-pink-500 text-white py-4 rounded-2xl font-black text-xl shadow-lg transition-all transform hover:scale-[1.02] active:scale-[0.98]";
+                        startBtn.textContent = `${dict['btn-start-round'] || 'Start Round'} (${pool.length})`;
+                    }
+                }
+
+                if (startGameBtn) {
+                    startGameBtn.disabled = pool.length === 0;
+                    startGameBtn.textContent = pool.length === 0 ? (dict['status-error'] || "No cards") : `${dict['btn-start-round'] || 'Start Round'} (${pool.length})`;
                 }
             }
 
@@ -2856,7 +3486,11 @@
                 this.activeLanguage = lang;
                 localStorage.setItem('taboo_lang', lang);
 
-                // Toggle theme (No longer needed, all use default indigo)
+                // Update UI Language ONLY IF it's the first time or if they match
+                // Actually, often it's better to keep them synced unless the user 
+                // specifically chose a different UI language.
+                // For simplicity and to match the prompt "Localization", 
+                // we'll keep UI lang decoupled and initialized via browser.
 
                 // Update Main Logo based on OS and Language
                 const logoEl = document.getElementById('main-logo-emoji');
@@ -2971,8 +3605,10 @@
                         const titleEl = document.getElementById('modal-title');
                         const textEl = document.getElementById('buzz-modal-text');
                         if (iconEl) iconEl.textContent = '⌛';
-                        if (titleEl) titleEl.textContent = "Time's Up!";
-                        if (textEl) textEl.innerHTML = `Did you get <span id="last-word-hint" class="font-bold text-primary"></span> just in time?`;
+
+                        const dict = I18N[this.uiLanguage] || I18N.en;
+                        if (titleEl) titleEl.textContent = dict["modal-times-up"] || "Time's Up!";
+                        if (textEl) textEl.innerHTML = `${dict["modal-just-in-time"] || "Did you get it just in time?"}<br><span id="last-word-hint" class="font-bold text-primary"></span>`;
 
                         document.getElementById('last-word-hint').textContent = `"${this.currentCard.word}"`;
                         document.getElementById('modal-end-turn').classList.remove('hidden');
@@ -3008,7 +3644,10 @@
 
                 this.currentCard = pool[Math.floor(Math.random() * pool.length)];
                 document.getElementById('word-to-guess').textContent = this.currentCard.word;
-                document.getElementById('card-level-tag').textContent = `Level ${this.currentCard.level}`;
+
+                const dict = I18N[this.uiLanguage] || I18N.en;
+                document.getElementById('card-level-tag').textContent = (dict["label-level-tag"] || "Level {lvl}").replace("{lvl}", this.currentCard.level);
+
                 const list = document.getElementById('taboo-words');
                 list.innerHTML = '';
                 this.currentCard.taboo.forEach(t => {
@@ -3019,8 +3658,15 @@
                 });
 
                 document.getElementById('score-display').textContent = this.score;
-                document.getElementById('btn-skip').textContent = `Skip (${this.skips}/1)`;
-                document.getElementById('btn-skip').disabled = this.skips <= 0;
+                const skipBtn = document.getElementById('btn-skip');
+                const skipSpan = skipBtn.querySelector('[data-i18n="btn-skip"]');
+                if (skipSpan) {
+                    skipSpan.textContent = dict["btn-skip"] || "Skip";
+                    skipBtn.innerHTML = `<span data-i18n="btn-skip">${dict["btn-skip"] || "Skip"}</span> (${this.skips}/1)`;
+                } else {
+                    skipBtn.textContent = (dict["label-skip-count"] || "Skip ({n}/1)").replace("{n}", this.skips);
+                }
+                skipBtn.disabled = this.skips <= 0;
             }
 
             skipCard() {
@@ -3066,8 +3712,9 @@
                 clearInterval(this.timer);
                 this.roundHistory.push({ round: this.roundNumber, score: this.roundScore });
 
+                const dict = I18N[this.uiLanguage] || I18N.en;
                 document.getElementById('round-score-val').textContent = this.roundScore;
-                document.getElementById('summary-title').textContent = `Round ${this.roundNumber} Done!`;
+                document.getElementById('summary-title').textContent = (dict["label-round-done"] || "Round {num} Done!").replace("{num}", this.roundNumber);
                 this.roundNumber++;
                 this.currentCard = null;
                 this.showScreen('summary');
@@ -3255,7 +3902,9 @@
                 if (startBtn) {
                     startBtn.disabled = false;
                     startBtn.className = "btn-3d w-full bg-green-500 text-white py-4 rounded-2xl text-xl font-black";
-                    startBtn.textContent = `Start Game (Level ${level})`;
+                    const dict = I18N[this.uiLanguage] || I18N.en;
+                    const template = dict["btn-start-game-level"] || "Start (Level {level})";
+                    startBtn.textContent = template.replace('{level}', level);
                 }
             }
 
@@ -3417,7 +4066,7 @@
             showLeaveGameModal() {
                 if (!this.multiplayerMode) return;
 
-                const modal = document.getElementById('modal-leave-game');
+                const dict = I18N[this.uiLanguage] || I18N.en;
                 const leaveBtn = document.getElementById('btn-leave-individual');
                 const endForAllBtn = document.getElementById('end-for-all-btn');
                 const leaveWarn = document.getElementById('leave-game-warning');
@@ -3445,7 +4094,7 @@
                     // Just warn them, but allow leaving. The validateRoomState logic will handle the forced finish.
                     if (leaveBtn) {
                         leaveBtn.classList.remove('hidden');
-                        leaveBtn.textContent = 'Leave & End Game';
+                        leaveBtn.textContent = dict["btn-leave-individual"] || 'Leave & End Game';
                         leaveBtn.className = "w-full bg-orange-500 text-white py-3 rounded-xl font-bold";
                         // Use a specific action that triggers END GAME then LEAVE
                         leaveBtn.setAttribute('onclick', "game.confirmLeaveAction('leaveAndEnd')");
@@ -3587,7 +4236,10 @@
         }
 
         let game;
-        window.onload = () => { game = new TabooPro(); };
+        window.onload = () => {
+            console.log("Window loaded.");
+            game = new TabooPro();
+        };
     </script>
 </body>
 
