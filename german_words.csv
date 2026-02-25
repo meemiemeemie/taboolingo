@@ -1,0 +1,193 @@
+Target Word,Level,Type,Taboo 1,Taboo 2,Taboo 3,Taboo 4,Taboo 5
+Brandenburger Tor,A2,Proper,Berlin,Denkmal,Wahrzeichen,Preußen,Mitte
+Backen,A1,Verb,Ofen,Kuchen,Brot,Teig,Küche
+Teuer,A2,Adj,Geld,Kosten,Preis,Billig,Viel
+The Beatles,A1,Proper,Musik,Band,Liverpool,Rock,Paul
+Bibliothek,A1,Noun,Bücher,Lesen,Ausleihen,Stille,Wissen
+Schön,A1,Adj,Hübsch,Attraktiv,Wundervoll,Hässlich,Aussehen
+Wandern,B1,Verb,Berge,Laufen,Natur,Wald,Rucksack
+Supermarkt,A1,Noun,Einkaufen,Essen,Laden,Wagen,Lebensmittel
+New York,A1,Proper,USA,Amerika,Manhattan,Apfel,Wolkenkratzer
+Leihen,A2,Verb,Geben,Zurück,Bibliothek,Geld,Borgen
+Zuverlässig,B1,Adj,Vertrauen,Sicher,Pünktlich,Ehrlich,Immer
+Sherlock Holmes,B1,Proper,Detektiv,Watson,London,Krimi,Pfeife
+Krankenhaus,A1,Noun,Arzt,Krank,Medizin,Patient,Hilfe
+Überraschung,A2,Noun,Party,Geschenk,Unerwartet,Schock,Geburtstag
+Nachhaltig,B2,Adj,Umwelt,Grün,Natur,Zukunft,Ökologisch
+Hollywood,A2,Proper,Film,Kino,Stars,Kalifornien,Schauspieler
+Ehrenamtlich,B1,Verb,Helfen,Geld,Freiwillig,Arbeit,Gratis
+Ehrgeizig,B2,Adj,Ziel,Erfolg,Karriere,Fleißig,Wollen
+Tower Bridge,A2,Proper,London,Themse,Fluss,Brücke,England
+Kaufen,B1,Verb,Einkaufen,Geld,Bezahlen,Laden,Erwerben
+Frustrierend,B2,Adj,Schwer,Ärgerlich,Problem,Schwierig,Gefühl
+Mount Everest,B1,Proper,Berg,Hoch,Himalaya,Gipfel,Klettern
+Flughafen,A1,Noun,Flugzeug,Fliegen,Reise,Urlaub,Terminal
+Erklären,A2,Verb,Verstehen,Sagen,Lehrer,Wissen,Deutlich
+Gemütlich,B1,Adj,Warm,Haus,Bequem,Sofort,Wohnzimmer
+Starbucks,A1,Proper,Kaffee,Becher,Grün,Trinken,Seattle
+Sport,A1,Noun,Bewegung,Fitness,Fußball,Körper,Gesund
+Entscheiden,A2,Verb,Wahl,Option,Möglichkeit,Wählen,Entschluss
+Anonym,B2,Adj,Name,Geheim,Unbekannt,Internet,Maske
+Coca-Cola,A1,Proper,Getränk,Limo,Rot,Zucker,Brause
+Umwelt,B1,Noun,Natur,Erde,Schutz,Klima,Welt
+Verzeihen,B1,Verb,Entschuldigung,Fehler,Vergeben,Streit,Frieden
+Eloquent,B2,Adj,Reden,Wörter,Sprache,Gut,Ausdruck
+Big Ben,A2,Proper,London,Uhr,Turm,Glocke,Zeit
+Urlaub,A1,Noun,Reise,Ferien,Strand,Frei / Freizeit,Sonne
+Entdecken,A2,Verb,Finden,Neu,Suchen,Reise,Forscher
+Lecker,A1,Adj,Essen,Geschmack,Gut,Kochen,Schmecken
+Walt Disney,A2,Proper,Maus,Film,Park,Mickey,Zeichentrick
+Herausforderung,B1,Noun,Schwer,Ziel,Aufgabe,Test,Meistern
+Ankündigen,B1,Verb,Sagen,Information,Neu,Werbung,Bekannt
+Tapfer,B2,Adj,Mutig,Angst,Held,Stark,Gefahr
+Weißes Haus,A2,Proper,Präsident,Washington,USA,Gebäude,Macht
+Restaurant,A1,Noun,Essen,Kellner,Speisekarte,Tisch,Kochen
+Erinnern,A2,Verb,Vergessen,Gedächtnis,Kopf,Vergangenheit,Denken
+Essenziell,B2,Adj,Wichtig,Nötig,Grundlage,Bedeutung,Vital
+Amazon,A1,Proper,Internet,Paket,Kaufen,Lieferung,Wald
+Möbel,A2,Noun,Tisch,Stuhl,Haus,Schrank,Wohnen
+Beschweren,B1,Verb,Meckern,Schlecht,Problem,Kunde,Sagen
+Vielfältig,B2,Adj,Anders,Bunt,Mix,Verschieden,Viel
+Grand Canyon,B1,Proper,USA,Fluss,Stein,Natur,Tief
+Freundschaft,A1,Noun,Freund,Liebe,Zusammen,Vertrauen,Mensch
+Nervös,B2,Adj,Angst,Stress,Ruhig,Warten,Zittern
+Hochzeit,A2,Noun,Heiraten,Ring,Liebe,Kirche,Feier
+Entschuldigen,B1,Verb,Fehler,Sagen,Verzeihung,Sorry,Leid
+Eifersüchtig,B1,Adj,Liebe,Partner,Neid,Gefühl,Andere
+Zuneigung,B2,Noun,Liebe,Gefühl,Mögen,Wärme,Herz
+Streiten,A2,Verb,Diskussion,Ärger,Wut,Worte,Kampf
+Ehrlich,A2,Adj,Wahrheit,Lügen,Sagen,Aufrichtig,Vertrauen
+Verknallt,B2,Adj,Liebe,Herz,Gefühl,Neu,Flirt
+Dankbar,B1,Adj,Danke,Helfen,Gefühl,Güte,Froh
+Empathie,B2,Noun,Gefühl,Verstehen,Andere,Mitleid,Mensch
+Kollege,B1,Noun,Arbeit,Büro,Firma,Zusammen,Job
+Einsam,A2,Adj,Allein,Traurig,Freunde,Single,Nur
+Verraten,B2,Verb,Geheimnis,Vertrauen,Lügen,Freund,Sagen
+Charmant,B1,Adj,Nett,Hübsch,Lächeln,Persönlichkeit,Anziehend
+Scheidung,B1,Noun,Trennung,Ehe,Ende,Gericht,Paar
+Geduld,B1,Noun,Warten,Zeit,Ruhig,Langsam,Nerv
+Unterstützen,A2,Verb,Helfen,Geben,Dasein,Team,Support
+Unsicher,B2,Adj,Angst,Zweifel,Gefühl,Selbstbewusst,Wackelig
+Großzügig,A2,Adj,Geben,Geld,Teilen,Nett,Geschenk
+Geschwister,B1,Noun,Bruder,Schwester,Familie,Kinder,Eltern
+Vertrauen,A2,Verb,Glauben,Sicher,Geheimnis,Wahrheit,Ehrlich
+Mitleid,B1,Adj,Traurig,Helfen,Gefühl,Arm,Andere
+Valentinstag,A2,Proper,Liebe,Herz,Februar,Blumen,Date
+Enthusiastisch,B2,Adj,Energie,Freude,Motiviert,Spaß,Begeistert
+Bekannter,B2,Noun,Freund,Wissen,Mensch,Hallo,Sehen
+Respektieren,B1,Verb,Ehre,Schätzen,Achten,Höflich,Wert
+Optimistisch,B2,Adj,Positiv,Zukunft,Hoffnung,Gut,Denken
+Amor,B1,Proper,Liebe,Pfeil,Bogen,Gott,Herz
+Ermutigen,B1,Verb,Helfen,Motivieren,Sagen,Stark,Machen
+Nostalgie,B2,Noun,Vergangenheit,Alt,Erinnerung,Traurig,Früher
+Introvertiert,B2,Adj,Schüchtern,Still,Allein,Leise,Mensch
+Höflich,B2,Adj,Nett,Danke,Bitte,Manieren,Respekt
+Feind,A2,Noun,Hass,Krieg,Gegner,Böse,Streit
+Versöhnen,B2,Verb,Frieden,Streit,Wieder,Freunde,Ende
+Aggressiv,B1,Adj,Wütend,Böse,Kampf,Gewalt,Schlagen
+Loyalität,B2,Noun,Treu,Freundschaft,Stehen,Immer,Vertrauen
+Romeo,A2,Proper,Julia,Liebe,Shakespeare,Drama,Balkon
+Erbarmen,B2,Noun,Hilfe,Gefühl,Gnade,Gott,Mitleid
+Hingabe,B2,Adj,Liebe,Zeit,Leidenschaft,Arbeit,Herz
+Liebeskummer,B1,Noun,Traurig,Herz,Ende,Trennung,Weinen
+Lästern,B1,Verb,Reden,Schlecht,Geheimnis,Hinterrücks,Andere
+Frustriert,B2,Adj,Ärgerlich,Schwer,Gefühl,Aufgeben,Nervig
+Güte,A2,Noun,Nett,Herz,Helfen,Gut,Mensch
+Anbeten,B1,Verb,Lieben,Gott,Kirche,Fan,Sehr
+Elend,B1,Adj,Schlecht,Traurig,Arm,Sehr,Unglücklich
+Aufrichtig,B2,Adj,Ehrlich,Wahr,Herz,Echt,Sagen
+Trösten,A2,Verb,Weinen,Traurig,Helfen,Arm,Besser
+Computer,A1,Noun,Bildschirm,Tastatur,PC,Laptop,Maus
+Internet,A1,Noun,Web,Online,WLAN,Surfen,Netz
+Schwerkraft,A2,Noun,Erde,Fallen,Newton,Apfel,Weltraum
+NASA,A2,Proper,Weltraum,Rakete,Mond,USA,Sterne
+Herunterladen,A2,Verb,Internet,Computer,Speichern,Datei,Download
+Smartphone,A1,Noun,Handy,Telefon,App,iPhone,Anrufen
+Entdecken,A2,Verb,Finden,Neu,Wissenschaft,Forschen,Erster
+Effizient,B1,Adj,Schnell,Arbeit,Zeit,Ergebnis,Sparen
+Silicon Valley,B1,Proper,Technik,USA,Google,Apple,Start-up
+Software,B1,Noun,Programm,Computer,Windows,App,Code
+Beobachten,B1,Verb,Sehen,Schauen,Wissenschaft,Auge,Prüfen
+Künstlich,B2,Adj,KI,Falsch,Mensch,Roboter,Natur
+WWW,A1,Proper,Internet,Web,Netz,Google,Welt
+Elektrizität,A2,Noun,Strom,Energie,Licht,Kabel,Batterie
+Innovativ,B2,Adj,Neu,Idee,Modern,Erfindung,Zukunft
+Algorithmus,B2,Noun,Mathe,Computer,Code,Internet,Regel
+Microsoft,A2,Proper,Windows,Bill Gates,PC,Software,Office
+Satellit,B1,Noun,Weltraum,Erde,GPS,TV,Signal
+Analysieren,B2,Verb,Daten,Prüfen,Wissenschaft,Denken,Ergebnis
+Virtuell,B2,Adj,Echt,Realität,Computer,Digital,Brille
+SpaceX,B1,Proper,Elon Musk,Rakete,Mars,Weltraum,Starlink
+Batterie,A2,Noun,Strom,Energie,Handy,Leer,Laden
+Surfen,B1,Verb,Internet,Web,Suchen,Seite,Klicken
+Präzise,B2,Adj,Genau,Richtig,Punkt,Details,Exakt
+Isaac Newton,B2,Proper,Physik,Apfel,Schwerkraft,Mathe,Wissenschaft
+Roboter,A1,Noun,Maschine,Metall,KI,Zukunft,Arbeit
+Untersuchen,B1,Verb,Prüfen,Arzt,Wissenschaft,Schauen,Testen
+Digital,B1,Adj,Analog,Computer,Internet,Technik,Modern
+Facebook,A1,Proper,Soziale Medien,Zuckerberg,Internet,App,Freunde
+Messen,A2,Verb,Größe,Länge,Meter,Zentimeter,Lineal
+Veraltet,B2,Adj,Alt,Neu,Kaputt,Früher,Technik
+Instagram,A1,Proper,Fotos,App,Bilder,Posten,Story
+Experiment,B1,Noun,Wissenschaft,Labor,Test,Versuch,Ergebnis
+Entwickeln,B1,Verb,Machen,Neu,Software,Fortschritt,Planen
+Komplex,B2,Adj,Schwierig,Einfach,Viel,Details,System
+Tesla,A2,Proper,Auto,Elon Musk,Strom,Batterie,Fahren
+Mikroskop,B1,Noun,Klein,Labor,Sehen,Wissenschaft,Linse
+Kommunizieren,A2,Verb,Reden,Sprechen,Nachricht,Handy,Sagen
+Langlebig,B2,Adj,Stark,Qualität,Zeit,Alt,Haltbar
+CERN,B2,Proper,Physik,Schweiz,Wissenschaft,Teilchen,Forschung
+Energie,B1,Noun,Strom,Kraft,Sonne,Batterie,Licht
+Suchen,A1,Verb,Finden,Google,Internet,Verloren,Schauen
+Automatisch,B1,Adj,Allein,Maschine,Schnell,Einfach,Programm
+Bluetooth,A2,Proper,Handy,Kabellos,Verbinden,Musik,Lautsprecher
+Klima,B1,Noun,Wetter,Erde,Warm,Natur,Luft
+Reagieren,B1,Verb,Antwort,Aktion,Gefühl,Was,Machen
+Vielseitig,B2,Adj,Viel,Können,Flexibel,Anders,Nützlich
+Wikipedia,A1,Proper,Wissen,Internet,Lexikon,Information,Artikel
+Labor,B1,Noun,Wissenschaft,Experiment,Weiß,Test,Forschen
+Reisepass,A1,Noun,Pass,Grenze,Dokument,Reise,Land
+Gepäck,A2,Noun,Koffer,Tasche,Reise,Urlaub,Flughafen
+London,A1,Proper,England,UK,Themse,Big Ben,Stadt
+Abflug,A2,Verb,Fliegen,Flughafen,Start,Zeit,Reise
+Reiseziel,B1,Noun,Ort,Urlaub,Ankunft,Ende,Fahren
+Ausland,B1,Adj,Land,Anders,Fremd,Sprache,Reisen
+Eiffelturm,A1,Proper,Paris,Frankreich,Stahl,Hoch,Stadt
+Strecke,B1,Noun,Weg,Reise,Kilometer,Fahren,Zug
+Malerisch,B2,Adj,Schön,Foto,Dorf,Natur,Landschaft
+Disney World,A1,Proper,Orlando,USA,Maus,Park,Spaß
+Unterkunft,B1,Noun,Hotel,Schlafen,Zimmer,Haus,Urlaub
+Navigieren,B2,Verb,Karte,GPS,Weg,Finden,Auto
+Überfüllt,A2,Adj,Menschen,Viel,Stadt,Bus,Platz
+Chinesische Mauer,A2,Proper,China,Lang,Stein,Asien,Grenze
+Reservierung,A2,Noun,Buchen,Hotel,Tisch,Platz,Restaurant
+Reiseplan,B2,Noun,Zeit,Liste,Urlaub,Wann,Aktivität
+Exotisch,B2,Adj,Anders,Insel,Fern,Tropisch,Neu
+Times Square,A2,Proper,New York,Licht,USA,Stadt,Reklame
+Passagier,A2,Noun,Reisender,Zug,Flugzeug,Auto,Sitzen
+Ankommen,A1,Verb,Ziel,Ende,Zeit,Da sein,Bahnhof
+Luxuriös,B1,Adj,Teuer,Reich,Hotel,Schön,Geld
+Machu Picchu,B1,Proper,Peru,Inka,Berg,Südamerika,Ruinen
+Tourismus,A2,Noun,Urlaub,Reisen,Stadt,Besuchen,Gäste
+Wandern,A2,Verb,Berge,Laufen,Wald,Natur,Schuhe
+Idyllisch,B2,Adj,Schön,Ruhig,Dorf,Land,Natur
+Alpen,A2,Proper,Berge,Ski,Schnee,Schweiz,Deutschland
+Einwanderung,B1,Noun,Grenze,Land,Pass,Visum,Kommen
+Rucksack,A1,Noun,Tasche,Schule,Wandern,Rücken,Tragen
+Atemberaubend,B2,Adj,Schön,Blick,Wahnsinn,Aussicht,Natur
+Las Vegas,A2,Proper,Casino,USA,Wüste,Spielen,Licht
+Verkehrsmittel,B1,Noun,Bus,Zug,Auto,Fahren,Transport
+Geräumig,B2,Adj,Groß,Platz,Zimmer,Viel,Haus
+Sahara,A2,Proper,Wüste,Afrika,Sand,Heiß,Sonne
+Währung,B1,Noun,Geld,Euro,Dollar,Land,Bezahlen
+Riskieren,B2,Verb,Gefahr,Versuchen,Mut,Machen,Vielleicht
+Antik,B1,Adj,Alt,Geschichte,Museum,Römer,Griechen
+Mount Fuji,A2,Proper,Japan,Berg,Vulkan,Schnee,Asien
+Botschaft,B2,Noun,Land,Diplomat,Visum,Pass,Ausland
+Kreuzfahrt,A2,Noun,Schiff,Meer,Urlaub,Wasser,Reisen
+Beschaulich,B2,Adj,Ruhig,Kleiner,Ort,Friedlich,Dorf
+Expedition,B2,Noun,Reise,Forschen,Wissenschaft,Abenteuer,Gefahr
+Pendeln,B1,Verb,Arbeit,Zug,Auto,Jeden Tag,Fahren
+Lebhaft,B2,Adj,Stadt,Viel los,Energie,Menschen,Aktiv
+Sydney Opera,A2,Proper,Australien,Gebäude,Musik,Hafen,Weiß
+Visum,B1,Noun,Pass,Land,Grenze,Papier,Erlaubnis

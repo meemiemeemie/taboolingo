@@ -1,0 +1,620 @@
+Target Word,Level,Type,Taboo 1,Taboo 2,Taboo 3,Taboo 4,Taboo 5
+Sagrada Família,A2,Proper,Barcelona,Gaudí,Iglesia,Catedral,Templo
+Hornear,A1,Verb,Horno,Pastel,Cocinar,Pan,Calor
+Caro,A2,Adj,Costar,Dinero,Precio,Barato,Rico
+The Beatles,A1,Proper,Música,Banda,Liverpool,Rock,Paul
+Biblioteca,A1,Noun,Libros,Leer,Silencio,Prestar,Estudiar
+Hermoso,A1,Adj,Guapo,Feo,Mirar,Atractivo,Precioso
+Deambular,B2,Verb,Caminar,Perdido,Mover,Viajar,Pasear
+Supermercado,A1,Noun,Comida,Comprar,Tienda,Carrito,Alimentos
+Nueva York,A1,Proper,Manzana,Skyline,Rascacielos,Manhattan,EE.UU.
+Prestar,A2,Verb,Devolver,Tomar,Dinero,Biblioteca,Dejar
+Fiable,B1,Adj,Confianza,Depender,Bueno,Honesto,Trabajar
+Sherlock Holmes,B1,Proper,Detective,Watson,Londres,Misterio,Pipa
+Hospital,A1,Noun,Doctor,Enfermo,Enfermera,Salud,Medicina
+Sorpresa,A2,Noun,Susto,Cumpleaños,Regalo,Inesperado,Fiesta
+Sostenible,B2,Adj,Verde,Ambiente,Tierra,Futuro,Duradero
+Hollywood,A2,Proper,Películas,Estrellas,California,Cine,Actor
+Ser voluntario,B1,Verb,Ayudar,Dinero,Trabajar,Caridad,Gratis
+Ambicioso,B2,Adj,Meta,Éxito,Difícil,Carrera,Trabajo
+Puente de Londres,A2,Proper,Río,Támesis,Caer,Ciudad,Inglaterra
+Comprar,B1,Verb,Adquirir,Tienda,Dinero,Obtener,Gasto
+Frustrante,B2,Adj,Enfado,Difícil,Molesto,Problema,Pesado
+Monte Everest,B1,Proper,Montaña,Alto,Escalar,Nepal,Pico
+Aeropuerto,A1,Noun,Avión,Volar,Viajar,Terminal,Maletas
+Explicar,A2,Verb,Entender,Decir,Por qué,Claro,Hablar
+Acogedor,B1,Adj,Caliente,Pequeño,Casa,Cómodo,Suave
+Starbucks,A1,Proper,Café,Bebida,Vaso,Seattle,Verde
+Ejercicio,A1,Noun,Deporte,Correr,Cuerpo,Gimnasio,Salud
+Decidir,A2,Verb,Elección,Elegir,Opción,Seleccionar,Mente
+Anónimo,B2,Adj,Nombre,Desconocido,Secreto,Oculto,Identidad
+Coca-Cola,A1,Proper,Bebida,Refresco,Rojo,Botella,Azúcar
+Medio Ambiente,B1,Noun,Naturaleza,Tierra,Verde,Planeta,Mundo
+Perdonar,B1,Verb,Perdón,Enfado,Error,Disculpa,Pasado
+Elocuente,B2,Adj,Hablar,Palabra,Fluido,Bueno,Lenguaje
+Big Ben,A2,Proper,Londres,Reloj,Torre,Tiempo,Campana
+Vacaciones,A1,Noun,Fiesta,Viajar,Playa,Viaje,Verano
+Explorar,A2,Verb,Viajar,Descubrir,Nuevo,Encontrar,Ruta
+Delicioso,A1,Adj,Sabor,Bueno,Comida,Comer,Rico
+Walt Disney,A2,Proper,Mickey,Películas,Parque,Dibujos,Mundo
+Desafío,B1,Noun,Difícil,Dificultad,Meta,Problema,Intentar
+Anunciar,B1,Verb,Vender,TV,Producto,Comercial,Negocio
+Valiente,B2,Adj,Coraje,Miedo,Héroe,Fuerte,Peligro
+La Casa Blanca,A2,Proper,Presidente,Washington,EE.UU.,Edificio,Despacho
+Restaurante,A1,Noun,Comida,Comer,Camarero,Menú,Cena
+Recordar,A2,Verb,Memoria,Olvidar,Mente,Pasado,Saber
+Esencial,B2,Adj,Importante,Necesitar,Deber,Básico,Vital
+Amazon,A1,Proper,Online,Compras,Río,Envío,Selva
+Muebles,A2,Noun,Mesa,Silla,Casa,Madera,Sofá
+Quejarse,B1,Verb,Malo,Problema,Decir,Enfadado,Servicio
+Diverso,B2,Adj,Diferente,Variedad,Mezcla,Muchos,Grupo
+Gran Cañón,B1,Proper,Río,Arizona,Roca,Profundo,Naturaleza
+Amistad,A1,Noun,Mejor,Amigo,Juntos,Lazo,Cercano
+Ansioso,B2,Adj,Preocupado,Nervioso,Estrés,Miedo,Calma
+Matrimonio,A2,Noun,Boda,Marido,Mujer,Anillo,Iglesia
+Disculparse,B1,Verb,Perdón,Perdonar,Error,Decir,Mal
+Celoso,B1,Adj,Envidia,Verde,Querer,Pareja,Relación
+Afecto,B2,Noun,Amor,Abrazo,Calor,Cariño,Sentir
+Discutir,A2,Verb,Pelear,Diferir,Palabras,Enfado,Debate
+Honesto,A2,Adj,Verdad,Mentira,Sincero,Franco,Decir
+Enamoramiento,B2,Noun,Crush,Amor,Breve,Obsesión,Corazón
+Agradecido,B1,Adj,Gracias,Apreciar,Ayuda,Amable,Bueno
+Empatía,B2,Noun,Sentir,Entender,Otros,Compasión,Simpatía
+Colega,B1,Noun,Trabajo,Oficina,Empleo,Socio,Compañero
+Solitario,A2,Adj,Solo,Único,Triste,Amigos,Aislado
+Traicionar,B2,Verb,Confianza,Espalda,Mentira,Secreto,Engañar
+Encantador,B1,Adj,Carisma,Gustar,Simpático,Atractivo,Personalidad
+Divorcio,B1,Noun,Separación,Boda,Separar,Final,Legal
+Paciencia,B1,Noun,Esperar,Despacio,Calma,Tiempo,Enfado
+Apoyar,A2,Verb,Ayuda,Respaldo,Dar,Cuidar,Pilar
+Inseguro,B2,Adj,Tímido,Preocupación,Confianza,Propio,Duda
+Generoso,A2,Adj,Dar,Compartir,Dinero,Amable,Altruista
+Hermano,B1,Noun,Hermana,Familia,Pariente,Mismo,Sangre
+Confiar,A2,Verb,Creer,Fiarse,Secreto,Verdad,Amigo
+Compasivo,B1,Adj,Pena,Sentir,Amable,Escuchar,Cuidar
+San Valentín,A2,Proper,Corazón,Amor,Febrero,Cita,Tarjeta
+Entusiasta,B2,Adj,Emocionado,Feliz,Ganas,Energía,Listo
+Conocido,B2,Noun,Saber,Amigo,Persona,Hola,Encontrar
+Respetar,B1,Verb,Honor,Admirar,Valor,Admiración,Alto
+Optimista,B2,Adj,Positivo,Esperanza,Futuro,Vaso,Bueno
+Cupido,B1,Proper,Flecha,Amor,Arco,Romano,Dios
+Animar,B1,Verb,Apoyo,Empujar,Motivar,Ayudar,Intentar
+Nostalgia,B2,Noun,Pasado,Memoria,Triste,Viejo,Casa
+Introvertido,B2,Noun,Tímido,Silencioso,Solo,Gente,Interior
+Afable,B2,Adj,Amable,Cariñoso,Fácil,Hablar,Simpático
+Enemigos,A2,Noun,Odiar,Pelear,Guerra,Rival,Oponente
+Reconciliar,B2,Verb,Pareja,Arreglar,Acordar,Relación,Paz
+Agresivo,B1,Adj,Enfadado,Malo,Pelea,Fuerza,Hostil
+Lealtad,B2,Noun,Fiel,Siempre,Seguir,Confianza,Lado
+Romeo,A2,Proper,Julieta,Amor,Obra,Shakespeare,Romántico
+Compasión,B2,Noun,Piedad,Amable,Corazón,Sentir,Ayudar
+Devoto,B2,Adj,Amor,Dar,Tiempo,Leal,Corazón
+Desamor,B1,Noun,Triste,Ruptura,Final,Llorar,Dolor
+Chismorrear,B1,Verb,Hablar,Rumor,Gente,Secreto,Susurro
+Frustrado,B2,Adj,Molesto,Difícil,Triste,Atascado,Rendirse
+Bondad,A2,Noun,Amable,Bueno,Ayuda,Cuidado,Acto
+Adorar,B1,Verb,Amar,Gustar,Altar,Ídolo,Grande
+Miserable,B1,Adj,Triste,Muy,Malo,Infeliz,Pobre
+Sincero,B2,Adj,Honesto,Verdad,Sentir,Real,Corazón
+Consolar,A2,Verb,Mejor,Sentir,Triste,Ayudar,Abrazo
+Ordenador,A1,Noun,Pantalla,Teclado,PC,Portátil,Ratón
+Internet,A1,Noun,Web,Online,WiFi,Conexión,Sitio
+Gravedad,A2,Noun,Tierra,Caer,Abajo,Newton,Espacio
+NASA,A2,Proper,Espacio,Cohete,Luna,Astronauta,Agencia
+Descargar,A2,Verb,Internet,Archivo,Guardar,Instalar,Bajarse
+Smartphone,A1,Noun,Teléfono,Pantalla,App,Móvil,iPhone
+Descubrir,A2,Verb,Encontrar,Nuevo,Ciencia,Investigar,Primero
+Eficiente,B1,Adj,Rápido,Trabajar,Pronto,Resultado,Gastar
+Silicon Valley,B1,Proper,Tecnología,Google,Apple,California,Negocio
+Software,B1,Noun,Programa,Windows,Ordenador,Aplicación,Código
+Observar,B1,Verb,Mirar,Ver,Ciencia,Estudiar,Ojo
+Artificial,B2,Adj,IA,Falso,Humano,Hecho,Robot
+La Red,A1,Proper,Web,Mundo,Red,Google,Online
+Electricidad,A2,Noun,Energía,Luz,Cable,Batería,Calambre
+Innovador,B2,Adj,Nuevo,Idea,Tech,Creativo,Moderno
+Algoritmo,B2,Noun,Mates,Ordenador,Código,Redes,Paso
+Microsoft,A2,Proper,Bill Gates,Windows,PC,Office,Software
+Satélite,B1,Noun,Espacio,Órbita,GPS,TV,Señal
+Analizar,B2,Verb,Datos,Estudiar,Mirar,Ciencia,Resultado
+Virtual,B2,Adj,Realidad,Digital,Falso,VR,Pantalla
+SpaceX,B1,Proper,Elon Musk,Cohete,Marte,Espacio,Starlink
+Batería,A2,Noun,Energía,Cargar,Teléfono,Pila,Alcalina
+Navegar,B1,Verb,Web,Internet,Mirar,Buscar,Página
+Preciso,B2,Adj,Exacto,Correcto,Medida,Detalle,Precisión
+Isaac Newton,B2,Proper,Gravedad,Manzana,Física,Científico,Ley
+Robot,A1,Noun,Máquina,Metal,Humano,IA,Futuro
+Examinar,B1,Verb,Mirar,Probar,Estudiar,Ver,Doctor
+Digital,B1,Adj,Analógico,PC,Número,Electrónico,Tech
+Facebook,A1,Proper,Redes,Meta,Zuckerberg,App,Online
+Medir,A2,Verb,Tamaño,Regla,Metros,Longitud,Escala
+Obsoleto,B2,Adj,Viejo,Pasado,Remplazar,Moda,Tecnología
+Instagram,A1,Proper,Fotos,App,Meta,Redes,Filtro
+Experimento,B1,Noun,Ciencia,Prueba,Laboratorio,Intentar,Resultado
+Desarrollar,B1,Verb,Hacer,Crecer,Software,Crear,Progreso
+Complejo,B2,Adj,Difícil,Simple,Muchos,Complicado,Detalle
+Tesla,A2,Proper,Elon Musk,Coche,Eléctrico,Batería,Tech
+Microscopio,B1,Noun,Pequeño,Ciencia,Mirar,Lab,Lente
+Comunicar,A2,Verb,Hablar,Decir,Mensaje,Contar,Señal
+Duradero,B2,Adj,Fuerte,Largo,Tiempo,Material,Calidad
+CERN,B2,Proper,Física,Partículas,Suiza,Ciencia,Colisionador
+Energía,B1,Noun,Poder,Electricidad,Sol,Fuerza,Combustible
+Buscar,A1,Verb,Encontrar,Google,Mirar,Internet,Web
+Automático,B1,Adj,Máquina,Solo,Manual,Fácil,Rápido
+Bluetooth,A2,Proper,Inalámbrico,Conectar,Móvil,Audio,Enlace
+Clima,B1,Noun,Tiempo,Calentamiento,Tierra,Naturaleza,Temperatura
+Reaccionar,B1,Verb,Acción,Respuesta,Química,Cambio,Sentir
+Versátil,B2,Adj,Muchos,Usos,Adaptable,Cambiar,Diferente
+Wikipedia,A1,Proper,Información,Sitio,Enciclopedia,Online,Artículo
+Laboratorio,B1,Noun,Ciencia,Lab,Experimento,Prueba,Científico
+Pasaporte,A1,Noun,ID,Viajar,Frontera,Documento,País
+Equipaje,A2,Noun,Maleta,Bolsa,Viajar,Llevar,Aeropuerto
+Londres,A1,Proper,Inglaterra,Reino Unido,Támesis,Big Ben,Capital
+Salida,A2,Verb,Salir,Irse,Vuelo,Empezar,Hora
+Destino,B1,Noun,Llegada,Lugar,Final,Viaje,Meta
+Extranjero,B1,Adj,País,Diferente,Extraño,Fuera,Idioma
+Torre Eiffel,A1,Proper,París,Francia,Monumento,Hierro,Alta
+Trayecto,B1,Noun,Viaje,Viajar,Largo,Carretera,Camino
+Escénico,B2,Adj,Bonito,Vista,Naturaleza,Foto,Paisaje
+Disney World,A1,Proper,Orlando,Florida,Mickey,Parque,Temático
+Alojamiento,B1,Noun,Hotel,Quedarse,Habitación,Casa,Lugar
+Navegar,B2,Verb,Mapa,GPS,Encontrar,Camino,Dirección
+Abarrotado,A2,Adj,Gente,Lleno,Muchos,Ocupado,Ciudad
+Gran Muralla,A2,Proper,China,Larga,Piedra,Asia,Frontera
+Reserva,A2,Noun,Reservar,Hotel,Mesa,Adelanto,Billete
+Itinerario,B2,Noun,Plan,Horario,Viaje,Lista,Ruta
+Exótico,B2,Adj,Extraño,Tropical,Nuevo,Isla,Lejos
+Times Square,A2,Proper,Nueva York,Luces,Broadway,Ciudad,Carteles
+Pasajero,A2,Noun,Viajero,Viaje,Asiento,Coche,Avión
+Llegar,A1,Verb,Alcanzar,Final,Destino,Venir,Hora
+Lujoso,B1,Adj,Caro,Rico,Elegante,Alta,Calidad
+Machu Picchu,B1,Proper,Perú,Incas,Montaña,Ruinas,Sudamérica
+Turismo,A2,Noun,Tour,Visitar,Monumento,Mirar,Turista
+Caminar,A2,Verb,Andar,Montaña,Naturaleza,Bosque,Botas
+Pintoresco,B2,Adj,Lindo,Pequeño,Pueblo,Viejo,Encanto
+Los Alpes,A2,Proper,Montañas,Europa,Esquí,Nieve,Suiza
+Inmigración,B1,Noun,Frontera,País,Entrada,Pasaporte,Legal
+Mochila,A1,Noun,Bolsa,Viajar,Llevar,Escuela,Senderismo
+Impresionante,B2,Adj,Increíble,Vista,Hermoso,Aire,Alucinante
+Las Vegas,A2,Proper,Nevada,Casino,Juego,Luces,Strip
+Transporte,B1,Noun,Bus,Tren,Coche,Mover,Manera
+Espacioso,B2,Adj,Grande,Cuarto,Enorme,Ancho,Espacio
+El Sahara,A2,Proper,Desierto,África,Arena,Calor,Seco
+Moneda,B1,Noun,Dinero,Cambio,Dólar,Euro,Pagar
+Arriesgar,B2,Verb,Ir,Riesgo,Intentar,Atreverse,Empezar
+Antiguo,B1,Adj,Viejo,Historia,Pasado,Romano,Griego
+Monte Fuji,A2,Proper,Japón,Volcán,Montaña,Nieve,Pico
+Embajada,B2,Noun,País,Gobierno,Visa,Oficial,Diplomacia
+Crucero,A2,Noun,Barco,Mar,Océano,Vacaciones,Navegar
+Tranquilo,B2,Adj,Calma,Silencio,Paz,Naturaleza,Relajarse
+Expedición,B2,Noun,Viaje,Investigar,Ciencia,Largo,Grupo
+Conmutar,B1,Verb,Trabajo,Viajar,Tren,Diario,Oficina
+Vibrante,B2,Adj,Color,Vida,Energía,Ciudad,Activo
+Ópera de Sídney,A2,Proper,Australia,Edificio,Música,Blanco,Puerto
+Visa,B1,Noun,Pasaporte,País,Entrada,Papel,Documento
+Cocina,A1,Noun,Cocinar,Cuarto,Casa,Fogones,Comida
+Receta,A2,Noun,Cocinar,Instrucciones,Libro,Ingredientes,Hacer
+Vegetariano,A2,Noun,Carne,Animal,Dieta,Comer,Planta
+Gordon Ramsay,B1,Proper,Chef,TV,Cocinar,Enfadado,Cocina
+Ingredientes,B1,Noun,Comida,Lista,Receta,Cosas,Componentes
+Marinar,B2,Verb,Salsa,Carne,Remojar,Sabor,Esperar
+McDonald's,A1,Proper,Hamburguesa,Fast food,Patatas,Payaso,Cadena
+Batir,B1,Verb,Huevos,Mezclar,Bol,Mover,Herramienta
+Nutritivo,B2,Adj,Sano,Comida,Bueno,Cuerpo,Vitamina
+Gastronomía,B1,Noun,Comida,Estilo,Cocinar,Francés,Italiano
+Hervir,B2,Verb,Agua,Calor,Lento,Cocinar,Burbujas
+Apetitoso,B2,Adj,Mirar,Comida,Hambre,Bueno,Comer
+Panadería,A1,Noun,Pan,Pastel,Tienda,Comprar,Bollería
+Sabor,A2,Noun,Gusto,Boca,Dulce,Picante,Bueno
+Guarnición,B2,Verb,Decorar,Plato,Comida,Arriba,Hierba
+Julia Child,B2,Proper,Chef,Francés,TV,Libro,Mujer
+Orgánico,B1,Adj,Natural,Granja,Sano,Químico,Verde
+Fermentar,B2,Verb,Levadura,Pan,Cerveza,Azúcar,Cambio
+Desayuno,A1,Noun,Mañana,Comer,Huevo,Cereales,Comida
+Kellogg's,A2,Proper,Cereales,Desayuno,Maíz,Leche,Marca
+Picante,A2,Adj,Calor,Pimienta,Chile,Quemar,Boca
+Preservar,B2,Verb,Guardar,Comida,Mermelada,Lata,Largo
+Postre,A1,Noun,Dulce,Después,Tarta,Azúcar,Comida
+Ben & Jerry's,A2,Proper,Helado,Frío,Dulce,Trozos,Marca
+Salado,B2,Adj,Sal,Sabor,Dulce,Gusto,Carne
+Utensilio,B1,Noun,Tenedor,Cuchara,Herramienta,Cocina,Comer
+Guía Michelin,B2,Proper,Estrella,Restaurante,Comida,Rojo,Crítica
+Auténtico,B2,Adj,Real,Original,Verdadero,Comida,Cocina
+Tabla de cortar,B1,Noun,Cortar,Cuchillo,Madera,Verduras,Cocina
+Masticar,B2,Verb,Comer,Snack,Ruido,Crujir,Morder
+Nespresso,A2,Proper,Café,Cápsula,Máquina,Beber,Clooney
+Refrigerio,B1,Noun,Bebida,Frío,Agua,Fiesta,Descanso
+Sazonar,B1,Noun,Sal,Pimienta,Especias,Sabor,Añadir
+Amargo,B1,Adj,Sabor,Dulce,Café,Lengua,Agrio
+Tabasco,B1,Proper,Picante,Salsa,Chile,Pimienta,Botella
+Aroma,B2,Noun,Olor,Nariz,Comida,Bueno,Fragancia
+Cenar,B1,Verb,Comer,Restaurante,Cena,Comida,Mesa
+Crujiente,A2,Adj,Sabor,Frito,Sonido,Patata,Seco
+Whole Foods,B1,Proper,Mercado,Orgánico,Tienda,Compra,Amazon
+Chisporrotear,B2,Verb,Sonido,Caliente,Sartén,Freír,Cocinar
+Bebida,B2,Noun,Beber,Líquido,Agua,Refresco,Alcohol
+Comestible,B2,Adj,Comer,Seguro,Comida,Poder,Boca
+Heinz,A2,Proper,Ketchup,Tomate,Salsa,Botella,Alubias
+Parrilla,A2,Verb,Carne,Fuego,Fuera,Barbacoa,Cocinar
+Ralladura,B2,Noun,Limón,Naranja,Piel,Sabor,Fruta
+Ascenso,B1,Noun,Trabajo,Alto,Nivel,Éxito,Puesto
+Salario,A2,Noun,Dinero,Mes,Pagar,Trabajo,Ingresos
+Entrevista,A2,Noun,Trabajo,Preguntas,Jefe,Hablar,Contratar
+Google,A1,Proper,Buscar,Empresa,Internet,Tech,Trabajo
+Renunciar,B2,Verb,Dejar,Irse,Trabajo,Aviso,Carta
+Plazo,B1,Noun,Tiempo,Terminar,Fecha,Límite,Trabajo
+Desempleado,B1,Adj,Trabajo,Paro,Dinero,Buscar,No
+Colaborar,B2,Verb,Juntos,Trabajar,Equipo,Grupo,Con
+LinkedIn,B1,Proper,Trabajo,Redes,Perfil,Carrera,Contactos
+Jubilación,B1,Noun,Viejo,Trabajo,Parar,Pensión,Edad
+Productivo,B2,Adj,Trabajo,Rápido,Resultado,Tiempo,Eficiente
+Candidato,B1,Noun,Trabajo,Persona,Entrevista,Aspirante,Elegir
+Wall Street,B2,Proper,Finanzas,Dinero,Nueva York,Bolsa,Banco
+Redundante,B2,Adj,Trabajo,Perder,Empresa,Corte,Sobra
+Gerente,A2,Noun,Jefe,Liderar,Equipo,Trabajo,Oficina
+Apple,A1,Proper,iPhone,Mac,Steve Jobs,Empresa,Tech
+Experiencia,B1,Noun,Trabajo,Tiempo,Pasado,Habilidades,Saber
+Negociar,B2,Verb,Precio,Dinero,Hablar,Acuerdo,Salario
+Ford,A2,Proper,Coche,Camión,Auto,Empresa,Henry
+Flexible,B1,Adj,Cambio,Tiempo,Fácil,Trabajo,Horas
+Aprendiz,B2,Noun,Aprender,Estudiante,Trabajo,Skill,Novato
+Empleador,B1,Noun,Jefe,Empresa,Trabajo,Contrata,Dueño
+Nike,A1,Proper,Deporte,Zapatillas,Logo,Ropa,Marca
+Autónomo,B2,Adj,Solo,Trabajo,Propio,Cliente,Independiente
+Estrategia,B2,Noun,Plan,Meta,Negocio,Futuro,Acción
+Horas extra,B1,Noun,Extra,Trabajo,Horas,Dinero,Pagar
+Consultor,B2,Noun,Consejo,Experto,Trabajo,Negocio,Ayudar
+Incentivo,B2,Noun,Bono,Premio,Trabajo,Dinero,Razón
+Cualificado,B1,Adj,Habilidades,Trabajo,Experto,Título,Capaz
+FedEx,A2,Proper,Correo,Paquete,Caja,Envío,Transporte
+Industria,B1,Noun,Negocio,Trabajo,Área,Campo,Producción
+Motivación,B1,Noun,Trabajo,Razón,Ganas,Meta,Intentar
+Permanente,B1,Adj,Siempre,Largo,Trabajo,Fijo,Contrato
+Taller,B2,Noun,Aprender,Clase,Grupo,Trabajo,Reunión
+Objetivo,B2,Noun,Meta,Blanco,Trabajo,Plan,Fin
+Liderazgo,B2,Noun,Líder,Jefe,Equipo,Guía,Habilidad
+Remoto,B1,Adj,Casa,Trabajo,Internet,Oficina,Fuera
+Seguro,B1,Noun,Dinero,Seguro,Pagar,Salud,Póliza
+Banco Mundial,B2,Proper,Dinero,País,Global,Finanzas,Organización
+Portafolio,B2,Noun,Trabajo,Ejemplos,Artista,Mostrar,Colección
+Multitarea,B2,Verb,Muchos,Mismo,Tiempo,Hacer,Trabajo
+Músculo,A2,Noun,Cuerpo,Fuerte,Gym,Brazo,Hueso
+Medicina,A1,Noun,Doctor,Farmacia,Pastilla,Enfermo,Droga
+Resistencia,B2,Noun,Energía,Largo,Correr,Aguante,Durar
+Cruz Roja,A2,Proper,Ayuda,Doctor,Hospital,Guerra,Símbolo
+Hidratado,B1,Adj,Agua,Beber,Sed,Líquido,Cuerpo
+Estirar,A2,Verb,Yoga,Músculo,Alcanzar,Cuerpo,Ejercicio
+Sedentario,B2,Adj,Sentar,Mover,Oficina,Activo,Estilo
+Tylenol,A2,Proper,Dolor,Cabeza,Pastilla,Medicina,Droga
+Nutrición,B1,Noun,Comida,Sano,Dieta,Cuerpo,Comer
+Recuperar,B1,Verb,Mejor,Enfermo,Salud,Curar,Lesión
+Flexibilidad,B2,Noun,Estirar,Yoga,Mover,Cuerpo,Doblar
+Peloton,B1,Proper,Bici,Ejercicio,Ciclo,Pantalla,Casa
+Síntomas,B1,Noun,Enfermo,Enfermedad,Signo,Doctor,Sentir
+Entrenamiento,A1,Noun,Gym,Ejercicio,Deporte,Entrenar,Forma
+Contagioso,B2,Adj,Enfermo,Extender,Coger,Virus,Otros
+Fitbit,A2,Proper,Reloj,Pasos,Seguir,Ejercicio,Corazón
+Metabolismo,B2,Noun,Cuerpo,Energía,Comida,Quemar,Peso
+Agotado,B1,Adj,Cansado,Dormir,Energía,Débil,Fatiga
+Vitaminas,A2,Noun,Pastillas,Salud,Cuerpo,C,Diario
+NHS,A2,Proper,Reino Unido,Hospital,Doctor,Gobierno,Salud
+Aeróbico,B1,Adj,Oxígeno,Corazón,Ejercicio,Cardio,Correr
+Terapia,B1,Noun,Ayuda,Doctor,Mente,Hablar,Mejor
+Crónico,B2,Adj,Largo,Dolor,Siempre,Tiempo,Enfermo
+Mayo Clinic,B2,Proper,Hospital,EE.UU.,Doctor,Investigar,Médico
+Equilibrado,B1,Adj,Dieta,Bueno,Salud,Medio,Comer
+Perspirar,B2,Verb,Sudar,Calor,Agua,Piel,Ejercicio
+Postura,B1,Noun,Espalda,Sentar,Recto,Cuerpo,Hombros
+SoulCycle,B1,Proper,Bici,Spin,Estudio,Música,Ejercicio
+Inmunidad,B2,Noun,Cuerpo,Enfermo,Proteger,Vacuna,Virus
+Higiénico,B2,Adj,Limpio,Lavar,Manos,Propre,Salud
+Caloría,A2,Noun,Comida,Energía,Peso,Quemar,Número
+Weight Watchers,B1,Proper,Dieta,Comer,Puntos,Perder,Comida
+Inhalar,B1,Verb,Respirar,Aire,Nariz,Pulmones,Dentro
+Activo,A1,Adj,Mover,Deporte,Gym,Ocupado,Ejercicio
+Resiliente,B2,Adj,Fuerte,Volver,Difícil,Mente,Duro
+Gatorade,A2,Proper,Bebida,Deporte,Agua,Azul,Sed
+Rutina,B1,Noun,Diario,Hábito,Siempre,Plan,Horario
+Adolorido,A2,Adj,Dolor,Músculo,Daño,Cuerpo,Gym
+Bienestar,B1,Noun,Salud,Mente,Cuerpo,Bueno,Vida
+CrossFit,B1,Proper,Gym,Duro,Ejercicio,Levantar,WOD
+Nutriente,B2,Noun,Comida,Cuerpo,Vitamina,Bueno,Sano
+Diagnosticar,B2,Verb,Doctor,Problema,Enfermo,Encontrar,Prueba
+Extenuante,B2,Adj,Duro,Difícil,Trabajo,Ejercicio,Energía
+Curita,A1,Proper,Corte,Piel,Daño,Sangre,Tira
+Alergia,A2,Noun,Enfermo,Polen,Comida,Reacción,Estornudar
+Receta médica,B1,Noun,Doctor,Medicina,Papel,Farmacia,Fármaco
+Deshidratado,B2,Adj,Agua,Seco,Beber,Sed,Líquido
+OMS,B1,Proper,ONU,Global,Salud,Enfermedades,Agencia
+Fatiga,B2,Noun,Cansado,Agotado,Dormir,Débil,Energía
+Saludable,B2,Adj,Sano,Bueno,Comida,Natural,Simple
+Director,A2,Noun,Película,Cine,Cámara,Jefe,Acción
+Audiencia,B1,Noun,Gente,Ver,Show,Público,Teatro
+Subtítulos,B1,Noun,Idioma,Pantalla,Abajo,Leer,Traducción
+Netflix,A1,Proper,Película,Serie,Stream,Ver,Online
+Transmitir,B2,Verb,Radio,TV,Show,Directo,Enviar
+Celebridad,A2,Noun,Famoso,Estrella,Conocido,Persona,Fama
+Spoiler,B1,Noun,Final,Trama,Decir,Secreto,Película
+Los Oscar,B1,Proper,Premios,Película,Actor,Estatuilla,Hollywood
+Periodismo,B2,Noun,Noticias,Reportero,Escribir,Medios,Periódico
+Documental,B1,Noun,Verdadero,Real,Cine,Historia,Educativo
+Viral,B2,Adj,Internet,Vídeo,Compartir,Rápido,Redes
+Disney,A1,Proper,Mickey,Dibujos,Película,Tierra,Magia
+Anuncio,A2,Noun,Publicidad,TV,Vender,Corte,Dinero
+Trama,B1,Noun,Historia,Libro,Película,Pasa,Guion
+Censura,B2,Noun,Prohibir,Control,Medios,Cortar,Libertad
+YouTube,A1,Proper,Vídeo,Ver,Canal,Internet,Google
+Reseña,A2,Noun,Opinión,Nota,Estrella,Comentario,Cine
+Streaming,B1,Noun,Online,Ver,Internet,Directo,Servicio
+La BBC,B1,Proper,Reino Unido,Noticias,Británico,Radio,Canal
+Guion,B1,Noun,Escribir,Diálogo,Actor,Obra,Cine
+Influencer,B1,Noun,Instagram,Redes,Seguidores,Online,Marketing
+TikTok,A1,Proper,Vídeo,App,Corto,Baile,China
+Protagonista,B2,Noun,Principal,Personaje,Héroe,Historia,Líder
+Estreno,B2,Noun,Primero,Ver,Noche,Apertura,Película
+Suscribirse,A2,Verb,Unirse,Canal,Seguir,Newsletter,Botón
+Ficticio,B1,Adj,Falso,Historia,Inventado,Libro,Imaginario
+Actuación,B1,Noun,Actuar,Show,Escenario,Cantar,Teatro
+Marvel,A2,Proper,Cómics,Superhéroe,Vengadores,Película,Stan Lee
+Cautivador,B2,Adj,Interesante,Diversión,Mantener,Atención,Bueno
+Podcast,A2,Noun,Audio,Escuchar,Episodios,Radio,Hablar
+Exclusivo,B2,Adj,Solo,Único,Noticias,Privado,Especial
+Warner Bros,B1,Proper,Estudio,Película,Batman,Looney Tunes,Logo
+Destacado,B1,Noun,Principal,Resaltar,Artículo,Incluir,Mostrar
+Fascinante,B2,Adj,Bonito,Mantener,Atención,Encantador,Mirar
+Spotify,A1,Proper,Música,Stream,Canción,Playlist,Artista
+Divertir,B2,Verb,Cambiar,Girar,Atención,Fuera,Entretenimiento
+Reparto,A2,Noun,Actores,Grupo,Película,Obra,Equipo
+Icónico,B2,Adj,Famoso,Símbolo,Clásico,Conocido,Signo
+MTV,A2,Proper,Música,TV,Canal,Vídeo,90s
+Diálogo,B1,Noun,Hablar,Palabras,Decir,Conversación,Guion
+Publicidad,B2,Noun,Medios,Atención,Noticias,Anuncio,Famoso
+Cinematográfico,B2,Adj,Película,Cine,Visual,Cámara,Aspecto
+Pixar,A2,Proper,Disney,Animación,Toy Story,Ordenador,Dibujos
+Género,B1,Noun,Tipo,Categoría,Estilo,Libro,Música
+Tabloide,B2,Noun,Periódico,Chisme,Famoso,Papel,Escándalo
+Estudiante,A1,Noun,Escuela,Aprender,Clase,Estudiar,Alumno
+Harvard,B1,Proper,Universidad,Ivy League,Boston,Colegio,Inteligente
+Investigación,B1,Noun,Ciencia,Estudiar,Encontrar,Información,Lab
+Memorizar,B2,Verb,Aprender,Cerebro,Recordar,Mente,Corazón
+Primaria,A2,Adj,Escuela,Joven,Niños,Básico,Colegio
+Oxford,B1,Proper,Universidad,Inglaterra,Viejo,Título,Colegio
+Certificado,B1,Noun,Papel,Oficial,Curso,Terminar,Grado
+Plagio,B2,Noun,Copiar,Trampa,Robar,Escribir,Original
+Aula,A1,Noun,Profesor,Pupitres,Escuela,Cuarto,Estudiantes
+Graduación,A2,Noun,Terminar,Diploma,Título,Birrete,Escuela
+Currículo,B2,Noun,Plan,Materias,Escuela,Aprender,Curso
+MIT,B2,Proper,Tech,Boston,Ciencia,Universidad,Ingeniería
+Conocimiento,B1,Noun,Saber,Cerebro,Información,Aprender,Sabiduría
+Tarea,B1,Noun,Deberes,Trabajo,Profesor,Casa,Escuela
+Fluido,B1,Adj,Idioma,Hablar,Bueno,Fácil,Conversar
+Duolingo,A1,Proper,Idioma,App,Aprender,Verde,Pájaro
+Conferencia,B1,Noun,Universidad,Profesor,Hablar,Clase,Escuchar
+Matrícula,B2,Noun,Dinero,Coste,Pagar,Universidad,Escuela
+Inquisitivo,B2,Adj,Preguntar,Preguntas,Curioso,Aprender,Saber
+Stanford,B2,Proper,California,Universidad,Tech,Colegio,Palo Alto
+Cuaderno,A1,Noun,Escribir,Papel,Boli,Escuela,Páginas
+Beca,B1,Noun,Dinero,Gratis,Estudiar,Universidad,Pagar
+Cambridge,B1,Proper,Universidad,Inglaterra,Viejo,Puente,Colegio
+Disciplina,B2,Noun,Regla,Orden,Conducta,Escuela,Seguir
+Académico,B2,Adj,Escuela,Estudiar,Universidad,Libros,Aprender
+Khan Academy,B1,Proper,Vídeo,Online,Aprender,Mates,Sal
+Asignatura,A1,Noun,Mates,Historia,Clase,Ciencia,Tema
+Evaluar,B2,Verb,Revisar,Probar,Juzgar,Nota,Resultado
+Alfabetismo,B2,Noun,Leer,Escribir,Educación,Libros,Aprender
+La Sorbona,B2,Proper,París,Universidad,Francia,Viejo,Educación
+Diccionario,A1,Noun,Palabras,Significado,Definición,Libro,Idioma
+Tutorial,B1,Noun,Ayuda,Guía,Aprender,Cómo,Vídeo
+Pedagogía,B2,Noun,Enseñar,Método,Educación,Maestro,Forma
+Barrio Sésamo,A2,Proper,TV,Niños,Elmo,Aprender,Marionetas
+Maestría,B2,Noun,Bueno,Experto,Habilidad,Perfecto,Aprender
+Enciclopedia,B1,Noun,Información,Libro,Datos,Wikipedia,Saber
+Princeton,B2,Proper,Universidad,Ivy League,Nueva Jersey,Viejo,Colegio
+Sustituto,B1,Noun,Profesor,Cambio,En lugar,Reemplazo,Persona
+British Council,B1,Proper,Inglés,Aprender,UK,Exámenes,Internacional
+Vocabulario,A2,Noun,Palabras,Idioma,Lista,Aprender,Hablar
+Exhaustivo,B2,Adj,Lleno,Todo,Completo,Detalle,Todo
+Innovación,B2,Noun,Nuevo,Idea,Cambio,Crear,Futuro
+Yale,B2,Proper,Universidad,Ivy League,Connecticut,Viejo,Azul
+Asistir,B1,Verb,Ir,Clase,Presente,Estar,Reunión
+Concentrarse,B1,Verb,Foco,Pensar,Mente,Estudiar,Atención
+Recibo,A2,Noun,Papel,Comprar,Prueba,Dinero,Tienda
+Descuento,A2,Noun,Rebajas,Barato,Precio,Off,Menos
+Walmart,A1,Proper,Tienda,Comprar,Supermercado,EE.UU.,Retail
+Asequible,B1,Adj,Barato,Precio,Dinero,Comprar,Coste
+Cliente,A1,Noun,Persona,Comprador,Tienda,Usuario,Servicio
+E-commerce,B2,Noun,Online,Internet,Tienda,Comprar,Negocio
+eBay,A2,Proper,Subasta,Puja,Online,Vender,Comprar
+Ganga,B1,Noun,Barato,Precio,Trato,Bueno,Comprar
+Reembolso,B1,Noun,Dinero,Vuelta,Devolver,Tienda,Recibo
+Inventario,B2,Noun,Stock,Tienda,Objetos,Lista,Bienes
+Al por mayor,B2,Adj,Granel,Grande,Precio,Barato,Negocio
+Garantía,B2,Noun,Asegurar,Arreglar,Roto,Tiempo,Contrato
+Alibaba,B2,Proper,China,Online,Jack Ma,Negocio,Global
+Transacción,B2,Noun,Pagar,Comprar,Dinero,Banco,Trato
+Exorbitante,B2,Adj,Precio,Caro,Alto,Demasiado,Coste
+Conveniencia,B1,Noun,Fácil,Rápido,Tienda,Servicio,Cerca
+IKEA,A1,Proper,Muebles,Suecia,Azul,Amarillo,Casa
+Consumidor,B1,Noun,Persona,Comprador,Gente,Mercado,Producto
+Rentable,B2,Adj,Dinero,Negocio,Ganancia,Éxito,Ganar
+Presupuesto,B1,Noun,Dinero,Plan,Límite,Coste,Gastar
+Carrito,A2,Noun,Trolley,Ruedas,Tienda,Comida,Supermercado
+Amazon Prime,B1,Proper,Envío,Rápido,Suscripción,Entrega,Vídeo
+Avalar,B2,Verb,Famoso,Apoyo,Anuncio,Marca,Firmar
+Lucrativo,B2,Adj,Dinero,Beneficio,Ganar,Negocio,Éxito
+Calidad,A2,Noun,Bueno,Malo,Estándar,Valor,Alta
+Vendedor,B2,Noun,Vender,Tienda,Mercado,Persona,Negocio
+Falsificado,B2,Adj,Falso,Mentira,Dinero,Copia,Ilegal
+Caja,A2,Noun,Pagar,Registro,Final,Tienda,Fila
+Costco,A2,Proper,Granel,Almacén,Membresía,Grande,Barato
+Deuda,B1,Noun,Dinero,Deber,Banco,Pagar,Pedir
+Venta al por menor,B1,Noun,Tienda,Comercio,Cliente,Vender,Negocio
+Mastercard,A1,Proper,Crédito,Tarjeta,Pagar,Banco,Dinero
+Suministro,B1,Noun,Stock,Dar,Demanda,Necesidad,Proveer
+Economía,B1,Noun,Dinero,País,Mercado,Finanzas,Negocio
+Premium,B2,Adj,Alto,Calidad,Precio,Extra,Mejor
+Comisión,B2,Noun,Dinero,Venta,Extra,Ganar,Porcentaje
+Ambiente,B1,Noun,Sentir,Humor,Tienda,Lugar,Vibe
+Lego,A1,Proper,Juguete,Bloques,Ladrillos,Construir,Dinamarca
+Externalizar,B2,Verb,Empresa,Trabajo,Fuera,País,Negocio
+Mercado,B1,Noun,Área,Vender,Tienda,Online,Amazon
+Democracia,B1,Noun,Votar,Gente,Libertad,Elecciones,Gobierno
+Presidente,A1,Noun,Líder,Jefe,EE.UU.,País,Casa Blanca
+Parlamento,B2,Noun,Leyes,Reino Unido,Gobierno,Voto,Miembros
+Naciones Unidas,B1,Proper,Global,Mundo,NY,Paz,Países
+Elección,A2,Noun,Voto,Elección,Candidato,Urna,Resultados
+Ciudadanía,B1,Noun,Pasaporte,País,Derecho,Nacional,Gente
+Corrupción,B2,Noun,Dinero,Malo,Ilegal,Política,Robar
+Legislación,B2,Noun,Leyes,Reglas,Gobierno,Parlamento,Acta
+Diplomacia,B2,Noun,Hablar,Países,Paz,Exterior,Discusión
+Igualdad,B1,Noun,Mismo,Derechos,Justo,Justicia,Nivel
+Unión Europea,B1,Proper,Europa,Bruselas,Países,Euro,Bruselas
+Campaña,B1,Noun,Elección,Voto,Candidato,Anuncio,Promover
+Justicia,B1,Noun,Ley,Corte,Justo,Juez,Derecho
+Oposición,B2,Noun,Contra,Partido,Gobierno,Otro,Lado
+Nelson Mandela,B1,Proper,Sudáfrica,Paz,Prisión,Apartheid,Líder
+Monarquía,B1,Noun,Rey,Reina,Real,Familia,Corona
+Constitución,B2,Noun,Leyes,Derechos,Papel,Reglas,Gobierno
+Libertad,A1,Noun,Derechos,Libre,Hablar,Elección,Cárcel
+OTAN,B2,Proper,Defensa,Alianza,Militar,Guerra,Occidental
+Autoridad,B2,Noun,Poder,Control,Jefe,Oficial,Gobierno
+Lobby,B2,Noun,Dinero,Influencia,Leyes,Grupo,Política
+Barack Obama,A2,Proper,Presidente,EE.UU.,Demócrata,Primero,Hawái
+Política,B1,Noun,Reglas,Gobierno,Plan,Ley,Decisión
+Reforma,B2,Noun,Cambio,Nuevo,Mejor,Ley,Mejorar
+Activista,B2,Noun,Cambio,Protesta,Causa,Derechos,Gente
+Downing Street,B1,Proper,UK,Primer Ministro,Londres,10,Gobierno
+Referéndum,B2,Noun,Votar,Gente,Sí,No,Decisión
+Sanciones,B2,Noun,Prohibir,Comercio,Castigar,País,Economía
+Cruz Roja,B1,Proper,Ayuda,Guerra,Sangre,Médico,Auxilio
+Territorio,B1,Noun,Tierra,Área,País,Frontera,Región
+Debate,B1,Verb,Hablar,Argumento,Discusión,Oposición,Discurso
+Soberano,B2,Adj,Poder,Rey,Independiente,País,Control
+Greenpeace,B1,Proper,Ambiente,Tierra,Protesta,Océano,Clima
+Protesta,B1,Noun,Manifestación,Calle,Gente,Enfadado,Cambio
+Alcalde,A2,Noun,Ciudad,Jefe,Ayuntamiento,Pueblo,Oficial
+Winston Churchill,B2,Proper,UK,Primer Ministro,II Guerra Mundial,Historia,Líder
+Embajador,B2,Noun,Exterior,País,Diplomacia,Oficial,Viajar
+Petición,B2,Noun,Firmar,Papel,Nombres,Cambio,Pedir
+Neutral,B1,Adj,Lado,Elegir,Ninguno,Suiza,Medio
+El Capitolio,B1,Proper,Washington,Edificio,Leyes,EE.UU.,Congreso
+Burocracia,B2,Noun,Papeleo,Reglas,Lento,Sistema,Gobierno
+Coalición,B2,Noun,Partidos,Juntos,Grupo,Gobierno,Alianza
+Propaganda,B2,Noun,Información,Falso,Convencer,Anuncios,Política
+Capitol Hill,B2,Proper,Washington,Política,Congreso,EE.UU.,Distrito
+Ideología,B2,Noun,Ideas,Creencia,Político,Pensamiento,Sistema
+Consenso,B2,Noun,Acuerdo,Juntos,Todos,Grupo,Opinión
+Paisaje,B1,Noun,Vista,Escenario,Naturaleza,Pintura,Horizonte
+Vida Silvestre,A2,Noun,Animales,Naturaleza,Bosque,Pájaros,Protección
+Sostenibilidad,B2,Noun,Verde,Futuro,Ambiente,Duradero,Tierra
+Ecosistema,B2,Noun,Naturaleza,Equilibrio,Vida,Biología,Ambiente
+Contaminación,A2,Noun,Sucio,Aire,Agua,Humo,Basura
+Conservación,B2,Noun,Proteger,Naturaleza,Salvar,Animal,Área
+El Amazonas,A1,Proper,Río,Selva,Brasil,Árboles,Lluvia
+Renovable,B1,Adj,Energía,Sol,Viento,Limpio,Nuevo
+Glaciar,B1,Noun,Hielo,Montaña,Frío,Congelado,Agua
+Gran Barrera Coral,B1,Proper,Coral,Australia,Océano,Mar,Peces
+Evaporar,B2,Verb,Agua,Seco,Calor,Vapor,Líquido
+Sequía,B1,Noun,Seco,Lluvia,Agua,No,Sed
+National Geographic,A2,Proper,Revista,Canal,Naturaleza,Animales,Foto
+Biodiversidad,B2,Noun,Especies,Vida,Naturaleza,Plantas,Animales
+Peligroso,B2,Adj,Peligro,Tóxico,Riesgo,Dañino,Malo
+Hábitat,B1,Noun,Hogar,Animal,Naturaleza,Lugar,Vivir
+Fértil,B2,Adj,Suelo,Tierra,Crecer,Plantas,Agricultura
+Horizonte,B1,Noun,Cielo,Tierra,Línea,Lejos,Ver
+WWF,B1,Proper,Panda,Animal,Proteger,Naturaleza,Fondo
+En peligro,B1,Adj,Animal,Extinto,Morir,Pocos,Seguro
+Deforestación,B2,Noun,Árboles,Cortar,Bosque,Madera,Ambiente
+Tsunami,B1,Noun,Ola,Océano,Gigante,Agua,Desastre
+Yellowstone,B1,Proper,Parque,EE.UU.,Oso,Naturaleza,Géiser
+Reciclar,A2,Verb,Cubo,Plástico,Papel,Basura,Otra vez
+Abundante,B2,Adj,Muchos,Lleno,Bastante,Rico,Mucho
+Precipitación,B2,Noun,Lluvia,Nieve,Agua,Cielo,Tiempo
+El Nilo,A2,Proper,Egipto,Río,África,Largo,Agua
+Volcán,A2,Noun,Lava,Montaña,Fuego,Calor,Erupción
+Cautiverio,B2,Noun,Zoo,Jaula,Salvaje,Libre,Mantener
+El Gran Cañón,A2,Proper,Arizona,EE.UU.,Profundo,Río,Rocas
+Hemisferio,B2,Noun,Globo,Norte,Sur,Tierra,Mitad
+Combustible Fósil,B1,Noun,Petróleo,Carbón,Gas,Energía,Viejo
+Charles Darwin,B2,Proper,Evolución,Ciencia,Pájaros,Barco,Origen
+Erosión,B2,Noun,Suelo,Agua,Viento,Piedra,Cambio
+Recurso,B1,Noun,Natural,Uso,Agua,Suministro,Petróleo
+Exuberante,B2,Adj,Verde,Plantas,Jardín,Rico,Bosque
+Patagonia,B1,Proper,Sudamérica,Montañas,Caminar,Marca,Glaciar
+Catástrofe,B2,Noun,Malo,Desastre,Evento,Final,Destruir
+Yermo,B2,Noun,Naturaleza,Sin gente,Salvaje,Bosque,Intacto
+Estancado,B2,Adj,Parar,Agua,Mover,Quieto,Sucio
+Solar,A2,Adj,Sol,Energía,Panel,Luz,Poder
+Ecuador,B1,Noun,Medio,Línea,Tierra,Calor,Mitad
+Fotografía,A2,Noun,Cámara,Imagen,Foto,Tomar,Lente
+Jardinería,A2,Noun,Flores,Plantas,Fuera,Crecer,Tierra
+Parque de Atracciones,A2,Noun,Atracciones,Montaña Rusa,Diversión,Disney,Entradas
+Nintendo,A1,Proper,Switch,Mario,Juegos,Vídeo,Japón
+Meditación,B1,Noun,Silencio,Mente,Relax,Respirar,Zen
+Alfarería,B2,Noun,Arcilla,Manos,Rueda,Bol,Cerámica
+Fascinante,B2,Adj,Interesante,Muy,Increíble,Genial,Mirar
+Tejer,B1,Noun,Lana,Agujas,Jersey,Hilo,Ropa
+Torneo,B1,Noun,Juego,Deporte,Ganar,Equipo,Jugar
+Adicto,B2,Adj,Parar,Siempre,Hábito,Malo,Enganchado
+PlayStation,A1,Proper,Sony,Juegos,Consola,Mando,Vídeo
+Buceo,B1,Noun,Océano,Agua,Bajo el agua,Oxígeno,Peces
+Coleccionar,A2,Verb,Sellos,Guardar,Grupo,Hobby,Encontrar
+Aventurero,B2,Adj,Valiente,Riesgo,Nuevo,Emocionante,Intentar
+Comic-Con,B1,Proper,Disfraz,Películas,Fans,San Diego,Libros
+Maratón,B1,Noun,Correr,Carrera,Largo,Millas,Terminar
+Recreación,B2,Noun,Diversión,Ocio,Tiempo libre,Jugar,Actividad
+Relajante,A2,Adj,Calma,Fácil,Silencio,Descanso,Chill
+Monopoly,A2,Proper,Juego de mesa,Dinero,Propiedad,Hotel,Dados
+Billar,B1,Noun,Pool,Mesa,Palo,Bolas,Verde
+Socializar,B1,Verb,Amigos,Gente,Hablar,Fiesta,Conocer
+Aficionado,B2,Noun,No profesional,Principiante,Hobby,Habilidad,Empezar
+Los Sims,A2,Proper,Juego,Casa,Virtual,Vida,EA
+Carpintería,B2,Noun,Construir,Herramientas,Árbol,Muebles,Carpintero
+Competir,B1,Verb,Ganar,Juego,Deporte,Contra,Rival
+Excitante,B2,Adj,Emocionante,Alto,Diversión,Subidón,Sentir
+YouTube Kids,A1,Proper,Vídeo,Niños,Ver,App,Seguro
+Origami,B1,Noun,Papel,Doblar,Japón,Pájaro,Arte
+Desconectar,B2,Verb,Relajarse,Descanso,Parar,Trabajo,Calma
+Solitario,B2,Adj,Solo,Uno,Único,Persona,Solo
+Scrabble,A2,Proper,Palabras,Juego de mesa,Letras,Fichas,Puntos
+Camping,A2,Noun,Tienda,Fuera,Dormir,Naturaleza,Bosque
+Involucrarse,B1,Verb,Hacer,Empezar,Actividad,Con,Unirse
+Espontáneo,B2,Adj,Rápido,Plan,No,Sorpresa,De repente
+Chess.com,B1,Proper,Jugar,Juego,Online,Tablero,Estrategia
+Karaoke,A2,Noun,Cantar,Música,Micrófono,Bar,Voz
+Participar,B1,Verb,Unirse,Hacer,Con,Equipo,Parte
+Terapéutico,B2,Adj,Mejor,Salud,Ayuda,Calma,Bueno
+Burning Man,B2,Proper,Festival,Desierto,Nevada,Arte,Fuego
+Escribir diario,B1,Noun,Escribir,Libro,Diario,Pensamientos,Diario
+Darse un gusto,B2,Verb,Ceder,Disfrutar,Diversión,Hacer,Capricho
+Atlético,B1,Adj,Deporte,Cuerpo,Forma,Fuerte,Activo
+Clue,A2,Proper,Juego de mesa,Asesinato,Misterio,Cartas,Cuarto
+Astronomía,B1,Noun,Estrellas,Cielo,Telescopio,Noche,Espacio
+Dominar,B2,Verb,Bueno,Habilidad,Aprender,Perfecto,Experto
+Tedioso,B2,Adj,Aburrido,Largo,Lento,Duro,Interés
+Pokémon,A1,Proper,Cartas,Juego,Pikachu,Atrapar,Nintendo
+Senderismo,A2,Noun,Caminar,Montaña,Naturaleza,Bosque,Botas
+Entretener,B1,Verb,Diversión,Reír,Show,Gente,Actuación
+Rascacielos,A2,Noun,Alto,Edificio,Ciudad,Elevado,Acero
+Empire State,A2,Proper,Nueva York,Alto,Rascacielos,Manhattan,Edificio
+Cimiento,B1,Noun,Fondo,Suelo,Bajo,Edificio,Empezar
+Renovar,B2,Verb,Arreglar,Viejo,Nuevo,Casa,Cambio
+Burj Khalifa,B1,Proper,Dubái,Más alto,Edificio,Torre,Mundo
+Apartamento,A1,Noun,Piso,Alquiler,Edificio,Vivir,Cuarto
+Plano,B2,Noun,Plan,Dibujo,Arquitectura,Diseño,Papel
+Metropolitano,B2,Adj,Ciudad,Grande,Área,Urbano,Centro
+El Louvre,A1,Proper,Museo,París,Pirámide,Arte,Francia
+Pasillo,B1,Noun,Hall,Caminar,Dentro,Largo,Paso
+Construir,B1,Verb,Hacer,Obrar,Obrero,Estructura,Sitio
+Antigüedad,B2,Adj,Viejo,Valioso,Muebles,Pasado,Estilo
+El Pentágono,A2,Proper,Washington,Cinco,Defensa,Militar,Edificio
+Escalera,A2,Noun,Escalones,Arriba,Abajo,Piso,Subir
+Claraboya,B2,Noun,Ventana,Techo,Sol,Luz,Cristal
+Residencial,B1,Adj,Casas,Vivir,Área,Barrio,Gente
+Coliseo,A2,Proper,Roma,Italia,Gladiadores,Arena,Historia
+Terraza,B1,Noun,Balcón,Fuera,Sentarse,Techo,Ático
+Demoler,B2,Verb,Destruir,Abajo,Tirar,Edificio,Máquina
+Industrial,B1,Adj,Fábrica,Trabajo,Negocio,Zona,Grande
+Buckingham,A2,Proper,Londres,Reina,Rey,Real,Inglaterra
+Sótano,A2,Noun,Bajo,Suelo,Piso,Bajo,Casa
+Fachada,B2,Noun,Frente,Fuera,Cara,Edificio,Aspecto
+Golden Gate,A2,Proper,San Francisco,Puente,Rojo,California,EE.UU.
