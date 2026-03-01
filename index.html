@@ -1650,6 +1650,15 @@
                 }
             }
 
+            async setLevel(level) {
+                if (!this.isHost || !this.roomRef) return;
+                try {
+                    await this.roomRef.child('gameState/level').set(level);
+                } catch (e) {
+                    console.error("Error setting level:", e);
+                }
+            }
+
             async startGame(level) {
                 if (!this.isHost || !this.roomRef) return;
 
@@ -1962,25 +1971,29 @@
             handleGameStateChange() {
                 if (!this.gameState) return;
 
-                // Update UI based on game state
+                // Sync common parameters for all screens
+                if (this.gameState.language && this.gameState.language !== this.game.activeLanguage) {
+                    this.game.setLanguage(this.gameState.language);
+                }
+                if (this.gameState.level && this.gameState.level !== this.game.selectedLevel) {
+                    this.game.selectedLevel = this.gameState.level;
+                }
+                if (this.gameState.timer !== undefined && this.gameState.timer !== this.game.timeLeft) {
+                    this.game.timeLeft = this.gameState.timer;
+                }
+
+                // Refresh UI state and button selections
+                this.game.updateStartUI();
+                this.game.updateStackDisplay();
+                this.game.updateLobbyVisuals();
+
+                // Update screen based on game state
                 if (this.gameState.status === 'playing') {
                     this.game.showScreen('game');
-                    // Sync level and update stack count
-                    if (this.gameState.level) {
-                        this.game.selectedLevel = this.gameState.level;
-                    }
-                    if (this.gameState.language && this.gameState.language !== this.game.activeLanguage) {
-                        this.game.setLanguage(this.gameState.language);
-                    }
-                    // Update stack display after ensuring language/level are set
-                    this.game.updateStackDisplay();
                     this.updateGameUI();
                 } else if (this.gameState.status === 'lobby') {
                     this.game.showScreen('lobby');
-                    // Sync language in lobby too
-                    if (this.gameState.language && this.gameState.language !== this.game.activeLanguage) {
-                        this.game.setLanguage(this.gameState.language);
-                    }
+                    this.updatePlayersList();
                 } else if (this.gameState.status === 'finished') {
                     // Game finished - show multiplayer end game screen
                     this.showMultiplayerEndGame();
@@ -3433,6 +3446,56 @@
                 }
             }
 
+            updateLobbyVisuals() {
+                const level = this.selectedLevel;
+                const seconds = this.timeLeft;
+
+                // 1. Update level buttons in lobby
+                document.querySelectorAll('#screen-lobby .level-btn').forEach(btn => {
+                    if (level && btn.textContent.includes(level)) {
+                        btn.classList.add('selected', 'border-primary');
+                        btn.classList.remove('border-slate-200');
+                    } else {
+                        btn.classList.remove('selected', 'border-primary');
+                        btn.classList.add('border-slate-200');
+                    }
+                });
+
+                // 2. Update timer buttons in lobby
+                const standardBtn = document.getElementById('lobby-timer-standard');
+                const beginnerBtn = document.getElementById('lobby-timer-beginner');
+                if (standardBtn && beginnerBtn) {
+                    if (seconds === 120) {
+                        beginnerBtn.classList.add('border-primary', 'bg-primary-light', 'text-primary');
+                        beginnerBtn.classList.remove('border-slate-100', 'bg-white', 'text-slate-400');
+                        standardBtn.classList.add('border-slate-100', 'bg-white', 'text-slate-400');
+                        standardBtn.classList.remove('border-primary', 'bg-primary-light', 'text-primary');
+                    } else {
+                        standardBtn.classList.add('border-primary', 'bg-primary-light', 'text-primary');
+                        standardBtn.classList.remove('border-slate-100', 'bg-white', 'text-slate-400');
+                        beginnerBtn.classList.add('border-slate-100', 'bg-white', 'text-slate-400');
+                        beginnerBtn.classList.remove('border-primary', 'bg-primary-light', 'text-primary');
+                    }
+                }
+
+                // 3. Update lobby start button (Host only)
+                const startBtn = document.getElementById('btn-start-game');
+                if (startBtn) {
+                    if (level) {
+                        startBtn.disabled = false;
+                        startBtn.className = "btn-3d w-full bg-green-500 text-white py-4 rounded-2xl text-xl font-black";
+                        const dict = I18N[this.uiLanguage] || I18N.en;
+                        const template = dict["btn-start-game-level"] || "Start (Level {level})";
+                        startBtn.textContent = template.replace('{level}', level);
+                    } else {
+                        startBtn.disabled = true;
+                        startBtn.className = "btn-3d w-full bg-slate-200 text-slate-400 py-4 rounded-2xl text-xl font-black";
+                        const dict = I18N[this.uiLanguage] || I18N.en;
+                        startBtn.textContent = dict["label-select-level-to-start"] || "Select Level to Start";
+                    }
+                }
+            }
+
             updateStackDisplay() {
                 const pool = this.getPool(this.selectedLevel);
                 const el = document.getElementById('stack-display');
@@ -3490,12 +3553,6 @@
                 this.activeLanguage = lang;
                 localStorage.setItem('taboo_lang', lang);
 
-                // Update UI Language ONLY IF it's the first time or if they match
-                // Actually, often it's better to keep them synced unless the user 
-                // specifically chose a different UI language.
-                // For simplicity and to match the prompt "Localization", 
-                // we'll keep UI lang decoupled and initialized via browser.
-
                 // Update Main Logo based on OS and Language
                 const logoEl = document.getElementById('main-logo-emoji');
                 if (logoEl) {
@@ -3503,16 +3560,28 @@
                     logoEl.textContent = isWindows ? config.winEmoji : config.emoji;
                 }
 
-                // Update UI selection
+                // Update UI selection for local/lobby
                 Object.keys(LANGUAGES).forEach(l => {
-                    const btn = document.getElementById(`lang-${l}`);
-                    if (btn) {
+                    // Start screen buttons
+                    const startBtn = document.getElementById(`lang-${l}`);
+                    if (startBtn) {
                         if (l === lang) {
-                            btn.classList.add('border-primary', 'bg-primary-light', 'selected');
-                            btn.classList.remove('border-slate-100', 'bg-white');
+                            startBtn.classList.add('border-primary', 'bg-primary-light', 'selected');
+                            startBtn.classList.remove('border-slate-100', 'bg-white');
                         } else {
-                            btn.classList.remove('border-primary', 'bg-primary-light', 'selected');
-                            btn.classList.add('border-slate-100', 'bg-white');
+                            startBtn.classList.remove('border-primary', 'bg-primary-light', 'selected');
+                            startBtn.classList.add('border-slate-100', 'bg-white');
+                        }
+                    }
+                    // Lobby buttons
+                    const lobbyBtn = document.getElementById(`lobby-lang-${l}`);
+                    if (lobbyBtn) {
+                        if (l === lang) {
+                            lobbyBtn.classList.add('border-primary', 'bg-primary-light', 'selected');
+                            lobbyBtn.classList.remove('border-slate-200', 'bg-white');
+                        } else {
+                            lobbyBtn.classList.remove('border-primary', 'bg-primary-light', 'selected');
+                            lobbyBtn.classList.add('border-slate-200', 'bg-white');
                         }
                     }
                 });
@@ -3523,11 +3592,8 @@
                     btn.classList.remove('opacity-50', 'cursor-not-allowed');
                 });
 
-                // Reset level selection if language changes (to force re-selection or at least re-validation)
-                // Actually, let's keep the level if it was already selected, but update the start UI
                 this.updateStartUI();
-
-                // If in multiplayer lobby, we should ideally sync this, but for now just local
+                this.updateLobbyVisuals();
             }
 
             setLevel(lvl, btn) {
@@ -3900,16 +3966,11 @@
 
             setMultiplayerLevel(level, btn) {
                 this.selectedLevel = level;
-                document.querySelectorAll('#screen-lobby .level-btn').forEach(b => b.classList.remove('selected'));
-                btn.classList.add('selected');
-                const startBtn = document.getElementById('btn-start-game');
-                if (startBtn) {
-                    startBtn.disabled = false;
-                    startBtn.className = "btn-3d w-full bg-green-500 text-white py-4 rounded-2xl text-xl font-black";
-                    const dict = I18N[this.uiLanguage] || I18N.en;
-                    const template = dict["btn-start-game-level"] || "Start (Level {level})";
-                    startBtn.textContent = template.replace('{level}', level);
+                if (this.multiplayer.isHost) {
+                    this.multiplayer.setLevel(level);
                 }
+                // Visual feedback
+                this.updateLobbyVisuals();
             }
 
             setMultiplayerLanguage(lang, btn) {
@@ -3934,7 +3995,9 @@
 
             setMultiplayerTimer(seconds, btn) {
                 if (this.multiplayer.isHost) {
+                    this.timeLeft = seconds;
                     this.multiplayer.setTimer(seconds);
+                    this.updateLobbyVisuals();
                 }
             }
 
