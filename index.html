@@ -1676,9 +1676,13 @@
                 // Determine first player
                 const firstPlayer = turnOrder[0];
 
+                // Clear previously played cards for this session
+                await this.roomRef.child('sessionPlayedIds').remove();
+
                 await this.roomRef.child('gameState').set({
                     status: 'playing',
                     level: level,
+                    language: this.game.activeLanguage, // Sync host's deck language
                     currentPlayer: firstPlayer,
                     currentCard: null,
                     timer: this.game.timeLeft, // Use currently selected timer duration
@@ -3910,6 +3914,7 @@
 
             setMultiplayerLanguage(lang, btn) {
                 if (this.multiplayer.isHost) {
+                    this.setLanguage(lang);
                     this.multiplayer.setLanguage(lang);
                 }
             }
