@@ -380,7 +380,7 @@
             class="bg-white/80 backdrop-blur-md px-4 py-2 rounded-2xl shadow-lg border border-slate-200 pointer-events-auto flex items-center gap-4 max-w-full overflow-x-auto no-scrollbar">
 
             <!-- Leave Button -->
-            <button id="leave-game-btn" onclick="game.showLeaveGameModal()"
+            <button id="leave-game-btn" onclick="game.showLeaveGameModal()" data-i18n="btn-leave"
                 class="hidden bg-slate-100 hover:bg-slate-200 text-slate-600 px-3 py-1.5 rounded-xl text-[10px] font-black uppercase transition-colors">
                 Leave
             </button>
@@ -389,14 +389,16 @@
 
             <!-- Score -->
             <div class="flex flex-col items-center min-w-[40px]">
-                <span class="text-[8px] uppercase font-black text-slate-400 leading-none mb-1">Score</span>
+                <span data-i18n="label-score"
+                    class="text-[8px] uppercase font-black text-slate-400 leading-none mb-1">Score</span>
                 <div id="score-display" class="text-lg font-black text-primary leading-none">0</div>
             </div>
 
             <!-- Timer -->
             <div id="timer-box"
                 class="flex flex-col items-center bg-slate-50 px-3 py-1 rounded-xl border border-slate-100 min-w-[50px]">
-                <span class="text-[8px] uppercase font-black text-slate-400 leading-none mb-1">Time</span>
+                <span data-i18n="label-time"
+                    class="text-[8px] uppercase font-black text-slate-400 leading-none mb-1">Time</span>
                 <div id="timer-display" class="text-xl font-black text-slate-700 leading-none">60</div>
             </div>
 
@@ -598,13 +600,17 @@
                             Interface Language</div>
                         <div class="flex justify-center gap-4">
                             <button onclick="game.setUILanguage('fr')" data-lang="fr"
-                                class="ui-toggle-btn px-3 py-1 text-xs font-black rounded-lg bg-slate-50 opacity-40 hover:opacity-100 hover:bg-white hover:shadow-sm transition-all">FR</button>
+                                class="ui-toggle-btn px-3 py-1 text-xs font-black rounded-lg bg-slate-50 opacity-40 hover:opacity-100 hover:bg-white hover:shadow-sm transition-all"><span
+                                    class="emoji-fr">🇫🇷</span></button>
                             <button onclick="game.setUILanguage('en')" data-lang="en"
-                                class="ui-toggle-btn px-3 py-1 text-xs font-black rounded-lg bg-slate-50 opacity-40 hover:opacity-100 hover:bg-white hover:shadow-sm transition-all">EN</button>
+                                class="ui-toggle-btn px-3 py-1 text-xs font-black rounded-lg bg-slate-50 opacity-40 hover:opacity-100 hover:bg-white hover:shadow-sm transition-all"><span
+                                    class="emoji-en">🇬🇧</span></button>
                             <button onclick="game.setUILanguage('de')" data-lang="de"
-                                class="ui-toggle-btn px-3 py-1 text-xs font-black rounded-lg bg-slate-50 opacity-40 hover:opacity-100 hover:bg-white hover:shadow-sm transition-all">DE</button>
+                                class="ui-toggle-btn px-3 py-1 text-xs font-black rounded-lg bg-slate-50 opacity-40 hover:opacity-100 hover:bg-white hover:shadow-sm transition-all"><span
+                                    class="emoji-de">🇩🇪</span></button>
                             <button onclick="game.setUILanguage('es')" data-lang="es"
-                                class="ui-toggle-btn px-3 py-1 text-xs font-black rounded-lg bg-slate-50 opacity-40 hover:opacity-100 hover:bg-white hover:shadow-sm transition-all">ES</button>
+                                class="ui-toggle-btn px-3 py-1 text-xs font-black rounded-lg bg-slate-50 opacity-40 hover:opacity-100 hover:bg-white hover:shadow-sm transition-all"><span
+                                    class="emoji-es">🇪🇸</span></button>
                         </div>
                     </div>
                 </div>
@@ -728,12 +734,13 @@
                 <label data-i18n="label-room-code" class="block text-left text-sm font-bold text-slate-600 mb-2">Room
                     Code</label>
                 <input id="input-room-code" type="text" maxlength="4" placeholder="AB12"
-                    oninput="this.value = this.value.toUpperCase()"
+                    oninput="this.value = this.value.toUpperCase()" data-i18n="placeholder-room-code"
                     class="w-full px-4 py-3 rounded-xl border-2 border-slate-200 text-center text-2xl font-black room-code-display uppercase mb-4"
                     style="letter-spacing: 0.2em;">
                 <label data-i18n="label-your-name" class="block text-left text-sm font-bold text-slate-600 mb-2">Your
                     Name</label>
                 <input id="input-player-name" type="text" maxlength="20" placeholder="Enter your name"
+                    data-i18n="placeholder-enter-name"
                     class="w-full px-4 py-3 rounded-xl border-2 border-slate-200 text-center text-lg font-bold mb-4">
                 <button onclick="game.joinRoom()" data-i18n="btn-join"
                     class="btn-3d w-full bg-slate-800 text-white py-3 rounded-xl font-black">
@@ -767,15 +774,16 @@
                     <div id="lobby-players-list" class="space-y-2 text-left"></div>
                 </div>
                 <div id="lobby-host-controls" class="hidden">
-                    <label class="block text-left text-sm font-bold text-slate-600 mb-2">Language</label>
+                    <label data-i18n="label-language"
+                        class="block text-left text-sm font-bold text-slate-600 mb-2">Language</label>
                     <div class="grid grid-cols-2 gap-2 mb-4">
                         <button id="lobby-lang-fr" onclick="game.setMultiplayerLanguage('fr', this)"
-                            class="py-3 rounded-xl border-2 border-slate-200 bg-white text-slate-600 font-bold text-sm transition-all flex items-center justify-center gap-2">
-                            <span class="emoji-fr">🇫🇷</span> Français
+                            class="lang-btn bg-white p-3 rounded-xl shadow-sm flex items-center justify-center gap-2 border-2 border-slate-100">
+                            <span class="emoji-fr">🇫🇷</span> <span class="text-xs font-bold uppercase">Français</span>
                         </button>
                         <button id="lobby-lang-en" onclick="game.setMultiplayerLanguage('en', this)"
-                            class="py-3 rounded-xl border-2 border-slate-200 bg-white text-slate-600 font-bold text-sm transition-all flex items-center justify-center gap-2">
-                            <span class="emoji-en">🇬🇧</span> English
+                            class="lang-btn bg-white p-3 rounded-xl shadow-sm flex items-center justify-center gap-2 border-2 border-primary bg-primary-light">
+                            <span class="emoji-en">🇬🇧</span> <span class="text-xs font-bold uppercase">English</span>
                         </button>
                         <button id="lobby-lang-de" onclick="game.setMultiplayerLanguage('de', this)"
                             class="py-3 rounded-xl border-2 border-slate-200 bg-white text-slate-600 font-bold text-sm transition-all flex items-center justify-center gap-2">
@@ -787,37 +795,45 @@
                         </button>
                     </div>
 
-                    <label class="block text-left text-sm font-bold text-slate-600 mb-2">Select Level</label>
+                    <label data-i18n="label-select-level"
+                        class="block text-left text-sm font-bold text-slate-600 mb-2">Select Level</label>
                     <div class="grid grid-cols-2 gap-2 mb-4">
                         <button onclick="game.setMultiplayerLevel('A1', this)"
                             class="level-btn bg-white p-3 rounded-xl shadow-sm text-left border-2 border-slate-200">
                             <div class="font-black text-primary text-lg">A1</div>
-                            <div class="text-[10px] text-slate-400 uppercase font-bold">Beginner</div>
+                            <div data-i18n="label-beginner" class="text-[10px] text-slate-400 uppercase font-bold">
+                                Beginner</div>
                         </button>
                         <button onclick="game.setMultiplayerLevel('A2', this)"
                             class="level-btn bg-white p-3 rounded-xl shadow-sm text-left border-2 border-slate-200">
                             <div class="font-black text-primary text-lg">A2</div>
-                            <div class="text-[10px] text-slate-400 uppercase font-bold">Elementary</div>
+                            <div data-i18n="label-elementary" class="text-[10px] text-slate-400 uppercase font-bold">
+                                Elementary</div>
                         </button>
                         <button onclick="game.setMultiplayerLevel('B1', this)"
                             class="level-btn bg-white p-3 rounded-xl shadow-sm text-left border-2 border-slate-200">
                             <div class="font-black text-primary text-lg">B1</div>
-                            <div class="text-[10px] text-slate-400 uppercase font-bold">Intermediate</div>
+                            <div data-i18n="label-intermediate" class="text-[10px] text-slate-400 uppercase font-bold">
+                                Intermediate</div>
                         </button>
                         <button onclick="game.setMultiplayerLevel('B2', this)"
                             class="level-btn bg-white p-3 rounded-xl shadow-sm text-left border-2 border-slate-200">
                             <div class="font-black text-primary text-lg">B2</div>
-                            <div class="text-[10px] text-slate-400 uppercase font-bold">Upper Inter.</div>
+                            <div data-i18n="label-upper-inter" class="text-[10px] text-slate-400 uppercase font-bold">
+                                Upper Inter.</div>
                         </button>
                     </div>
 
-                    <label class="block text-left text-sm font-bold text-slate-600 mb-2">Timer Duration</label>
+                    <label data-i18n="label-timer-duration"
+                        class="block text-left text-sm font-bold text-slate-600 mb-2">Timer Duration</label>
                     <div class="flex gap-2 mb-4">
                         <button id="lobby-timer-standard" onclick="game.setMultiplayerTimer(60, this)"
+                            data-i18n="btn-timer-standard"
                             class="flex-1 py-3 rounded-xl border-2 border-primary bg-primary-light text-primary font-bold text-sm transition-all">
                             Standard (60s)
                         </button>
                         <button id="lobby-timer-beginner" onclick="game.setMultiplayerTimer(120, this)"
+                            data-i18n="btn-timer-beginner"
                             class="flex-1 py-3 rounded-xl border-2 border-slate-100 bg-white text-slate-400 font-bold text-sm transition-all">
                             Beginner (2m)
                         </button>
@@ -2194,8 +2210,10 @@
 
                 // Show/hide Leave Game button
                 const leaveBtn = document.getElementById('leave-game-btn');
+                const leaveSeparator = document.getElementById('leave-separator');
                 if (leaveBtn) {
                     leaveBtn.classList.remove('hidden');
+                    if (leaveSeparator) leaveSeparator.classList.remove('hidden');
                 }
 
                 // Update HUD score with player's total score
@@ -2442,18 +2460,18 @@
                     if (cardB) cardB.classList.remove('team-winner-glow-b');
 
                     if (scoreA > scoreB) {
-                        winnerText = "Team A Wins!";
-                        winnerSubtext = `Team Scored ${scoreA} Points!`;
+                        winnerText = (dict["team-indicator-a"] || "Team A") + " " + (dict["label-wins"] || "Wins!");
+                        winnerSubtext = (dict["label-team-scored"] || "Team Scored") + ` ${scoreA} ` + (dict["label-points"] || "Points!");
                         if (cardA) cardA.classList.add('team-winner-glow');
                         winners = teamA;
                     } else if (scoreB > scoreA) {
-                        winnerText = "Team B Wins!";
-                        winnerSubtext = `Team Scored ${scoreB} Points!`;
+                        winnerText = (dict["team-indicator-b"] || "Team B") + " " + (dict["label-wins"] || "Wins!");
+                        winnerSubtext = (dict["label-team-scored"] || "Team Scored") + ` ${scoreB} ` + (dict["label-points"] || "Points!");
                         if (cardB) cardB.classList.add('team-winner-glow-b');
                         winners = teamB;
                     } else {
-                        winnerText = "It's a Team Draw!";
-                        winnerSubtext = `Both teams scored ${scoreA} points!`;
+                        winnerText = dict["label-team-draw"] || "It's a Team Draw!";
+                        winnerSubtext = (dict["label-both-teams-scored"] || "Both teams scored") + ` ${scoreA} ` + (dict["label-points"] || "points!");
                         winners = playerArray;
                     }
                 } else {
@@ -2463,11 +2481,11 @@
                     const winnerNames = winners.map(w => w.name).join(' & ');
 
                     if (winners.length > 1) {
-                        winnerText = "Draw!";
-                        winnerSubtext = `${winnerNames} both scored ${highestScore} points!`;
+                        winnerText = dict["label-draw"] || "Draw!";
+                        winnerSubtext = `${winnerNames} ` + (dict["label-scored-points"]?.replace('{pts}', highestScore) || `both scored ${highestScore} points!`);
                     } else {
-                        winnerText = `${winners[0]?.name} Wins!`;
-                        winnerSubtext = `A stunning performance with ${highestScore} points!`;
+                        winnerText = `${winners[0]?.name} ` + (dict["label-wins"] || "Wins!");
+                        winnerSubtext = dict["label-stunning-performance"]?.replace('{pts}', highestScore) || `A stunning performance with ${highestScore} points!`;
                     }
 
                     const teamContainer = document.getElementById('team-scores-container');
@@ -2518,7 +2536,7 @@
                         div.innerHTML = `
                             <div class="flex items-center">
                                 <span class="text-xs font-black text-slate-400 mr-3">${index + 1}</span>
-                                <span class="font-bold text-slate-800">${player.name}${player.id === this.playerId ? ' (You)' : ''}</span>
+                                <span class="font-bold text-slate-800">${player.name}${player.id === this.playerId ? ' ' + (dict["label-you"] || '(You)') : ''}</span>
                                 ${teamIndicator}
                             </div>
                             <span class="font-black text-slate-800">${player.score || 0}</span>
@@ -2532,7 +2550,7 @@
                 if (myWordsListEl) {
                     myWordsListEl.innerHTML = '';
                     if (this.game.wordLog.length === 0) {
-                        myWordsListEl.innerHTML = '<p class="text-xs text-slate-400 italic">You didn\'t describe any words this game.</p>';
+                        myWordsListEl.innerHTML = `<p class="text-xs text-slate-400 italic">${dict["msg-no-words-described"] || "You didn't describe any words this game."}</p>`;
                     } else {
                         this.game.wordLog.forEach(item => {
                             const div = document.createElement('div');
@@ -2546,15 +2564,15 @@
                             };
                             const statusLabels = {
                                 correct: '✓',
-                                skipped: 'Skip',
-                                timeout: 'Time',
-                                buzzed: 'Buzzed'
+                                skipped: dict["label-skip-short"] || 'Skip',
+                                timeout: dict["label-time-short"] || 'Time',
+                                buzzed: dict["label-buzzed-short"] || 'Buzzed'
                             };
                             div.innerHTML = `
-                                <div class="flex flex-col">
-                                    <a href="${url}" target="_blank" class="word-link font-bold text-slate-700">
-                                        ${item.word} <span class="text-[8px] opacity-30">↗</span>
-                                    </a>
+                                    <div class="flex flex-col">
+                                        <a href="${url}" target="_blank" class="word-link font-bold text-slate-700">
+                                            ${item.word} <span class="text-[8px] opacity-30">↗</span>
+                                        </a>
                                     <span class="text-[9px] text-slate-400 uppercase font-bold">${item.level}</span>
                                 </div>
                                 <span class="text-[9px] font-black uppercase px-2 py-1 rounded-md ${statusColors[item.status]}">${statusLabels[item.status]}</span>
@@ -2836,7 +2854,38 @@
                 "label-role-describer": "Vue du Décriveur",
                 "label-role-guesser": "Vue du Devineur",
                 "label-role-buzzer": "Service Buzzer",
-                "label-unknown": "Inconnu"
+                "label-unknown": "Inconnu",
+                "btn-leave": "Quitter",
+                "label-score": "Score",
+                "label-time": "Temps",
+                "label-stack": "Pile",
+                "label-language": "Langue",
+                "label-timer-duration": "Durée du minuteur",
+                "label-select-level": "Sélectionner le niveau",
+                "msg-last-on-team": "Partir laissera votre équipe avec trop peu de joueurs. La partie se terminera pour tout le monde.",
+                "msg-end-2-player": "Quitter un match à 2 joueurs mettra fin à la partie pour tout le monde.",
+                "btn-leave-individual": "Quitter la partie",
+                "btn-end-for-all": "Terminer pour tous les joueurs",
+                "label-draw": "Égalité !",
+                "label-scored-points": "ont marqué {pts} points !",
+                "label-wins": "Gagne !",
+                "label-team-scored": "L'équipe a marqué",
+                "label-points": "points !",
+                "label-team-draw": "Égalité entre les équipes !",
+                "label-both-teams-scored": "Les deux équipes ont marqué",
+                "label-stunning-performance": "Une performance impressionnante avec {pts} points !",
+                "label-you": "(Vous)",
+                "msg-no-words-described": "Vous n'avez décrit aucun mot pendant cette partie.",
+                "label-skip-short": "Passé",
+                "label-time-short": "Temps",
+                "label-buzzed-short": "Buzzé",
+                "msg-confirm-end-all": "Cela mettra fin à la partie pour tous les joueurs. Êtes-vous sûr ?",
+                "msg-confirm-leave": "Vous allez quitter la partie. Êtes-vous sûr ?",
+                "placeholder-room-code": "AB12",
+                "placeholder-enter-name": "Entrez votre nom",
+                "sub-enter-code": "Entrez le code à 4 chiffres pour rejoindre",
+                "label-room-code": "Code de la salle",
+                "label-your-name": "Votre nom"
             },
             en: {
                 "step-connection": "1. Connection Mode",
@@ -2946,7 +2995,19 @@
                 "label-role-describer": "Describer View",
                 "label-role-guesser": "Guesser View",
                 "label-role-buzzer": "Buzzer Duty",
-                "label-unknown": "Unknown"
+                "label-unknown": "Unknown",
+                "btn-leave": "Leave",
+                "label-score": "Score",
+                "label-time": "Time",
+                "label-stack": "Stack",
+                "label-language": "Language",
+                "label-timer-duration": "Timer Duration",
+                "label-select-level": "Select Level",
+                "placeholder-room-code": "ABCD",
+                "placeholder-enter-name": "Enter your name",
+                "sub-enter-code": "Enter the 4-digit code to join",
+                "label-room-code": "Room Code",
+                "label-your-name": "Your Name"
             },
             de: {
                 "step-connection": "1. Verbindungsmodus",
@@ -3052,7 +3113,19 @@
                 "label-role-describer": "Sicht des Beschreibers",
                 "label-role-guesser": "Sicht des Raters",
                 "label-role-buzzer": "Buzzer-Dienst",
-                "label-unknown": "Unbekannt"
+                "label-unknown": "Unbekannt",
+                "btn-leave": "Verlassen",
+                "label-score": "Punktzahl",
+                "label-time": "Zeit",
+                "label-stack": "Stapel",
+                "label-language": "Sprache",
+                "label-timer-duration": "Timer-Dauer",
+                "label-select-level": "Level auswählen",
+                "placeholder-room-code": "ABCD",
+                "placeholder-enter-name": "Dein Name",
+                "sub-enter-code": "Gib den 4-stelligen Code ein",
+                "label-room-code": "Raum-Code",
+                "label-your-name": "Dein Name"
             },
             es: {
                 "step-connection": "1. Modo de conexión",
@@ -3159,7 +3232,19 @@
                 "label-role-describer": "Vista del descriptor",
                 "label-role-guesser": "Vista del adivinador",
                 "label-role-buzzer": "Servicio de zumbador",
-                "label-unknown": "Desconocido"
+                "label-unknown": "Desconocido",
+                "btn-leave": "Salir",
+                "label-score": "Puntuación",
+                "label-time": "Tiempo",
+                "label-stack": "Pila",
+                "label-language": "Idioma",
+                "label-timer-duration": "Duración del temporizador",
+                "label-select-level": "Seleccionar nivel",
+                "placeholder-room-code": "ABCD",
+                "placeholder-enter-name": "Tu nombre",
+                "sub-enter-code": "Introduce el código de 4 dígitos",
+                "label-room-code": "Código de la sala",
+                "label-your-name": "Tu nombre"
             }
         };
 
@@ -4198,9 +4283,12 @@
                 if (!this.multiplayerMode) return;
 
                 const dict = I18N[this.uiLanguage] || I18N.en;
+                const modal = document.getElementById('modal-leave-game');
                 const leaveBtn = document.getElementById('btn-leave-individual');
                 const endForAllBtn = document.getElementById('end-for-all-btn');
                 const leaveWarn = document.getElementById('leave-game-warning');
+
+                if (!modal) return;
 
                 const currentPlayers = Object.keys(this.multiplayer.players || {});
                 const playerCount = currentPlayers.length;
@@ -4213,7 +4301,7 @@
                 let isLastOnTeam = false;
                 if (isTeamMode && myTeam) {
                     const myTeamMembers = currentPlayers.filter(id => this.multiplayer.players[id].team === myTeam);
-                    if (myTeamMembers.length <= 2) {
+                    if (myTeamMembers.length <= 1) { // Fixed: <=1 means I'm the only one left
                         isLastOnTeam = true;
                     }
                 }
@@ -4222,49 +4310,37 @@
                 const mustEndForAll = (playerCount <= 2) || (isTeamMode && isLastOnTeam);
 
                 if (mustEndForAll) {
-                    // Just warn them, but allow leaving. The validateRoomState logic will handle the forced finish.
                     if (leaveBtn) {
                         leaveBtn.classList.remove('hidden');
                         leaveBtn.textContent = dict["btn-leave-individual"] || 'Leave & End Game';
                         leaveBtn.className = "w-full bg-orange-500 text-white py-3 rounded-xl font-bold";
-                        // Use a specific action that triggers END GAME then LEAVE
                         leaveBtn.setAttribute('onclick', "game.confirmLeaveAction('leaveAndEnd')");
                     }
                     if (leaveWarn) {
                         leaveWarn.classList.remove('hidden');
                         leaveWarn.textContent = isLastOnTeam ?
-                            "Leaving will leave your team with too few players. The game will end for everyone." :
-                            "Leaving a 2-player match will end the game for everyone.";
+                            (dict["msg-last-on-team"] || "Leaving will leave your team with too few players. The game will end for everyone.") :
+                            (dict["msg-end-2-player"] || "Leaving a 2-player match will end the game for everyone.");
                     }
-                    // Hide separate "End for All" button to avoid confusion, since leaving does the same thing effectively
                     if (endForAllBtn) endForAllBtn.classList.add('hidden');
                 } else {
                     if (leaveBtn) {
                         leaveBtn.classList.remove('hidden');
-                        leaveBtn.textContent = 'Leave Game';
+                        leaveBtn.textContent = dict["btn-leave-individual"] || 'Leave Game';
                         leaveBtn.className = "w-full bg-orange-500 text-white py-3 rounded-xl font-bold";
                         leaveBtn.setAttribute('onclick', "game.confirmLeaveAction('leave')");
                     }
                     if (leaveWarn) leaveWarn.classList.add('hidden');
 
-                    // Show "End for All" only for host as an extra option
-                    if (endForAllBtn) {
-                        leaveBtn.className = "w-full bg-orange-500 text-white py-3 rounded-xl font-bold";
-                    }
-                    if (leaveWarn) leaveWarn.classList.add('hidden');
-
-                    // Show "End for All" only for host as an extra option
-                    if (endForAllBtn) {
-                        if (this.multiplayer.isHost) {
-                            endForAllBtn.classList.remove('hidden');
-                            endForAllBtn.textContent = 'End for All Players';
-                        } else {
-                            endForAllBtn.classList.add('hidden');
-                        }
+                    if (this.multiplayer.isHost && endForAllBtn) {
+                        endForAllBtn.classList.remove('hidden');
+                        endForAllBtn.textContent = dict["btn-end-for-all"] || 'End for All Players';
+                    } else if (endForAllBtn) {
+                        endForAllBtn.classList.add('hidden');
                     }
                 }
 
-                if (modal) modal.classList.remove('hidden');
+                modal.classList.remove('hidden');
             }
 
             async executeFinishGame() {
@@ -4297,10 +4373,12 @@
                 const confirmModal = document.getElementById('modal-confirm-leave');
                 const confirmText = document.getElementById('confirm-leave-text');
 
+                const dict = I18N[this.uiLanguage] || I18N.en;
+
                 if (action === 'endAll' || action === 'leaveAndEnd') {
-                    confirmText.textContent = 'This will end the game for all players. Are you sure?';
+                    confirmText.textContent = dict["msg-confirm-end-all"] || 'This will end the game for all players. Are you sure?';
                 } else {
-                    confirmText.textContent = 'You will leave the game. Are you sure?';
+                    confirmText.textContent = dict["msg-confirm-leave"] || 'You will leave the game. Are you sure?';
                 }
 
                 if (confirmModal) confirmModal.classList.remove('hidden');
