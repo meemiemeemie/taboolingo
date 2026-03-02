@@ -1594,6 +1594,8 @@
                     return;
                 }
 
+                this.game.multiplayerMode = true; // Ensure host is flagged for multiplayer logic flow
+
                 // Determine game mode based on player count
                 let teams = null;
                 let turnOrder = [];
@@ -2102,6 +2104,14 @@
                 if (!this.gameState) return;
 
                 const currentPlayerId = this.gameState.currentPlayer;
+                const currentPlayer = this.players[currentPlayerId];
+
+                // Guard: If current player data is missing (e.g. during transition or leaving), stop here
+                if (currentPlayerId && !currentPlayer) {
+                    console.warn("Waiting for player data sync for:", currentPlayerId);
+                    return;
+                }
+
                 const isMyTurn = currentPlayerId === this.playerId;
                 const isTeamMode = !!this.gameState.teams;
                 const roundActive = this.gameState.roundActive;
@@ -2144,7 +2154,6 @@
                 const buzzedBtn = document.getElementById('btn-buzzed');
                 const correctBtn = document.getElementById('btn-correct');
 
-                const currentPlayer = this.players[currentPlayerId];
                 const currentPlayerName = currentPlayer?.name || 'Unknown';
                 const activeTeam = currentPlayer?.team;
 
@@ -3212,6 +3221,7 @@
                 const hostName = nameInput ? nameInput.value.trim() : null;
                 const code = await this.multiplayer.createRoom(hostName);
                 if (code) {
+                    this.multiplayerMode = true;
                     document.getElementById('lobby-room-code').textContent = code;
                     this.showScreen('lobby');
                 } else {
@@ -3576,8 +3586,7 @@
                         } else {
                             await this.multiplayer.markBuzzed();
                         }
-                        // Stay on game screen
-                        this.showScreen('game');
+                        // removed redundant showScreen('game') which was clobbering UI state
                     }
                 } else {
                     // Single player mode
