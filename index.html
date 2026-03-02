@@ -2183,8 +2183,12 @@
             updateGameUI() {
                 if (!this.gameState) return;
 
-                const currentPlayerId = this.gameState.currentPlayer;
-                const isMyTurn = currentPlayerId === this.playerId;
+                const dict = I18N[this.game.uiLanguage] || I18N.en;
+                const activePlayerId = this.gameState.currentPlayer;
+                const activeTeam = this.gameState.activeTeam;
+                const currentPlayer = this.players[activePlayerId];
+                const currentPlayerName = currentPlayer?.name || (dict['label-unknown'] || 'Unknown');
+                const isMyTurn = activePlayerId === this.playerId;
                 const isTeamMode = !!this.gameState.teams;
                 const roundActive = this.gameState.roundActive;
 
@@ -2219,16 +2223,10 @@
                 const startRoundBtn = document.getElementById('multiplayer-start-round');
                 const waitingMsg = document.getElementById('multiplayer-waiting');
                 const playerList = document.getElementById('multiplayer-player-list');
+                const skipBtn = document.getElementById('btn-skip-multi');
+                const buzzedBtn = document.getElementById('btn-buzzed-multi');
+                const correctBtn = document.getElementById('btn-correct-multi');
                 const buzzerContainer = document.getElementById('multiplayer-buzzer-container');
-
-                // UI Buttons
-                const skipBtn = document.getElementById('btn-skip');
-                const buzzedBtn = document.getElementById('btn-buzzed');
-                const correctBtn = document.getElementById('btn-correct');
-
-                const currentPlayer = this.players[currentPlayerId];
-                const currentPlayerName = currentPlayer?.name || 'Unknown';
-                const activeTeam = currentPlayer?.team;
 
                 // Apply team theme to game board
                 const mainBoard = document.querySelector('main > div#screen-game');
@@ -2239,14 +2237,14 @@
                     }
                 }
 
-                if (turnIndicator) turnIndicator.classList.remove('hidden');
                 if (playerList) playerList.classList.remove('hidden');
 
-                // Apply team theme to indicator
+                // Role badge and UI coloring
                 if (turnIndicator) {
-                    turnIndicator.classList.remove('team-a', 'team-b', 'bg-slate-50', 'border-slate-200');
-                    if (isTeamMode && activeTeam) {
-                        turnIndicator.classList.add(activeTeam === 'A' ? 'team-a' : 'team-b');
+                    turnIndicator.classList.remove('hidden');
+                    turnIndicator.classList.remove('team-a', 'team-b', 'bg-slate-50', 'border-slate-200', 'bg-primary-light', 'border-primary'); // Clear all
+                    if (isMyTurn) {
+                        turnIndicator.classList.add('bg-primary-light', 'border-primary');
                     } else {
                         turnIndicator.classList.add('bg-slate-50', 'border-slate-200');
                     }
@@ -2257,7 +2255,6 @@
                 const isOpposingTeam = isTeamMode && myTeam && activeTeam && myTeam !== activeTeam;
 
                 if (roleBadge) {
-                    // Systematically clear ALL potential role classes to prevent "class stacking"
                     roleBadge.classList.remove(
                         'hidden',
                         'bg-primary', 'text-white',
@@ -2269,14 +2266,13 @@
                     if (isTeamMode) {
                         roleBadge.classList.remove('hidden');
                         if (isMyTurn) {
-                            roleBadge.textContent = 'Describer View';
+                            roleBadge.textContent = dict['label-role-describer'] || 'Describer View';
                             roleBadge.classList.add('bg-primary', 'text-white');
                         } else if (isSameTeam) {
-                            roleBadge.textContent = 'Guesser View';
+                            roleBadge.textContent = dict['label-role-guesser'] || 'Guesser View';
                             roleBadge.classList.add('bg-primary-light', 'text-primary');
                         } else if (isOpposingTeam) {
-                            roleBadge.textContent = 'Buzzer Duty';
-                            // Light Red for English, Light Indigo for French
+                            roleBadge.textContent = dict['label-role-buzzer'] || 'Buzzer Duty';
                             if (this.game.activeLanguage === 'en') {
                                 roleBadge.classList.add('bg-red-100', 'text-red-700');
                             } else {
@@ -2297,8 +2293,11 @@
                         if (waitingMsg) waitingMsg.classList.add('hidden');
                     }
                     if (turnIndicator) {
-                        turnIndicator.querySelector('#turn-indicator-text').textContent = isTeamMode ? `Team ${activeTeam} is up!` : 'Your Turn!';
-                        turnIndicator.querySelector('#turn-indicator-subtext').textContent = roundActive ? 'Describe the word!' : 'Start your round when ready';
+                        const titleKey = isTeamMode ? 'label-team-up' : 'label-your-turn';
+                        const subKey = roundActive ? 'label-describe-word' : 'label-start-ready';
+
+                        turnIndicator.querySelector('#turn-indicator-text').textContent = (dict[titleKey] || titleKey).replace('{team}', activeTeam);
+                        turnIndicator.querySelector('#turn-indicator-subtext').textContent = dict[subKey] || subKey;
                     }
                 } else {
                     if (startRoundBtn) startRoundBtn.classList.add('hidden');
@@ -2309,20 +2308,29 @@
                             waitingMsg.classList.add('hidden');
                         } else {
                             waitingMsg.classList.remove('hidden');
-                            waitingMsg.querySelector('#waiting-text').textContent = `Waiting for ${currentPlayerName} to start their round...`;
+                            const waitTemplate = dict['label-waiting-player'] || "Waiting for {name} to start...";
+                            waitingMsg.querySelector('#waiting-text').textContent = waitTemplate.replace('{name}', currentPlayerName);
                         }
                     }
 
                     if (turnIndicator) {
-                        turnIndicator.querySelector('#turn-indicator-text').textContent = isTeamMode ? `Team ${activeTeam} is up!` : `${currentPlayerName}'s Turn`;
+                        const titleTemplate = isTeamMode ? (dict['label-team-up'] || "Team {team} is up!") : (dict['label-player-turn'] || "{name}'s Turn");
+                        turnIndicator.querySelector('#turn-indicator-text').textContent = titleTemplate.replace('{team}', activeTeam).replace('{name}', currentPlayerName);
+
                         if (isTeamMode) {
                             if (isOpposingTeam) {
-                                turnIndicator.querySelector('#turn-indicator-subtext').textContent = `${currentPlayerName} is describing. Buzz if you hear a taboo word!`;
+                                const buzzTemplate = dict['label-player-describing'] || "{name} is describing. Buzz if you hear a taboo word!";
+                                turnIndicator.querySelector('#turn-indicator-subtext').textContent = buzzTemplate.replace('{name}', currentPlayerName);
                             } else {
-                                turnIndicator.querySelector('#turn-indicator-subtext').textContent = `${currentPlayerName} is describing. Guess the word!`;
+                                turnIndicator.querySelector('#turn-indicator-subtext').textContent = dict['label-listen-carefully'] || "Listen carefully!";
                             }
                         } else {
-                            turnIndicator.querySelector('#turn-indicator-subtext').textContent = `${currentPlayerName} is describing. Guess the word!`;
+                            if (roundActive) {
+                                const descTemplate = dict['label-is-describing-short'] || "{name} is describing...";
+                                turnIndicator.querySelector('#turn-indicator-subtext').textContent = descTemplate.replace('{name}', currentPlayerName);
+                            } else {
+                                turnIndicator.querySelector('#turn-indicator-subtext').textContent = dict['label-waiting-round-start'] || 'Waiting for round to start';
+                            }
                         }
                     }
                 }
@@ -2814,7 +2822,21 @@
                 "label-round-done": "Manche {num} terminée !",
                 "label-level-tag": "Niveau {lvl}",
                 "label-skip-count": "Passer ({n}/1)",
-                "label-interface-language": "Langue de l'interface"
+                "label-interface-language": "Langue de l'interface",
+                "label-your-turn": "C'est votre tour !",
+                "label-describe-word": "Décrivez le mot !",
+                "label-team-up": "L'équipe {team} joue !",
+                "label-start-ready": "Prêt ? Démarrez la manche !",
+                "label-waiting-player": "En attente de {name} pour démarrer...",
+                "label-player-turn": "Tour de {name}",
+                "label-player-describing": "{name} décrit. Buzzez si besoin !",
+                "label-listen-carefully": "Écoutez attentivement !",
+                "label-is-describing-short": "{name} décrit...",
+                "label-waiting-round-start": "En attente du début de la manche",
+                "label-role-describer": "Vue du Décriveur",
+                "label-role-guesser": "Vue du Devineur",
+                "label-role-buzzer": "Service Buzzer",
+                "label-unknown": "Inconnu"
             },
             en: {
                 "step-connection": "1. Connection Mode",
@@ -2910,7 +2932,21 @@
                 "label-round-done": "Round {num} Done!",
                 "label-level-tag": "Level {lvl}",
                 "label-skip-count": "Skip ({n}/1)",
-                "label-interface-language": "Interface Language"
+                "label-interface-language": "Interface Language",
+                "label-your-turn": "Your Turn!",
+                "label-describe-word": "Describe the word!",
+                "label-team-up": "Team {team} is up!",
+                "label-start-ready": "Start your round when ready",
+                "label-waiting-player": "Waiting for {name} to start...",
+                "label-player-turn": "{name}'s Turn",
+                "label-player-describing": "{name} is describing. Buzz if you hear a taboo word!",
+                "label-listen-carefully": "Listen carefully!",
+                "label-is-describing-short": "{name} is describing...",
+                "label-waiting-round-start": "Waiting for round to start",
+                "label-role-describer": "Describer View",
+                "label-role-guesser": "Guesser View",
+                "label-role-buzzer": "Buzzer Duty",
+                "label-unknown": "Unknown"
             },
             de: {
                 "step-connection": "1. Verbindungsmodus",
@@ -3001,9 +3037,22 @@
                 "btn-copied": "Kopiert!",
                 "alert-invalid-code": "Bitte gib einen gültigen 4-stelligen Code ein.",
                 "alert-enter-name": "Bitte gib deinen Namen ein.",
-                "btn-start-game-level": "Start (Level {level})",
-                "alert-select-level": "Bitte wähle zuerst ein Level.",
-                "label-interface-language": "Sprache der Benutzeroberfläche"
+                "label-round-done": "Runde {num} beendet !",
+                "label-interface-language": "Sprache der Benutzeroberfläche",
+                "label-your-turn": "Du bist dran !",
+                "label-describe-word": "Beschreibe das Wort !",
+                "label-team-up": "Team {team} ist dran !",
+                "label-start-ready": "Starte deine Runde, wenn du bereit bist",
+                "label-waiting-player": "Warten auf {name}...",
+                "label-player-turn": "{name} ist dran",
+                "label-player-describing": "{name} beschreibt. Buzze bei Tabu-Wort!",
+                "label-listen-carefully": "Hör genau zu!",
+                "label-is-describing-short": "{name} beschreibt...",
+                "label-waiting-round-start": "Warten auf Rundenstart",
+                "label-role-describer": "Sicht des Beschreibers",
+                "label-role-guesser": "Sicht des Raters",
+                "label-role-buzzer": "Buzzer-Dienst",
+                "label-unknown": "Unbekannt"
             },
             es: {
                 "step-connection": "1. Modo de conexión",
@@ -3096,7 +3145,21 @@
                 "alert-enter-name": "Por favor, introduce tu nombre.",
                 "btn-start-game-level": "Empezar (Nivel {level})",
                 "alert-select-level": "Por favor, selecciona un nivel primero.",
-                "label-interface-language": "Idioma de la interfaz"
+                "label-interface-language": "Idioma de la interfaz",
+                "label-your-turn": "¡Tu turno!",
+                "label-describe-word": "¡Describe la palabra!",
+                "label-team-up": "¡Equipo {team} jugando!",
+                "label-start-ready": "Empieza tu ronda cuando estés listo",
+                "label-waiting-player": "Esperando a {name} para empezar...",
+                "label-player-turn": "Turno de {name}",
+                "label-player-describing": "¡{name} está describiendo. Usa el zumbador!",
+                "label-listen-carefully": "¡Escucha con atención!",
+                "label-is-describing-short": "{name} está describiendo...",
+                "label-waiting-round-start": "Esperando a que empiece la ronda",
+                "label-role-describer": "Vista del descriptor",
+                "label-role-guesser": "Vista del adivinador",
+                "label-role-buzzer": "Servicio de zumbador",
+                "label-unknown": "Desconocido"
             }
         };
 
