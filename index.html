@@ -884,6 +884,43 @@
         </div>
     </div>
 
+    <!-- PLAYER OFFLINE MODAL -->
+    <div id="modal-player-offline"
+        class="hidden fixed inset-0 bg-slate-900/80 backdrop-blur-md z-[250] flex items-center justify-center p-6">
+        <div class="bg-white rounded-[2.5rem] p-10 max-w-sm w-full text-center shadow-2xl scale-in">
+            <div class="text-6xl mb-6 animate-bounce">📵</div>
+            <h3 id="offline-modal-title" class="text-3xl font-black text-slate-800 mb-4">Connection Lost</h3>
+            <p id="offline-modal-msg" class="text-slate-500 mb-8 leading-relaxed text-lg">
+                Waiting for <span id="offline-player-name" class="font-bold text-primary">the active player</span> to
+                return...
+            </p>
+            <div class="flex flex-col gap-3">
+                <div id="offline-status-bar"
+                    class="flex items-center justify-center gap-2 text-primary font-bold animate-pulse mb-2">
+                    <span class="w-2 h-2 rounded-full bg-primary"></span>
+                    <span>Game Paused</span>
+                </div>
+
+                <!-- Decision Buttons (Shown only to Host) -->
+                <div id="offline-host-controls" class="hidden space-y-3">
+                    <button id="btn-skip-offline-player" onclick="game.multiplayer.skipOfflinePlayer()"
+                        class="w-full bg-primary text-white py-4 rounded-2xl font-black text-lg shadow-lg hover:brightness-110 transition-all flex items-center justify-center gap-2">
+                        <span>Skip Player & Proceed</span>
+                        <span class="text-xs opacity-75">⏭️</span>
+                    </button>
+                    <button onclick="game.confirmLeaveAction('endAll')"
+                        class="w-full bg-white border-2 border-slate-100 text-slate-600 py-3 rounded-xl font-bold hover:bg-slate-50 transition-colors">
+                        End Game for All
+                    </button>
+                </div>
+
+                <p id="offline-wait-msg" class="text-[10px] text-slate-400 font-bold uppercase tracking-widest">
+                    Waiting for reconnection...
+                </p>
+            </div>
+        </div>
+    </div>
+
     <!-- FINISH GAME PROMPT MODAL -->
     <div id="modal-finish-game-prompt"
         class="hidden fixed inset-0 bg-slate-900/60 backdrop-blur-sm z-[200] flex items-center justify-center p-4">
@@ -898,8 +935,8 @@
                     See Game Results
                 </button>
                 <button id="continue-anyway-btn" onclick="game.multiplayer.continueAnyway()"
-                    class="hidden w-full bg-slate-100 text-slate-600 py-3 rounded-2xl font-black text-sm">
-                    Continue anyway
+                    class="w-full bg-white border-2 border-slate-100 text-slate-600 py-4 rounded-2xl font-black text-lg shadow-sm hover:bg-slate-50 transition-colors">
+                    Continue Anyway
                 </button>
             </div>
         </div>
@@ -978,7 +1015,7 @@
     </div>
 
     <!-- Leave Game Modal - Step 2: Confirm action -->
-    <div id="modal-confirm-leave" class="hidden fixed inset-0 z-[100] flex items-center justify-center p-6 overlay">
+    <div id="modal-confirm-leave" class="hidden fixed inset-0 z-[300] flex items-center justify-center p-6 overlay">
         <div class="bg-white rounded-3xl p-8 shadow-2xl max-w-xs w-full text-center">
             <div class="text-4xl mb-4">⚠️</div>
             <h3 class="text-xl font-black mb-2">Are you sure?</h3>
@@ -1130,7 +1167,9 @@
                     connectedRef.on('value', (snap) => {
                         if (snap.val() === true && this.roomRef) {
                             const pRef = this.roomRef.child(`players/${this.playerId}`);
-                            pRef.onDisconnect().remove();
+                            // Only mark offline on disconnect — never delete the node.
+                            // Deleting the node would erase the player's score, team, and name.
+                            pRef.onDisconnect().update({ online: false });
                         }
                     });
 
@@ -1189,6 +1228,10 @@
 
                     // Create room with expiration (1 hour)
                     const expirationTime = Date.now() + (60 * 60 * 1000);
+                    // Reset solo game state for host too
+                    this.game.playedIds.clear();
+                    this.game.timeLeft = 60;
+
                     await this.roomRef.set({
                         host: this.playerId,
                         createdAt: firebase.database.ServerValue.TIMESTAMP,
@@ -1210,8 +1253,8 @@
                     await this.joinRoomAsPlayer(hostName || 'Host');
                     this.setupRoomListeners();
 
-                    // Set up individual player cleanup on disconnect
-                    this.roomRef.child(`players/${this.playerId}`).onDisconnect().remove();
+                    // Only mark offline on disconnect — do NOT remove the node (would erase score/team).
+                    this.roomRef.child(`players/${this.playerId}`).onDisconnect().update({ online: false });
 
                     return code;
                 } catch (error) {
@@ -1239,16 +1282,7 @@
                     }
 
                     const roomData = snapshot.val();
-                    if (roomData.gameState && roomData.gameState.status === 'playing') {
-                        // Check if there are actually any active players
-                        const activePlayers = Object.values(roomData.players || {}).filter(p => p.online !== false);
-
-                        if (activePlayers.length > 0) {
-                            // Allow joining during game but show message only if there are people playing
-                            const joinDuringGame = confirm('Game is already in progress. You can join as a spectator. Continue?');
-                            if (!joinDuringGame) return false;
-                        }
-                    }
+                    // Remove spectator logic as requested - all players join directly
 
                     // Check player limit (8 players max)
                     const currentPlayers = Object.keys(roomData.players || {}).length;
@@ -1261,6 +1295,10 @@
                     this.currentHostId = roomData.host;
                     this.storage.saveRoomCode(code);
                     this.storage.savePlayerName(playerName);
+                    // Reset solo game state to prevent contamination
+                    this.game.playedIds.clear();
+                    this.game.timeLeft = 60;
+
                     await this.joinRoomAsPlayer(playerName);
                     this.setupRoomListeners();
                     return true;
@@ -1306,18 +1344,35 @@
             async joinRoomAsPlayer(playerName) {
                 if (!this.roomRef) return;
 
+                // Ensure the game knows we are in multiplayer mode (covers all join paths)
+                this.game.multiplayerMode = true;
+
                 // Sanitize player name
                 const sanitizedName = playerName.substring(0, 20).replace(/[<>]/g, '') || 'Player';
 
+                // Read directly from Firebase (not local cache, which is empty on page load)
+                const existingSnap = await this.roomRef.child(`players/${this.playerId}`).once('value');
+                const existing = existingSnap.val();
+
+                console.log('[joinRoomAsPlayer] existing Firebase data:', existing);
+
                 const playerData = {
                     name: sanitizedName,
-                    joinedAt: firebase.database.ServerValue.TIMESTAMP,
-                    score: 0,
-                    team: null,
                     online: true
                 };
 
-                await this.roomRef.child(`players/${this.playerId}`).set(playerData);
+                // Only reset score/team/joinedAt for brand-new players, never on rejoin
+                if (!existing) {
+                    playerData.joinedAt = firebase.database.ServerValue.TIMESTAMP;
+                    playerData.score = 0;
+                    playerData.team = null;
+                    console.log('[joinRoomAsPlayer] NEW player — writing score:0');
+                } else {
+                    console.log('[joinRoomAsPlayer] REJOIN — preserving score:', existing.score, 'team:', existing.team);
+                }
+
+                console.log('[joinRoomAsPlayer] writing to Firebase:', playerData);
+                await this.roomRef.child(`players/${this.playerId}`).update(playerData);
                 // Keep online status synced
                 this.roomRef.child(`players/${this.playerId}/online`).onDisconnect().set(false);
             }
@@ -1329,6 +1384,7 @@
                 this.roomRef.child('players').on('value', async (snapshot) => {
                     this.players = snapshot.val() || {};
                     this.updatePlayersList();
+                    this.updateGameUI();
 
                     // Host Migration Logic
                     if (this.roomRef && this.players) {
@@ -1362,17 +1418,29 @@
                     this.isHost = (newHostId === this.playerId);
 
                     if (this.isHost && !wasHost) {
-                        console.log("I am the new Host! Starting timer authority...");
+                        console.log('I am the new Host! Starting timer authority...');
                         this.startHostTimer();
-                        this.validateRoomState(); // Immediate check after promotion
+                        // Only run validateRoomState if the previous host is truly gone from the room.
+                        // If they are just offline (online === false but still in players list),
+                        // the Game Paused overlay will handle it — no immediate force-end.
+                        const prevHostData = this.players[currentHostId];
+                        const prevHostTrulyGone = !prevHostData; // undefined = removed from room entirely
+                        if (prevHostTrulyGone) {
+                            this.validateRoomState();
+                        } else {
+                            console.log('Old host is temporarily offline — skipping validateRoomState, showing Game Paused overlay.');
+                        }
                         this.updatePlayersList();
                     }
                 });
 
                 this.roomRef.child('players').on('child_removed', (snapshot) => {
-                    if (this.isHost && this.gameState && this.gameState.status === 'playing') {
-                        this.validateRoomState();
-                    }
+                    // NOTE: Do NOT call validateRoomState here.
+                    // A page refresh causes a brief 'child_removed' then 'child_added' — triggering
+                    // an immediate forced finish on a temporary disconnect. The Game Paused overlay
+                    // (shown when online===false) handles temporary disconnects gracefully.
+                    // validateRoomState is only called from the players 'value' listener so it works
+                    // on the full settled state.
                 });
 
                 // Listen to game state
@@ -1415,9 +1483,9 @@
                     }
                 });
 
-                // Handle disconnections
+                // Mark offline on disconnect — do NOT remove the node (would erase score/team).
                 if (this.playerId) {
-                    this.roomRef.child(`players/${this.playerId}`).onDisconnect().remove();
+                    this.roomRef.child(`players/${this.playerId}`).onDisconnect().update({ online: false });
                 }
 
                 // Start host timer if applicable
@@ -1586,11 +1654,29 @@
             }
 
             async startGame(level) {
-                if (!this.isHost || !this.roomRef) return;
+                console.log('[startGame] called. isHost:', this.isHost, 'roomRef:', !!this.roomRef, 'players:', Object.keys(this.players).length, 'level:', level);
+
+                // Re-check host status directly from Firebase in case local flag is stale
+                if (!this.roomRef) {
+                    alert('Error: Room connection lost. Please leave and rejoin.');
+                    return;
+                }
+                if (!this.isHost) {
+                    // Attempt to verify from Firebase before giving up
+                    const hostSnap = await this.roomRef.child('host').once('value');
+                    const currentHost = hostSnap.val();
+                    console.log('[startGame] Firebase host:', currentHost, 'myId:', this.playerId);
+                    if (currentHost !== this.playerId) {
+                        alert('Error: Only the host can start the game.');
+                        return;
+                    }
+                    // Fix stale flag
+                    this.isHost = true;
+                }
 
                 const playerArray = Object.keys(this.players);
                 if (playerArray.length < 2) {
-                    alert('Need at least 2 players to start!');
+                    alert(`Need at least 2 players to start! Currently ${playerArray.length} player(s) in room.`);
                     return;
                 }
 
@@ -1618,7 +1704,7 @@
                     level: level,
                     currentPlayer: firstPlayer,
                     currentCard: null,
-                    timer: this.game.timeLeft, // Use currently selected timer duration
+                    timer: this.game.timerDuration || 60, // Fix: Use configured duration (default 60s)
                     roundActive: false,
                     teams: teams,
                     turnOrder: turnOrder,
@@ -1872,6 +1958,37 @@
                 }, 1000);
             }
 
+            canContinueWithoutPlayer(offlinePlayerId) {
+                if (!this.gameState || !this.players) return false;
+
+                const playerIds = Object.keys(this.players).filter(id => id !== offlinePlayerId && this.players[id].online !== false);
+
+                if (this.gameState.teams) {
+                    // Team Mode: User requested at least 2 players per team to continue
+                    const teamA = playerIds.filter(id => this.players[id].team === 'A');
+                    const teamB = playerIds.filter(id => this.players[id].team === 'B');
+                    return teamA.length >= 2 && teamB.length >= 2;
+                } else {
+                    // FFA Mode: Check if at least 2 players remain
+                    return playerIds.length >= 2;
+                }
+            }
+
+            async skipOfflinePlayer() {
+                if (!this.isHost || !this.roomRef || !this.gameState) return;
+
+                const offlinePlayerId = this.gameState.currentPlayer;
+                if (!this.canContinueWithoutPlayer(offlinePlayerId)) {
+                    alert("Not enough players left to continue. You should end the game.");
+                    return;
+                }
+
+                // Force end the round and move to next player
+                // We use endRound(false, true) where 'true' is the 'force' parameter
+                await this.endRound(false, true);
+                console.log(`Host skipped offline player: ${offlinePlayerId}`);
+            }
+
             async endGame() {
                 if (!this.roomRef) return;
 
@@ -1913,6 +2030,22 @@
                     // Sync language in lobby too
                     if (this.gameState.language && this.gameState.language !== this.game.activeLanguage) {
                         this.game.setLanguage(this.gameState.language);
+                    }
+                    // Restore selectedLevel and button state if a level was already chosen
+                    if (this.gameState.level && this.isHost) {
+                        this.game.selectedLevel = this.gameState.level;
+                        const startBtn = document.getElementById('btn-start-game');
+                        if (startBtn) {
+                            startBtn.disabled = false;
+                            startBtn.className = 'btn-3d w-full bg-green-500 text-white py-4 rounded-2xl text-xl font-black';
+                            startBtn.textContent = `Start Game (Level ${this.gameState.level})`;
+                            // Highlight the previously selected level button
+                            document.querySelectorAll('#screen-lobby .level-btn').forEach(b => {
+                                const lvl = b.querySelector('div')?.textContent?.trim();
+                                if (lvl === this.gameState.level) b.classList.add('selected');
+                                else b.classList.remove('selected');
+                            });
+                        }
                     }
                 } else if (this.gameState.status === 'finished') {
                     // Game finished - show multiplayer end game screen
@@ -2101,10 +2234,13 @@
             }
 
             updateGameUI() {
-                if (!this.gameState) return;
+                if (!this.gameState) return; // Only guard: must have game state
 
-                const currentPlayerId = this.gameState.currentPlayer;
-                const currentPlayer = this.players[currentPlayerId];
+                // References available on 'this' (MultiplayerManager)
+                const gameState = this.gameState;
+                const players = this.players;
+                const currentPlayerId = gameState.currentPlayer;
+                const currentPlayer = players[currentPlayerId];
 
                 // Guard: If current player data is missing (e.g. during transition or leaving), stop here
                 if (currentPlayerId && !currentPlayer) {
@@ -2112,9 +2248,40 @@
                     return;
                 }
 
+                // Handle Offline Describer Suspension
+                const offlineModal = document.getElementById('modal-player-offline');
+                if (offlineModal) {
+                    // Show Game Paused whenever the current player is offline —
+                    // whether the round is active OR waiting to start (roundActive = false).
+                    if (currentPlayer && currentPlayer.online === false) {
+                        offlineModal.classList.remove('hidden');
+                        const nameSpan = document.getElementById('offline-player-name');
+                        if (nameSpan) nameSpan.textContent = currentPlayer.name;
+
+                        // Show host controls only to the host
+                        const hostControls = document.getElementById('offline-host-controls');
+                        if (hostControls) {
+                            if (this.isHost) {
+                                hostControls.classList.remove('hidden');
+                                // Enable skip only if game remains valid (logic inside skipOfflinePlayer)
+                                const skipBtn = document.getElementById('btn-skip-offline-player');
+                                if (skipBtn) {
+                                    const canSkip = this.canContinueWithoutPlayer(currentPlayerId);
+                                    skipBtn.disabled = !canSkip;
+                                    skipBtn.style.opacity = canSkip ? '1' : '0.5';
+                                }
+                            } else {
+                                hostControls.classList.add('hidden');
+                            }
+                        }
+                    } else {
+                        offlineModal.classList.add('hidden');
+                    }
+                }
+
                 const isMyTurn = currentPlayerId === this.playerId;
-                const isTeamMode = !!this.gameState.teams;
-                const roundActive = this.gameState.roundActive;
+                const isTeamMode = !!gameState.teams;
+                const roundActive = gameState.roundActive;
 
                 // Show/hide Leave Game button
                 const leaveBtn = document.getElementById('leave-game-btn');
@@ -2124,14 +2291,14 @@
 
                 // Update HUD score with player's total score
                 const scoreEl = document.getElementById('score-display');
-                if (scoreEl && this.players[this.playerId]) {
-                    scoreEl.textContent = this.players[this.playerId].score || 0;
+                if (scoreEl && players[this.playerId]) {
+                    scoreEl.textContent = players[this.playerId].score || 0;
                 }
 
                 // Persistent "Your Team" badge
                 const yourTeamBadge = document.getElementById('your-team-badge');
-                if (yourTeamBadge && this.players[this.playerId]) {
-                    const myTeam = this.players[this.playerId].team;
+                if (yourTeamBadge && players[this.playerId]) {
+                    const myTeam = players[this.playerId].team;
                     if (myTeam && isTeamMode) {
                         yourTeamBadge.classList.remove('hidden');
                         yourTeamBadge.textContent = `Your Team: ${myTeam}`;
@@ -2179,7 +2346,7 @@
                     }
                 }
 
-                const myTeam = this.players[this.playerId]?.team;
+                const myTeam = players[this.playerId]?.team;
                 const isSameTeam = isTeamMode && myTeam && activeTeam && myTeam === activeTeam;
                 const isOpposingTeam = isTeamMode && myTeam && activeTeam && myTeam !== activeTeam;
 
@@ -2489,43 +2656,57 @@
 
                 const initialCount = this.gameState.initialPlayerCount || 2;
                 const turnOrder = this.gameState.turnOrder || [];
-                const currentPlayers = Object.keys(this.players);
 
-                // 1. Sync Turn Order: Remove any players who are no longer in the room
+                // Only count players that are ONLINE (online !== false).
+                // Offline players may be mid-refresh — Game Paused overlay handles them.
+                const onlinePlayers = Object.entries(this.players)
+                    .filter(([id, data]) => data.online !== false)
+                    .map(([id]) => id);
+                const allPlayers = Object.keys(this.players);
+
+                // 1. Sync Turn Order: Remove any players who are completely gone from the room
                 const newTurnOrder = turnOrder.filter(id => this.players[id]);
-
                 if (newTurnOrder.length !== turnOrder.length) {
-                    console.log("Syncing turn order after departure...");
+                    console.log('Syncing turn order after permanent departure...');
                     await this.roomRef.child('gameState/turnOrder').set(newTurnOrder);
 
-                    // If the active player is gone, skip their turn
+                    // If the active player is completely gone (not just offline), skip their ghost turn
                     if (!this.players[this.gameState.currentPlayer]) {
-                        console.log("Current player left, skipping ghost turn...");
+                        console.log('Current player left permanently, skipping ghost turn...');
                         await this.forceSkipGhostTurn(newTurnOrder);
                     }
                 }
 
-                // 2. Check Balance Thresholds (1vN)
-                const playerCount = currentPlayers.length;
+                // 2. Check Balance Thresholds using ONLINE player count only
+                const onlineCount = onlinePlayers.length;
                 let shouldFinish = false;
 
-                if (initialCount === 4 && playerCount === 3) {
-                    // Start 4 -> 3 left (2v1) -> Mandatory end
+                if (initialCount === 4 && onlineCount === 3) {
+                    // 4-player started -> dropped to 3 online (2v1 unbalanced) -> must end
                     shouldFinish = true;
                 } else if (initialCount >= 5) {
-                    const teamA = currentPlayers.filter(id => this.players[id].team === 'A');
-                    const teamB = currentPlayers.filter(id => this.players[id].team === 'B');
-
+                    const teamA = onlinePlayers.filter(id => this.players[id]?.team === 'A');
+                    const teamB = onlinePlayers.filter(id => this.players[id]?.team === 'B');
                     if (teamA.length <= 1 || teamB.length <= 1) {
                         shouldFinish = true;
                     }
-                } else if (initialCount < 4 && playerCount < 2) {
-                    // FFA mode needs at least 2
-                    shouldFinish = true;
+                } else if (initialCount < 4 && onlineCount < 2) {
+                    // FFA: only 1 online player. But wait — if there's still another player in
+                    // the room (just offline), show the Game Paused overlay instead.
+                    const offlinePlayers = allPlayers.filter(id => this.players[id]?.online === false);
+                    if (offlinePlayers.length > 0) {
+                        // Someone is offline but still in the room — don't force-finish yet.
+                        // The Game Paused overlay gives the host time to decide.
+                        console.log('Player offline (not gone) — showing Game Paused, not forcing end.');
+                        shouldFinish = false;
+                    } else {
+                        // Player is truly gone from the room
+                        shouldFinish = true;
+                    }
                 }
 
                 if (shouldFinish && !this.gameState.forcedFinish && !this.gameState.promptFinish) {
-                    console.log("Teams unbalanced, forcing game end.");
+                    console.log('Teams permanently unbalanced, forcing game end.');
                     await this.roomRef.child('gameState/forcedFinish').set(true);
                 }
             }
@@ -2658,6 +2839,7 @@
                 this.wordLog = [];
 
                 this.timeLeft = 60;
+                this.timerDuration = 60; // default; overridden when timer button is clicked
                 this.skips = 1;
                 this.timer = null;
                 this.currentCard = null;
@@ -2737,6 +2919,11 @@
                         taboo: [cols[3], cols[4], cols[5], cols[6], cols[7]].map(s => s.trim())
                     });
                 }
+                console.log(`[CSV Diagnostic] Loaded ${results.length} cards for language: ${lang}`);
+                const levelCounts = {};
+                results.forEach(r => levelCounts[r.level] = (levelCounts[r.level] || 0) + 1);
+                console.log(`[CSV Diagnostic] Levels for ${lang}:`, levelCounts);
+
                 this.db[lang] = results;
 
                 // Initialize played IDs if not already done
@@ -3276,12 +3463,15 @@
             }
 
             async startMultiplayerGame() {
-                if (!this.selectedLevel) {
+                // Fall back to the level already synced from Firebase if the host re-entered the lobby
+                const level = this.selectedLevel || this.multiplayer.gameState?.level;
+                if (!level) {
                     alert('Please select a level first.');
                     return;
                 }
+                this.selectedLevel = level; // ensure it's set
                 this.multiplayerMode = true;
-                await this.multiplayer.startGame(this.selectedLevel);
+                await this.multiplayer.startGame(level);
             }
 
             async startMultiplayerRound() {
